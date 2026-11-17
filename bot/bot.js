@@ -190,7 +190,7 @@ const DEFAULT_BOT = {
   ]
 };
 const adminPhones = () => { const l = (Array.isArray(CFG.adminPhones) && CFG.adminPhones.length ? CFG.adminPhones : [CFG.wa]).map(pLocal).filter(phoneOk); return [...new Set(l)]; };
-const SITE_DEFAULT = "https://maavar.barbershops.company/";
+const SITE_DEFAULT = "https://chlomo111-bit.github.io/maavar-lanekuda/";
 /* the site address can be changed from config.json (siteUrl) */
 const siteUrl = () => { const u = String((CFG && CFG.siteUrl) || SITE_DEFAULT).trim(); return u.endsWith("/") ? u : u + "/"; };
 let CFG = {};
