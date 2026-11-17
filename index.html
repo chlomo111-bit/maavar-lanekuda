@@ -1,0 +1,2112 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="קובעים תור אונליין במעבר לנקודה, קליניקה לרפואה סינית של ענבל בוחניק באשדוד: דיקור סיני, טווינא, כוסות רוח ומוקסה.">
+<meta name="theme-color" content="#0a0f0c">
+<meta property="og:title" content="מעבר לנקודה · קביעת תור">
+<meta property="og:description" content="קליניקה לרפואה סינית באשדוד · קביעת תור אונליין">
+<meta property="og:locale" content="he_IL">
+<meta name="robots" content="noindex">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="מעבר לנקודה">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23c9a45c'/%3E%3Ccircle cx='32' cy='32' r='26' fill='%230b0a08'/%3E%3Crect x='27' y='12' width='10' height='40' rx='5' fill='%23f5efe3'/%3E%3Cpath d='M27 20l10-5v5l-10 5zM27 30l10-5v5l-10 5zM27 40l10-5v5l-10 5z' fill='%23c9a45c'/%3E%3C/svg%3E">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>מעבר לנקודה · קביעת תור</title>
+</head>
+<body>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800;900&display=swap">
+<style>
+/* Layout: phone-first single column. Landing screen (emblem + big CTA), then one full screen per step with a mini header, gold progress bar and a big title. Dark luxury: warm black + brushed gold. */
+:root{
+  --bg:#0a0f0c;           /* page ground */
+  --bg-glow:#163025;      /* warm glow behind the emblem */
+  --surface:#101813;      /* cards */
+  --surface-2:#17241c;    /* raised / selected cards */
+  --line:#26392d;         /* card borders */
+  --gold:#86c2a3;         /* brand gold */
+  --gold-lt:#cdeadb;      /* gold highlight */
+  --gold-dk:#2f5c47;      /* gold shadow */
+  --text:#eef5f0;
+  --muted:#9fb3a7;
+  --ok:#86c79a; --err:#ea8f7c;
+  --f:"Heebo","Assistant","Segoe UI",Arial,sans-serif;
+  --r:16px;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{min-height:100%}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--f);font-size:16px;line-height:1.55;
+  background-image:radial-gradient(120% 60% at 50% 0%,var(--bg-glow) 0%,transparent 60%);background-attachment:fixed;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 32px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:calc(env(safe-area-inset-top,0px) + 6px);z-index:30;
+  background:repeating-linear-gradient(-45deg,var(--gold) 0 10px,#0f1a14 10px 20px)}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--gold-lt);outline-offset:3px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:fixed;top:-60px;right:12px;z-index:100;background:var(--gold);color:#111;font-weight:800;padding:10px 16px;border-radius:12px;text-decoration:none}
+.skip:focus{top:12px}
+main:focus{outline:none}
+.footaddr{font-style:normal;font-size:13px;color:var(--muted)}
+.footaddr a,.legal a,.fine a{color:var(--gold-lt);text-decoration:underline;text-underline-offset:3px}
+.legal{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;font-size:13px;margin:2px 0}
+.legal span{color:var(--muted)}
+.consent{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--muted);margin:4px 0 10px;text-align:right;cursor:pointer}
+.consent input{width:20px;height:20px;flex:none;margin-top:2px;accent-color:var(--gold)}
+.legalcard{max-width:560px;text-align:right}
+.legalhead{display:flex;justify-content:space-between;align-items:center;gap:10px;position:sticky;top:-18px;background:var(--surface);padding:6px 0;margin:-6px 0 0}
+.legalhead h2{font-size:21px;margin:0}
+.legalhead .ghost{width:auto;padding:8px 14px}
+.legaltxt{display:grid;gap:8px;font-size:15px;line-height:1.65}
+.legaltxt h3{font-size:16px;color:var(--gold-lt);margin:8px 0 0}
+.legaltxt ul{margin:0;padding-inline-start:20px;display:grid;gap:4px}
+.legaltxt a{color:var(--gold-lt)}
+.legaldate{color:var(--muted);font-size:13px}
+.wrap{max-width:480px;margin:0 auto;position:relative;z-index:1}
+h1,h2{margin:0;text-wrap:balance}
+svg.i{width:22px;height:22px;flex:none;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* faint leaves, needles and yin-yang marks behind everything */
+.deco{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.deco svg{position:absolute;width:44px;height:44px;stroke:var(--gold);fill:none;stroke-width:1.5;opacity:.13}
+
+/* ---------- landing ---------- */
+.home{min-height:calc(100svh - 40px);display:grid;align-content:center;justify-items:center;text-align:center;gap:18px;padding-block:40px 24px}
+.emblem{position:relative;width:min(64vw,250px);aspect-ratio:1;max-width:100%;display:grid;place-items:center}
+.emblem .orbit{position:absolute;inset:-14%;border:1.5px dashed rgba(134,194,163,.35);border-radius:50%;animation:spin 60s linear infinite}
+.emblem .orbit::after{content:"";position:absolute;top:8%;left:12%;width:7px;height:7px;border-radius:50%;background:var(--gold)}
+.emblem .halo{position:absolute;inset:-6%;border-radius:50%;background:radial-gradient(circle,rgba(205,234,219,.25),transparent 65%);filter:blur(6px)}
+.emblem svg.logo{position:relative;width:100%;height:100%}
+.emblem .pin{position:absolute;bottom:-26px;width:40px;height:40px;border-radius:50%;background:var(--gold-dk);border:2px solid var(--gold);display:grid;place-items:center;color:var(--gold-lt)}
+.emblem .pin svg{width:20px;height:20px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.home #hName{font-size:clamp(40px,12vw,56px);font-weight:900;line-height:1;margin-top:22px;letter-spacing:-.5px}
+.bar-gold{width:64px;height:4px;border-radius:2px;background:linear-gradient(90deg,var(--gold-dk),var(--gold-lt),var(--gold-dk))}
+.addr{display:flex;align-items:center;gap:6px;color:var(--muted);font-size:16px}
+.addr svg{color:var(--gold);width:20px;height:20px}
+.tagline{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:5px 16px;font-weight:700;color:var(--gold-lt);font-size:15px}
+.cta{width:100%;min-height:68px;border:0;border-radius:22px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:12px;
+  font-size:24px;font-weight:800;color:#0b1f16;background:linear-gradient(180deg,#bfe3d0 0%,#86c2a3 55%,#5e9a7d 100%);
+  box-shadow:0 10px 40px rgba(134,194,163,.35),inset 0 1px 0 rgba(255,255,255,.45);transition:transform .15s,box-shadow .2s}
+.cta svg{width:28px;height:28px;stroke-width:2.2}
+.cta:active{transform:scale(.98)}
+.cta:disabled{opacity:.35;cursor:not-allowed;box-shadow:none}
+.cta.md{min-height:58px;font-size:19px;border-radius:18px}
+.textlink{background:none;border:0;color:var(--text);text-decoration:underline;text-underline-offset:5px;text-decoration-color:var(--gold);font-size:18px;font-weight:500;cursor:pointer;padding:10px}
+.today{font-size:14px;color:var(--muted)}
+.today b{color:var(--gold-lt);font-weight:700}
+
+/* ---------- step screens ---------- */
+.top{position:sticky;top:calc(env(safe-area-inset-top,0px) + 6px);z-index:5;background:linear-gradient(var(--bg) 75%,transparent);padding-block:14px 14px}
+.toprow{display:flex;align-items:center;gap:10px}
+.back{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--surface);display:grid;place-items:center;cursor:pointer;color:var(--text)}
+.mini{display:flex;align-items:center;gap:8px;margin-inline-start:auto;font-weight:700;font-size:16px}
+.mini svg{width:38px;height:38px}
+.progress{height:5px;border-radius:3px;background:#17241c;margin-top:14px;overflow:hidden}
+.progress i{display:block;height:100%;width:0;border-radius:3px;background:linear-gradient(90deg,var(--gold-dk),var(--gold-lt));transition:width .5s ease;margin-inline-start:0}
+.screen h2{font-size:30px;font-weight:800;line-height:1.15;margin-top:6px}
+.screen .under{width:46px;height:4px;border-radius:2px;background:var(--gold);margin-top:10px}
+.screen .sub{color:var(--muted);margin:12px 0 18px;font-size:16px}
+
+/* day cards: tear-off calendar pages */
+.days{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.month{grid-column:1/-1;display:flex;align-items:center;gap:10px;color:var(--gold);font-weight:700;font-size:15px;margin-top:6px}
+.month::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+.day{position:relative;border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:0 0 8px;cursor:pointer;display:grid;justify-items:center;overflow:visible;min-height:92px;text-align:center}
+.day::before,.day::after{content:"";position:absolute;top:-5px;width:4px;height:11px;border-radius:2px;background:#b9cdc1}
+.day::before{right:30%}.day::after{left:30%}
+.day .wd{width:100%;background:var(--gold);color:#0b1f16;font-weight:800;font-size:13px;padding:3px 0;border-radius:11px 11px 0 0}
+.day .dn{font-size:28px;font-weight:900;line-height:1.1;margin-top:6px;font-variant-numeric:tabular-nums}
+.day .mo{font-size:12px;color:var(--muted)}
+.day .st{font-size:12px;font-weight:700;color:var(--muted)}
+.day:disabled{cursor:not-allowed}
+.day:disabled .wd{background:#2b3a31;color:#9fb3a7}
+.day:disabled .dn{color:#6f8478}
+.day[aria-pressed="true"]{border-color:var(--gold-lt);box-shadow:0 0 0 1px var(--gold-lt),0 8px 26px rgba(134,194,163,.25);background:var(--surface-2)}
+.day.today .wd{background:linear-gradient(180deg,var(--gold-lt),var(--gold))}
+
+/* time grid */
+.legend{display:flex;gap:16px;font-size:14px;color:var(--muted);margin-bottom:14px}
+.legend span{display:flex;align-items:center;gap:6px}
+.legend i{width:10px;height:10px;border-radius:50%;background:var(--gold)}
+.legend i.x{background:#5b3a32}
+.slots{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}
+.slot{min-height:58px;border:1px solid var(--line);border-radius:14px;background:var(--surface);cursor:pointer;font-size:19px;font-weight:800;font-variant-numeric:tabular-nums;display:grid;place-content:center;gap:0;line-height:1.1}
+.slot small{font-size:11px;font-weight:600;color:var(--gold)}
+.slot:disabled{cursor:not-allowed;color:#5d6e64;text-decoration:line-through;text-decoration-color:#7a4a42;background:transparent;border-style:dashed}
+.slot[aria-pressed="true"]{border-color:var(--gold-lt);box-shadow:0 0 0 1px var(--gold-lt);background:var(--surface-2);color:var(--gold-lt)}
+.empty{color:var(--muted);text-align:center;padding:24px 8px}
+
+/* services */
+.svcs{display:grid;gap:12px}
+.svc{display:flex;align-items:center;gap:12px;width:100%;text-align:right;border:1px solid var(--line);border-radius:var(--r);background:linear-gradient(180deg,#19150f,#120f0a);padding:16px 18px;cursor:pointer;min-height:76px}
+.svc .nm{font-weight:800;font-size:19px;display:block}
+.svc .du{display:inline-block;margin-top:5px;font-size:13px;color:var(--muted);background:#152019;border-radius:999px;padding:1px 10px}
+.svc .pr{margin-inline-start:auto;font-size:24px;font-weight:800;color:var(--gold);white-space:nowrap;font-variant-numeric:tabular-nums}
+.svc[aria-pressed="true"]{border-color:var(--gold-lt);box-shadow:0 0 0 1px var(--gold-lt);background:var(--surface-2)}
+.svc:disabled{opacity:.4;cursor:not-allowed}
+.svc .why{display:block;font-size:12px;color:var(--err);margin-top:4px}
+.addh{font-weight:800;font-size:18px;margin:26px 0 10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+/* health questionnaire (new patients) */
+.hq{border:1px solid var(--line);border-radius:var(--r);background:var(--surface);padding:16px;margin:0 0 16px}
+.hq h3{margin:0 0 4px;font-size:18px}
+.hq .lock{font-size:13px;color:var(--muted);margin:0 0 12px}
+.seg{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px}
+.seg button{min-height:48px;border:1px solid var(--line);border-radius:14px;background:var(--surface);font-weight:700;cursor:pointer}
+.seg button[aria-pressed="true"]{border-color:var(--gold-lt);box-shadow:0 0 0 1px var(--gold-lt);background:var(--surface-2);color:var(--gold-lt)}
+.hqgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px}
+.hqgrid label{display:flex;gap:8px;align-items:center;border:1px solid var(--line);border-radius:12px;padding:9px 10px;font-size:14px;cursor:pointer}
+.hqgrid input{width:18px;height:18px;flex:none;accent-color:var(--gold)}
+.hq .field label{text-align:right}.hq .field input,.hq .field textarea{text-align:right}
+.hq textarea{background:var(--surface-2);border:1px solid var(--line);border-radius:14px;padding:12px;font-size:16px;width:100%;min-height:70px;resize:vertical}
+.sigbox{position:relative;border:1px dashed var(--gold);border-radius:14px;background:#f4faf6;height:140px;touch-action:none;margin-bottom:6px}
+.sigbox canvas{width:100%;height:100%;display:block;border-radius:14px}
+.sigbox span{position:absolute;inset:auto 0 8px;text-align:center;font-size:13px;color:#5d6e64;pointer-events:none}
+.sigclr{background:none;border:0;color:var(--gold-lt);text-decoration:underline;font-size:14px;cursor:pointer;padding:4px 0}
+.chip{display:flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:9px 16px;cursor:pointer;min-height:44px;font-weight:600}
+.chip .p{color:var(--gold);font-weight:700}
+.chip .pl{font-weight:800;color:var(--gold-lt);width:14px;text-align:center}
+.chip[aria-pressed="true"]{border-color:var(--gold-lt);background:var(--surface-2)}
+.chip:disabled{opacity:.4;cursor:not-allowed}
+.hint{font-size:13px;color:var(--muted);margin-top:8px}
+.sticky-cta{position:sticky;bottom:calc(env(safe-area-inset-bottom,0px) + 12px);margin-top:22px}
+
+/* ticket + form */
+.ticket{border:1px solid var(--line);border-radius:20px;background:linear-gradient(180deg,#15231b,#0d1611);padding:18px 20px;margin-bottom:22px;box-shadow:0 12px 30px rgba(0,0,0,.35)}
+.ticket .dt{color:var(--muted);font-size:14px}
+.ticket .tm{font-size:40px;font-weight:900;color:var(--gold);line-height:1.1;font-variant-numeric:tabular-nums}
+.ticket hr{border:0;border-top:1.5px dashed var(--line);margin:14px 0}
+.ticket .ln{display:flex;justify-content:space-between;gap:12px;font-size:16px;padding:2px 0}
+.ticket .ln span:last-child{color:var(--muted);white-space:nowrap}
+.ticket .tot{display:flex;justify-content:space-between;align-items:baseline;margin-top:10px;font-size:16px}
+.ticket .tot b{font-size:26px;font-weight:900;font-variant-numeric:tabular-nums}
+.field{display:grid;gap:6px;margin-bottom:16px}
+.field label{font-weight:700;font-size:16px}
+.field input{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px;font-size:17px;width:100%;min-width:0;min-height:52px}
+.field input:focus{border-color:var(--gold)}
+.msg{font-size:14px;min-height:20px}
+.msg.ok{color:var(--ok)}.msg.bad{color:var(--err)}
+.fine{font-size:14px;color:var(--muted);text-align:center;margin-top:12px}
+
+/* confirmation */
+.done{text-align:center;display:grid;gap:16px;padding-block:24px}
+.check{width:96px;height:96px;margin:0 auto}
+.check circle{fill:none;stroke:var(--gold);stroke-width:3;stroke-dasharray:252;stroke-dashoffset:252;animation:draw .7s ease forwards}
+.check path{fill:none;stroke:var(--gold-lt);stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:60;stroke-dashoffset:60;animation:draw .45s .6s ease forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.note{border:1px solid var(--gold-dk);background:#13201a;border-radius:14px;padding:12px 14px;font-size:15px;text-align:right}
+.ghost{width:100%;min-height:54px;border-radius:18px;border:1px solid var(--gold);background:transparent;color:var(--gold-lt);font-weight:700;font-size:17px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none}
+.wa{color:#0b1f16}
+textarea.copybox{width:100%;min-height:150px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px;font-size:14px}
+
+footer{text-align:center;padding-top:28px;display:grid;gap:6px;justify-items:center;color:var(--muted);font-size:13px}
+.ownerlink{background:none;border:0;color:var(--muted);text-decoration:underline;cursor:pointer;font-size:13px;padding:8px}
+
+/* ---------- owner mode ---------- */
+.admin{position:fixed;inset:0;z-index:40;background:var(--bg);overflow-y:auto;
+  padding-top:calc(env(safe-area-inset-top,0px) + 18px);padding-bottom:calc(env(safe-area-inset-bottom,0px) + 96px);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.admhead{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:14px}
+.admhead h2{font-size:26px;font-weight:800;color:var(--gold-lt)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border-radius:999px;padding:9px 16px;font-weight:700;font-size:15px;cursor:pointer;border:1px solid var(--gold);background:transparent;color:var(--gold-lt);min-height:44px}
+.btn.primary{background:linear-gradient(180deg,#bfe3d0,#86c2a3);color:#0b1f16;border-color:var(--gold)}
+.btn.danger{border-color:var(--err);color:var(--err)}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.tabs{display:flex;gap:6px;overflow-x:auto;padding-bottom:6px;margin-bottom:14px}
+.tabs button{flex:0 0 auto;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:8px 16px;cursor:pointer;font-weight:700;min-height:44px}
+.tabs button[aria-selected="true"]{border-color:var(--gold);color:var(--gold-lt);background:var(--surface-2)}
+.chl{display:flex;flex-direction:column;gap:2px}
+.chi{display:flex;gap:10px;align-items:center;width:100%;text-align:right;background:transparent;border:0;border-bottom:1px solid var(--line);color:var(--text);padding:12px 4px;cursor:pointer;font:inherit;min-height:60px}
+.chi:hover{background:var(--surface-2)}
+.chav{flex:0 0 42px;height:42px;border-radius:50%;background:var(--surface-2);border:1px solid var(--gold-dk);display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--gold-lt)}
+.chm{flex:1;min-width:0}.chn{font-weight:700;display:flex;gap:8px;align-items:baseline}.chn small{margin-inline-start:auto;color:var(--muted);font-weight:400;font-size:12px}
+.chp{color:var(--muted);font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.chu{background:var(--gold);color:#0b1f16;border-radius:999px;font-size:12px;font-weight:800;padding:1px 8px;margin-inline-start:6px}
+.chhd{display:flex;align-items:center;gap:8px;margin-bottom:8px}.chhd .chn{flex:1;flex-direction:column;gap:0}.chhd .who{font-size:13px}
+.chth{height:min(58vh,520px);overflow-y:auto;display:flex;flex-direction:column;gap:6px;padding:10px;background:#0b130f;border:1px solid var(--line);border-radius:12px}
+.bb{max-width:80%;padding:8px 12px;border-radius:14px;white-space:pre-wrap;word-wrap:break-word;font-size:15px;line-height:1.45}
+.bb.in{align-self:flex-start;background:var(--surface-2);border:1px solid var(--line);border-start-start-radius:4px}
+.bb.out{align-self:flex-end;background:#16291f;border:1px solid var(--gold-dk);border-start-end-radius:4px}
+.bb i{display:block;font-style:normal;font-size:11px;color:var(--muted);margin-top:2px;text-align:left;direction:ltr}.bb i b{color:#6fb4ff;font-weight:400}
+.chday{align-self:center;font-size:12px;color:var(--muted);background:var(--surface);border-radius:999px;padding:2px 10px;margin:6px 0}
+.chcomp{display:flex;gap:8px;margin-top:8px;align-items:flex-end}.chcomp textarea{flex:1;min-height:46px;max-height:140px;resize:none;border-radius:14px;padding:10px 12px;background:var(--surface);color:var(--text);border:1px solid var(--line);font:inherit}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px;margin-bottom:12px}
+.card h3{margin:0 0 12px;font-size:18px;color:var(--gold-lt)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:0 10px}
+.grid2>*{min-width:0}
+.admin .field input,.admin .field select{background:var(--bg);min-height:46px;padding:10px 12px;border:1px solid var(--line);border-radius:12px;width:100%;font-size:16px}
+.row{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:10px 0;border-bottom:1px solid var(--line)}
+.row:last-child{border-bottom:0}
+.row .grow{flex:1 1 160px;min-width:0}
+.row input{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:8px;font-size:15px;min-width:0;min-height:40px}
+.row input[type=time]{width:112px}
+.row input[type=number]{width:74px}
+.when{font-weight:800;font-variant-numeric:tabular-nums}
+.who{color:var(--muted);font-size:14px}
+.badge{font-size:12px;border-radius:999px;padding:1px 8px;border:1px solid var(--gold);color:var(--gold)}
+.badge.block{border-color:var(--muted);color:var(--muted)}
+.pubbar{position:fixed;inset:auto 0 0;z-index:41;background:var(--surface);border-top:1px solid var(--line);
+  padding-top:10px;padding-bottom:calc(env(safe-area-inset-bottom,0px) + 10px);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.pubbar .in{max-width:480px;margin:0 auto;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.pubbar .st{flex:1 1 140px;font-size:14px;color:var(--muted);min-width:0}
+.pubbar .st.dirty{color:var(--gold-lt)}
+
+/* admin month calendar + day view */
+.calhead{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px}
+.calhead h3{margin:0}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.cw{text-align:center;font-size:13px;color:var(--muted);font-weight:700;padding-bottom:2px}
+.cd{position:relative;min-height:52px;border:1px solid var(--line);border-radius:10px;background:var(--bg);cursor:pointer;display:grid;justify-items:center;align-content:center;gap:2px;padding:4px 0}
+.cd b{font-size:16px;font-variant-numeric:tabular-nums}
+.cd i{font-style:normal;font-size:12px;font-weight:800;background:var(--gold);color:#0b1f16;border-radius:999px;min-width:20px;padding:0 6px}
+.cd em{font-style:normal;font-size:10px;color:var(--muted)}
+.cd.off{background:transparent;border-style:dashed}
+.cd.past{opacity:.5}
+.cd.tod{border-color:var(--gold)}
+.cd.open{border-color:var(--gold-lt);box-shadow:0 0 0 1px var(--gold-lt);background:var(--surface-2)}
+.dayview{margin-top:14px;border-top:1px solid var(--line);padding-top:12px}
+.dvhead{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+.dvhead b{font-size:17px;color:var(--gold-lt)}
+.dvhead .btn{margin-inline-start:auto}
+.hr{display:flex;gap:10px;border-bottom:1px solid var(--line);padding:6px 0;min-height:44px;align-items:stretch}
+.ht{width:48px;flex:none;font-weight:800;font-variant-numeric:tabular-nums;color:var(--muted);padding-top:6px}
+.hc{flex:1;min-width:0;display:grid;gap:6px}
+.ab{display:flex;align-items:center;gap:6px;flex-wrap:wrap;background:var(--surface-2);border:1px solid var(--gold-dk);border-inline-start:4px solid var(--gold);border-radius:10px;padding:6px 10px}
+.ab>div{flex:1 1 140px;min-width:0}
+.ab.blk{border-color:var(--line);border-inline-start-color:var(--muted)}
+.ab .btn{min-height:36px;padding:4px 12px;font-size:13px;text-decoration:none}
+.free{background:none;border:1px dashed var(--line);border-radius:10px;color:var(--muted);cursor:pointer;min-height:36px;font-size:14px}
+.free:hover{border-color:var(--gold);color:var(--gold-lt)}
+.cont{color:var(--muted);font-size:13px;padding-top:8px}
+
+/* floating WhatsApp bubble */
+.wa-fab{position:fixed;z-index:35;bottom:calc(env(safe-area-inset-bottom,0px) + 18px);left:calc(env(safe-area-inset-left,0px) + 18px);
+  width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:#25d366;color:#fff;
+  box-shadow:0 8px 24px rgba(0,0,0,.45),0 0 0 3px rgba(134,194,163,.55);text-decoration:none;transition:transform .15s}
+.wa-fab:hover{transform:scale(1.06)}.wa-fab:active{transform:scale(.95)}
+.wa-fab svg{width:30px;height:30px;fill:#fff}
+.wa-fab .pulse{position:absolute;inset:0;border-radius:50%;border:2px solid #25d366;animation:wapulse 2.4s ease-out infinite}
+@keyframes wapulse{from{transform:scale(1);opacity:.7}to{transform:scale(1.6);opacity:0}}
+body.adm .wa-fab{display:none}
+.sticky-cta{margin-inline-start:70px}
+/* admin today */
+.todaycard{border-color:var(--gold)}
+.tdh{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:6px}
+.tdh b{font-size:18px;color:var(--gold-lt)}
+.tdnext{font-size:16px;margin-bottom:8px}.tdnext b{color:var(--gold-lt);font-variant-numeric:tabular-nums}
+.tdlist{display:grid;gap:6px}
+.tdi{display:flex;align-items:center;gap:8px;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:6px 10px}
+.tdi b{font-variant-numeric:tabular-nums}
+.tdi.done{opacity:.5}.tdi.now{border-color:var(--gold-lt)}
+.calhead h3{flex:1;text-align:center}
+/* install as app */
+.instbar{position:fixed;z-index:36;left:max(12px,env(safe-area-inset-left,0px));right:max(12px,env(safe-area-inset-right,0px));bottom:calc(env(safe-area-inset-bottom,0px) + 12px);
+  max-width:480px;margin:0 auto;background:var(--surface);border:1px solid var(--gold-dk);border-radius:20px;padding:14px;box-shadow:0 14px 40px rgba(0,0,0,.6);animation:pop .35s ease both}
+.instrow{display:flex;align-items:center;gap:12px;text-align:right}
+.instrow img{width:56px;height:56px;border-radius:14px;flex:none}
+.instrow b{display:block;font-size:17px}
+.instrow span{display:block;color:var(--muted);font-size:14px}
+.instbtns{display:grid;grid-template-columns:2fr 1fr;gap:8px;margin-top:12px}
+.instbtns .cta{min-height:50px;font-size:17px}
+.instbtns .ghost{min-height:50px}
+.instmodal{position:fixed;inset:0;z-index:45;background:rgba(0,0,0,.7);display:grid;place-items:center;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.instcard{width:100%;max-width:420px;background:var(--surface);border:1px solid var(--gold-dk);border-radius:24px;padding:18px;display:grid;gap:12px}
+.insteps{list-style:none;margin:0;padding:0;display:grid;gap:8px;counter-reset:st}
+.insteps li{counter-increment:st;display:flex;align-items:center;gap:12px;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:12px;text-align:right;font-size:15px}
+.insteps li::before{content:counter(st);flex:none;width:34px;height:34px;border-radius:10px;background:#17271e;color:var(--gold-lt);display:grid;place-items:center;font-weight:800}
+.insteps li small{display:block;color:var(--muted);font-size:12px}
+.instcard{max-height:calc(100dvh - 24px);overflow:auto}
+.insteps li{transition:border-color .3s,background .3s}
+.insteps li.on{border-color:var(--gold);background:#14211a}
+.pm{justify-self:center;width:150px;height:290px;border-radius:26px;background:#141c17;padding:7px;box-shadow:0 0 0 1px #3a3328,0 12px 30px rgba(0,0,0,.5)}
+.pm-scr{position:relative;width:100%;height:100%;border-radius:20px;overflow:hidden;background:#f4f1ec;font-size:9px;color:#222;direction:rtl}
+.pm-page{position:absolute;inset:0;padding:30px 10px 0;display:grid;align-content:start;gap:6px}
+.pm-page b{display:block;height:40px;border-radius:8px;background:linear-gradient(135deg,#0f1a14,#1f3a2c);color:#a9d3bd;font-size:12px;display:grid;place-items:center}
+.pm-page i{display:block;height:7px;border-radius:4px;background:#ddd6cb}.pm-page i:nth-child(odd){width:70%}
+.pm-top,.pm-bot{position:absolute;left:0;right:0;display:none;align-items:center;gap:6px;padding:0 8px;background:#fff;z-index:2}
+.pm-top{top:0;height:26px;border-bottom:1px solid #e4e0d8}.pm-bot{bottom:0;height:30px;border-top:1px solid #e4e0d8;justify-content:space-around}
+.pm-and .pm-top,.pm-ios .pm-bot{display:flex}.pm-and .pm-page{padding-top:34px}.pm-ios .pm-page{padding-top:14px}
+.pm-url{flex:1;background:#eee;border-radius:9px;height:15px;font-size:7.5px;color:#666;display:grid;place-items:center;direction:ltr}
+.pm-k{font-style:normal;font-size:13px;line-height:1;color:#2b6fe0;display:grid;place-items:center;width:22px;height:22px;border-radius:7px;transition:background .25s}
+.pm-k svg{width:14px;height:14px}
+.pm-menu{position:absolute;z-index:3;background:#fff;border-radius:10px;box-shadow:0 6px 20px rgba(0,0,0,.25);padding:4px 0;width:100px;opacity:0;transform:scale(.85);transform-origin:top left;transition:opacity .3s,transform .3s;pointer-events:none}
+.pm-and .pm-menu{top:24px;left:6px}.pm-ios .pm-menu{bottom:34px;left:6px;transform-origin:bottom left}
+.pm-sheet{position:absolute;z-index:3;left:0;right:0;bottom:0;background:#f2f1f6;border-radius:14px 14px 0 0;padding:8px 6px 10px;transform:translateY(105%);transition:transform .4s}
+.pm-r{padding:6px 9px;border-radius:7px;transition:background .25s,color .25s;white-space:nowrap}
+.pm-sheet .pm-r{background:#fff;margin-top:3px}
+.pm-conf{position:absolute;z-index:4;opacity:0;transition:opacity .3s,transform .35s;pointer-events:none}
+.pm-ios .pm-conf{inset:0;background:#f2f1f6;transform:translateY(100%);opacity:1;padding:8px}
+.pm-and .pm-conf{left:10px;right:10px;top:95px;background:#fff;border-radius:12px;padding:10px;box-shadow:0 8px 30px rgba(0,0,0,.35);transform:scale(.9)}
+.pm-cbar{display:flex;justify-content:space-between;color:#2b6fe0;font-size:9.5px}.pm-cbar b{font-weight:700}
+.pm-capp{display:flex;align-items:center;gap:7px;background:#fff;border-radius:9px;padding:7px;margin-top:10px;font-size:10px;font-weight:700}
+.pm-capp img{width:26px;height:26px;border-radius:7px}
+.pm-and .pm-cbar{margin-top:10px;justify-content:flex-start;gap:16px;flex-direction:row-reverse}.pm-and .pm-capp{margin-top:6px;padding:0}
+.pm-home{position:absolute;inset:0;z-index:5;background:linear-gradient(160deg,#3d4f7a,#1c2338);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));align-content:start;gap:10px 6px;padding:26px 9px;opacity:0;transition:opacity .35s;pointer-events:none}
+.pm-home span{aspect-ratio:1;border-radius:8px;background:rgba(255,255,255,.22)}
+.pm-home .pm-me{background:none;display:grid;gap:2px;justify-items:center;color:#fff;font-size:7px;transform:scale(0);transition:transform .45s .35s cubic-bezier(.3,1.6,.5,1)}
+.pm-home .pm-me img{width:100%;border-radius:8px}
+.pm.v-menu .pm-menu{opacity:1;transform:none}.pm.v-sheet .pm-sheet{transform:none}
+.pm-ios.v-conf .pm-conf{transform:none}.pm-and.v-conf .pm-conf{opacity:1;transform:none}
+.pm.v-home .pm-home{opacity:1}.pm.v-home .pm-me{transform:none}
+.pm .hit{background:#d9e6ff}.pm .pm-r.hit{background:#2b6fe0;color:#fff}
+.pm-f{position:absolute;z-index:9;width:22px;height:22px;margin:-11px 0 0 -11px;border-radius:50%;background:rgba(134,194,163,.55);border:2px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.4);opacity:0;transition:left .6s ease,top .6s ease,opacity .3s,transform .15s}
+.pm-f.show{opacity:1}.pm-f.tap{transform:scale(.7)}
+@keyframes pop{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+/* reviews */
+.reviews{text-align:center;padding-block:34px 6px;border-top:1px solid var(--line);margin-top:10px}
+.reviews h2{font-size:26px;font-weight:800}
+.reviews .under{width:46px;height:4px;border-radius:2px;background:var(--gold);margin:10px auto 0}
+.revsum{margin:14px 0 6px;color:var(--muted);font-size:15px}
+.revsum b{font-size:30px;color:var(--gold-lt);font-weight:900;display:block;line-height:1.1}
+.revsum .st{color:var(--gold);font-size:20px;letter-spacing:2px}
+.revlist{display:grid;gap:10px;margin-top:12px}
+.rev{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 14px;text-align:center}
+.rev .st{color:var(--gold);letter-spacing:2px}
+.rev .nm{font-weight:800;margin-top:2px}
+.rev .tx{color:var(--text);margin-top:4px;white-space:pre-line;overflow-wrap:anywhere}
+.rev .dt{color:var(--muted);font-size:12px;margin-top:4px}
+.revform{margin-top:14px;text-align:center}
+.stars{display:flex;justify-content:center;gap:6px;margin-bottom:12px;direction:ltr}
+.stars button{background:none;border:0;font-size:38px;line-height:1;color:#3a3326;cursor:pointer;padding:2px;min-width:44px;min-height:44px}
+.stars button.on{color:var(--gold)}
+/* business dashboard */
+.motiv{border-color:var(--gold);background:linear-gradient(180deg,#1f190e,var(--surface))}
+.motiv .mt{font-size:18px;font-weight:700;margin:0 0 12px;line-height:1.45}
+.goal .gl{display:flex;justify-content:space-between;font-size:14px;color:var(--muted)}
+.goal .gl b{color:var(--gold-lt);font-variant-numeric:tabular-nums}
+.goal .gb{height:10px;border-radius:5px;background:#1a2a21;overflow:hidden;margin:6px 0 10px}
+.goal .gb i{display:block;height:100%;background:linear-gradient(90deg,var(--gold-dk),var(--gold-lt));border-radius:5px;transition:width .6s ease}
+.goal .ge{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+.goal .ge input{width:90px;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:6px 8px;min-height:38px}
+.goal .ge .btn{min-height:38px;padding:4px 12px;font-size:13px}
+.motiv .tip{margin:12px 0 0;padding-top:12px;border-top:1px dashed var(--line);font-size:15px}
+.motiv .tip b{display:block;color:var(--gold);margin-bottom:4px}
+.kpis{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px;display:grid;gap:2px;text-align:center}
+.kpi small{color:var(--muted);font-size:13px}
+.kpi b{font-size:24px;font-weight:900;color:var(--gold-lt);font-variant-numeric:tabular-nums}
+.kpi span{color:var(--muted);font-size:12px}
+.bars{display:grid;grid-template-columns:repeat(14,1fr);gap:4px;align-items:end;height:150px;padding-top:18px}
+.bar{position:relative;height:100%;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;min-width:0}
+.bar i{display:block;width:100%;background:linear-gradient(180deg,var(--gold-lt),var(--gold-dk));border-radius:4px 4px 0 0;min-height:0}
+.bar em{order:-1;font-style:normal;font-size:9px;color:var(--muted);font-variant-numeric:tabular-nums;margin-bottom:2px;line-height:1}
+.bar span{font-size:10px;color:var(--muted);margin-top:3px;font-variant-numeric:tabular-nums}
+/* admin clients */
+.cli{border:1px solid var(--line);border-radius:12px;margin-bottom:8px;background:var(--bg)}
+.cli.open{border-color:var(--gold)}
+.clirow{display:flex;align-items:center;gap:10px;width:100%;background:none;border:0;padding:10px 12px;cursor:pointer;text-align:start;min-height:56px}
+.clirow .grow{flex:1;min-width:0}
+.cst{display:grid;justify-items:center;min-width:58px}
+.cst b{font-variant-numeric:tabular-nums;color:var(--gold-lt);font-size:15px}
+.cst small{font-size:11px;color:var(--muted)}
+.clid{padding:0 12px 12px;border-top:1px solid var(--line)}
+.clia{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.clia a{text-decoration:none}
+/* everything centered on the customer side */
+.screen{text-align:center}
+.screen h2{text-align:center}
+.screen .under{margin-inline:auto}
+.legend{justify-content:center}
+.svc{flex-direction:column;justify-content:center;text-align:center;gap:6px}
+.svc .pr{margin-inline-start:0}
+.chips{justify-content:center}
+.ticket,.ticket .dt{text-align:center}
+.ticket .ln,.ticket .tot{justify-content:center;gap:10px}
+.field label{text-align:center}
+.field input{text-align:center}
+.note{text-align:center}
+.mini{margin-inline:auto}
+.toprow{position:relative}
+.toprow .back{position:absolute;inset-inline-start:0}
+.toprow{justify-content:center;min-height:44px}
+@media (min-width:520px){.days{grid-template-columns:repeat(5,1fr)}.slots{grid-template-columns:repeat(5,1fr)}}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .check circle,.check path{stroke-dashoffset:0}
+}
+.bs-sign,.bs-line{color:var(--muted);opacity:.55;font-size:11.5px;text-decoration:none;transition:opacity .2s}
+.bs-sign:hover,.bs-line:hover,.bs-sign:focus-visible,.bs-line:focus-visible{opacity:1;color:var(--gold-lt)}
+.bs-sign{margin-top:4px;letter-spacing:.02em}
+#findCode:not(:placeholder-shown){letter-spacing:.3em}
+.bs-mark{display:inline-flex;align-items:center;gap:4px;vertical-align:middle}
+.bs-line{display:block;text-align:center;margin-top:14px}
+</style>
+
+<div class="deco" aria-hidden="true" id="deco"></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="gGold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d9f0e3"/><stop offset=".45" stop-color="#86c2a3"/><stop offset="1" stop-color="#2f5c47"/>
+    </linearGradient>
+    <radialGradient id="gFace" cx=".5" cy=".38" r=".7">
+      <stop offset="0" stop-color="#18291f"/><stop offset="1" stop-color="#08100c"/>
+    </radialGradient>
+    <symbol id="logo" viewBox="0 0 200 200">
+      <circle cx="100" cy="100" r="96" fill="url(#gGold)"/>
+      <circle cx="100" cy="100" r="88" fill="url(#gFace)"/>
+      <circle cx="100" cy="100" r="80" fill="none" stroke="url(#gGold)" stroke-width="1.2" stroke-dasharray="1.5 4"/>
+      <!-- yin-yang dot + acupuncture needles -->
+      <g stroke="url(#gGold)" stroke-linecap="round" fill="none">
+        <path d="M100 30 V58" stroke-width="2.4" stroke="#a9d3bd"/><circle cx="100" cy="27" r="3.5" fill="url(#gGold)" stroke="none"/>
+        <path d="M70 44 L84 66" stroke-width="2"/><circle cx="68" cy="41" r="3" fill="url(#gGold)" stroke="none"/>
+        <path d="M130 44 L116 66" stroke-width="2"/><circle cx="132" cy="41" r="3" fill="url(#gGold)" stroke="none"/>
+      </g>
+      <circle cx="100" cy="88" r="22" fill="none" stroke="url(#gGold)" stroke-width="2.5"/>
+      <path d="M100 66 a11 11 0 0 1 0 22 a11 11 0 0 0 0 22 a22 22 0 0 1 0 -44z" fill="url(#gGold)"/>
+      <circle cx="100" cy="77" r="3.2" fill="#08100c"/><circle cx="100" cy="99" r="3.2" fill="url(#gGold)"/>
+      <!-- name -->
+      <text x="100" y="140" text-anchor="middle" font-family="Heebo,Arial,sans-serif" font-weight="900" font-size="21" fill="url(#gGold)">מעבר לנקודה</text>
+      <text x="100" y="161" text-anchor="middle" font-family="Heebo,Arial,sans-serif" font-weight="700" font-size="9" letter-spacing="3" fill="#a9d3bd">ACUPUNCTURE</text>
+      <path d="M70 172 h60" stroke="url(#gGold)" stroke-width="1.5"/>
+    </symbol>
+  </defs>
+</svg>
+
+<a class="skip" href="#main">דלג לתוכן הראשי</a>
+<div class="wrap">
+<main id="main" tabindex="-1">
+<h1 class="sr">מעבר לנקודה – קליניקה לרפואה סינית באשדוד · קביעת תור אונליין</h1>
+
+  <!-- LANDING -->
+  <section class="home screen" id="home">
+    <div class="emblem">
+      <div class="halo"></div>
+      <div class="orbit"></div>
+      <svg class="logo" role="img" aria-label="הסמל של מעבר לנקודה"><use href="#logo"/></svg>
+      <div class="pin" aria-hidden="true"><svg class="i" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></div>
+    </div>
+    <h2 class="h-in" id="hName">מעבר לנקודה</h2>
+    <div class="bar-gold h-in"></div>
+    <div class="addr h-in"><svg class="i" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span id="hArea">רחוב יעל 16 ט״ו, אשדוד</span></div>
+    <div class="tagline h-in" id="hTag">קליניקה לרפואה סינית · ענבל בוחניק</div>
+    <div class="h-in" style="width:100%;margin-top:14px">
+      <button class="cta" id="startBtn" type="button"><svg class="i" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M12 14v4M10 16h4"/></svg>קביעת תור</button>
+    </div>
+    <button class="textlink h-in" id="myLink" type="button">התורים שלי</button>
+    <a class="textlink h-in" id="askLink" href="#" target="_blank" rel="noopener" style="font-size:15px;color:var(--muted)">שאלה? כתבו לי בוואטסאפ</a>
+    <div class="today h-in" id="todayLine"></div>
+  </section>
+
+  <!-- STEP 1: day -->
+  <section class="screen" id="sDay" hidden>
+    <div class="top"><div class="toprow"><button class="back" type="button" data-back="home" aria-label="חזרה"><svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      <div class="mini"><span class="bn">מעבר לנקודה</span><svg aria-hidden="true"><use href="#logo"/></svg></div></div>
+      <div class="progress"><i style="width:25%"></i></div></div>
+    <h2>באיזה יום?</h2><div class="under"></div>
+    <p class="sub">בוחרים יום, ואחר כך שעה</p>
+    <div class="days" id="days"></div>
+  </section>
+
+  <!-- STEP 2: time -->
+  <section class="screen" id="sTime" hidden>
+    <div class="top"><div class="toprow"><button class="back" type="button" data-back="sDay" aria-label="חזרה לבחירת יום"><svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      <div class="mini"><span class="bn">מעבר לנקודה</span><svg aria-hidden="true"><use href="#logo"/></svg></div></div>
+      <div class="progress"><i style="width:50%"></i></div></div>
+    <h2>באיזו שעה?</h2><div class="under"></div>
+    <p class="sub" id="timeSub"></p>
+    <div class="legend"><span><i></i>פנוי</span><span><i class="x"></i>תפוס</span></div>
+    <div class="slots" id="slots"></div>
+  </section>
+
+  <!-- STEP 3: service -->
+  <section class="screen" id="sSvc" hidden>
+    <div class="top"><div class="toprow"><button class="back" type="button" data-back="sTime" aria-label="חזרה לבחירת שעה"><svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      <div class="mini"><span class="bn">מעבר לנקודה</span><svg aria-hidden="true"><use href="#logo"/></svg></div></div>
+      <div class="progress"><i style="width:75%"></i></div></div>
+    <h2>מה עושים?</h2><div class="under"></div>
+    <p class="sub" id="svcSub"></p>
+    <div class="svcs" id="svcs"></div>
+    <div id="addWrap"><div class="addh">תוספות</div><div class="chips" id="addons"></div><p class="hint">תוספת נקבעת רק יחד עם שירות</p></div>
+    <div class="sticky-cta"><button class="cta md" id="svcNext" type="button" disabled>המשך</button></div>
+  </section>
+
+  <!-- STEP 4: details -->
+  <section class="screen" id="sDet" hidden>
+    <div class="top"><div class="toprow"><button class="back" type="button" data-back="sSvc" aria-label="חזרה לבחירת שירות"><svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      <div class="mini"><span class="bn">מעבר לנקודה</span><svg aria-hidden="true"><use href="#logo"/></svg></div></div>
+      <div class="progress"><i style="width:100%"></i></div></div>
+    <h2>הפרטים שלך</h2><div class="under"></div>
+    <div style="height:18px"></div>
+    <div class="ticket" id="ticket"></div>
+    <form id="form" novalidate>
+      <div class="field"><label for="fname">שם מלא</label><input id="fname" autocomplete="name" maxlength="40"></div>
+      <div class="field"><label for="fphone">טלפון נייד</label><input id="fphone" type="tel" inputmode="tel" autocomplete="tel" dir="ltr" placeholder="050-1234567" maxlength="17">
+        <div class="msg" id="phoneMsg" aria-live="polite"></div></div>
+      <div id="hBlock" hidden>
+        <div class="field"><label id="hFirstL">זה הטיפול הראשון שלך אצל ענבל?</label></div>
+        <div class="seg" role="group" aria-labelledby="hFirstL"><button type="button" data-first="1" aria-pressed="false">כן, טיפול ראשון</button><button type="button" data-first="0" aria-pressed="false">כבר הייתי</button></div>
+        <div class="hq" id="hq" hidden>
+          <h3>שאלון בריאות</h3>
+          <p class="lock">🔒 נשמר מוצפן ורק ענבל רואה אותו. סמנו מה שרלוונטי:</p>
+          <div class="hqgrid" id="hqItems"></div>
+          <div class="field"><label for="hMeds">תרופות קבועות</label><input id="hMeds" maxlength="200" placeholder="אם אין, השאירו ריק"></div>
+          <div class="field"><label for="hAll">אלרגיות</label><input id="hAll" maxlength="200" placeholder="אם אין, השאירו ריק"></div>
+          <div class="field"><label for="hWhy">סיבת הפנייה</label><textarea id="hWhy" maxlength="600" placeholder="למשל: כאבי גב, מיגרנות, שינה, פוריות…"></textarea></div>
+          <label class="consent" style="color:var(--text)"><input type="checkbox" id="hOk"> <span>קראתי ואני מסכים/ה לקבל טיפול ברפואה סינית, הכולל שיחת אבחנה, דיקור סיני וטווינא, ובמידת הצורך כוסות רוח, מוקסה והקזה. ידוע לי שייתכנו תופעות זמניות כמו כאב קל, אודם או סימנים בעור. הפרטים שמסרתי נכונים, ואעדכן על כל שינוי במצבי.</span></label>
+          <div class="field" style="margin-bottom:4px"><label>חתימה</label></div>
+          <div class="sigbox"><canvas id="hSig" aria-label="שטח חתימה"></canvas><span id="hSigHint">חתמו כאן באצבע</span></div>
+          <button type="button" class="sigclr" id="hSigClr">ניקוי חתימה</button>
+        </div>
+      </div>
+      <div id="otpWrap" hidden>
+        <div class="field"><label for="fcode">הקוד שקיבלת בוואטסאפ</label><input id="fcode" inputmode="numeric" autocomplete="one-time-code" maxlength="4" dir="ltr" placeholder="• • • •" style="letter-spacing:.5em;font-size:24px;font-weight:800"></div>
+        <button class="textlink" id="resendBtn" type="button" style="font-size:15px">לא קיבלתי קוד, שלחו שוב</button>
+      </div>
+      <label class="consent"><input type="checkbox" id="fmk"> <span>אשמח לקבל בוואטסאפ עדכונים ותורים פנויים מ<span class="bizname">מעבר לנקודה</span> (אפשר להסיר בכל רגע)</span></label>
+      <div class="msg" id="bookMsg" aria-live="polite" style="text-align:center"></div>
+      <button class="cta md" id="toConfirm" type="submit" disabled>שליחת בקשה לתור</button>
+      <p class="fine" id="fineTxt">נשלח לך קוד לאימות בוואטסאפ. הפרטים משמשים לקביעת התור, לאישור ולתזכורת לפני התור. <a href="#privacy" data-legal="priv">מדיניות הפרטיות</a> · <a href="#terms" data-legal="terms">תקנון</a></p>
+    </form>
+  </section>
+
+  <!-- MY APPOINTMENTS (this device only) -->
+  <section class="screen" id="sMine" hidden>
+    <div class="top"><div class="toprow"><button class="back" type="button" data-back="home" aria-label="חזרה"><svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      <div class="mini"><span class="bn">מעבר לנקודה</span><svg aria-hidden="true"><use href="#logo"/></svg></div></div></div>
+    <h2>התורים שלי</h2><div class="under"></div>
+    <p class="sub">התורים שקבעת</p>
+    <button class="ghost" id="findBtn" type="button" style="width:100%;margin-bottom:12px">🔎 מצא את התורים שלי לפי מספר טלפון</button>
+    <div id="mineList" class="svcs"></div>
+  </section>
+
+  <!-- CONFIRM -->
+  <section class="screen done" id="sDone" hidden aria-live="polite">
+    <svg class="check" viewBox="0 0 90 90" aria-hidden="true"><circle cx="45" cy="45" r="40"/><path d="M27 46 l12 12 l24 -26"/></svg>
+    <h2 id="doneTitle">הבקשה מוכנה</h2>
+    <div class="ticket" id="ticket2" style="margin:0"></div>
+    <p class="note" id="doneNote">התור עוד לא נקבע. שלחו את הבקשה מהוואטסאפ של המספר שהזנתם. <span class="bizname">ענבל</span> יבדוק ויאשר לכם בחזרה בוואטסאפ, ורק אז התור סגור.</p>
+    <a class="cta md wa" id="waBtn" href="#" target="_blank" rel="noopener"><svg class="i" viewBox="0 0 24 24"><path d="M3 21l1.7-4.6A8.5 8.5 0 1 1 8 19.6z"/><path d="M9 9.5c.3 2 1.8 3.8 4 4.7l1.2-1.1 2 1-.4 1.6c-3.6.3-7.4-3.2-7.6-6.9l1.6-.4.9 2z"/></svg>שלח בוואטסאפ</a>
+    <button class="ghost" id="copyBtn" type="button">העתק הודעה</button>
+    <a class="ghost" id="gcalBtn" href="#" target="_blank" rel="noopener"><svg class="i" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>הוספה ליומן Google</a>
+    <button class="ghost" id="icsBtn" type="button" hidden><svg class="i" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>קובץ ליומן (אייפון / אאוטלוק)</button>
+    <div id="copyFallback" hidden>
+      <p class="today" style="margin:0 0 6px">ההעתקה נחסמה בדפדפן. סמנו את הטקסט והעתיקו ידנית:</p>
+      <label for="copyText" class="sr">הודעה להעתקה</label>
+      <textarea id="copyText" class="copybox" readonly></textarea>
+    </div>
+    <p class="today" id="waPlainRow" style="margin:0">הוואטסאפ לא נפתח? שלחו את ההודעה למספר <b dir="ltr" id="waPlain"></b></p>
+    <button class="textlink" id="editBtn" type="button">חזרה לעריכה</button>
+    <a class="bs-line" href="https://barbershops.company/?from=maavar#contact" target="_blank" rel="noopener">בעל עסק? רוצה אפליקציה כזאת?</a>
+  </section>
+
+  <section class="reviews" id="reviews" aria-labelledby="revTitle">
+    <h2 id="revTitle">מה המטופלים אומרים</h2><div class="under"></div>
+    <div class="revsum" id="revSum"></div>
+    <div class="revlist" id="revList"></div>
+    <button class="ghost" id="revOpen" type="button" style="max-width:420px;margin:14px auto 0">כתבו ביקורת ⭐</button>
+    <form class="card revform" id="revForm" hidden novalidate>
+      <div class="stars" id="revStars" role="radiogroup" aria-label="דירוג">
+        <button type="button" data-st="1" aria-label="כוכב אחד">★</button><button type="button" data-st="2" aria-label="2 כוכבים">★</button><button type="button" data-st="3" aria-label="3 כוכבים">★</button><button type="button" data-st="4" aria-label="4 כוכבים">★</button><button type="button" data-st="5" aria-label="5 כוכבים">★</button>
+      </div>
+      <div class="field"><label for="rvName">שם (יופיע באתר)</label><input id="rvName" maxlength="30" autocomplete="given-name"></div>
+      <div class="field"><label for="rvPhone">טלפון (לא יופיע באתר)</label><input id="rvPhone" type="tel" dir="ltr" inputmode="tel" maxlength="17" placeholder="050-1234567"></div>
+      <div class="field"><label for="rvText">הביקורת שלך</label><textarea id="rvText" rows="3" maxlength="300" style="background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px;width:100%;font-size:16px"></textarea></div>
+      <div class="field" id="rvCodeWrap" hidden><label for="rvCode">הקוד שקיבלת בוואטסאפ</label><input id="rvCode" inputmode="numeric" maxlength="4" dir="ltr" style="letter-spacing:.5em;font-size:22px;font-weight:800"></div>
+      <div class="msg" id="rvMsg" style="text-align:center"></div>
+      <button class="cta md" id="rvBtn" type="submit">שלחו לי קוד לאימות</button>
+      <p class="fine">השם הפרטי והביקורת יפורסמו באתר. הטלפון משמש רק לאימות ולא מתפרסם. <a href="#privacy" data-legal="priv">מדיניות הפרטיות</a></p>
+    </form>
+  </section>
+
+  <div class="instbar" id="instBar" hidden role="dialog" aria-label="התקנה כאפליקציה">
+    <div class="instrow"><img src="icon-192.png" alt="" width="56" height="56"><div><b>מעבר לנקודה כאפליקציה בטלפון</b><span>פותחים בנגיעה מהמסך, בלי לחפש את הקישור</span></div></div>
+    <div class="instbtns"><button class="cta md" id="instYes" type="button">להוסיף (3 נגיעות)</button><button class="ghost" id="instNo" type="button">לא עכשיו</button></div>
+  </div>
+  <div class="instmodal legalmodal" id="legalModal" hidden role="dialog" aria-modal="true" aria-labelledby="legalTitle">
+    <div class="instcard legalcard" tabindex="-1" id="legalCard">
+      <div class="legalhead"><h2 id="legalTitle"></h2><button class="ghost" id="legalClose" type="button" aria-label="סגירה">✕</button></div>
+      <article id="legal-acc" class="legaltxt" hidden>
+        <p>אנו רואים חשיבות רבה במתן שירות שוויוני לכלל הלקוחות, כולל אנשים עם מוגבלות, ופועלים להנגשת האתר בהתאם לחוק שוויון זכויות לאנשים עם מוגבלות, התשנ״ח-1998, ולתקנות הנגישות לשירות (תשע״ג-2013).</p>
+        <h3>רמת הנגישות</h3>
+        <p>האתר הונגש בהתאם לתקן הישראלי ת״י 5568 המבוסס על הנחיות WCAG 2.0 ברמה AA, ונבדק בכלי בדיקה אוטומטיים ובבדיקה ידנית בדפדפנים Chrome ו-Safari, במחשב ובטלפון נייד.</p>
+        <h3>מה הונגש באתר</h3>
+        <ul><li>ניווט מלא במקלדת, עם סימון ברור של הרכיב המסומן וקישור ״דלג לתוכן הראשי״.</li><li>תאימות לקוראי מסך: כותרות, תוויות לשדות, תיאור לכפתורים ולתמונות, והודעות שמוקראות אוטומטית.</li><li>ניגודיות צבעים לפי התקן, וגופן שניתן להגדיל עד 200% בהגדרות הדפדפן בלי לאבד תוכן.</li><li>עצירת אנימציות אוטומטית למי שהגדיר ״הפחתת תנועה״ במכשיר.</li><li>התאמה מלאה לטלפון נייד, לרוחב ולאורך.</li></ul>
+        <h3>מגבלות ידועות</h3>
+        <p>ייתכן שחלקים מסוימים עדיין אינם נגישים במלואם. אם נתקלתם בקושי – נשמח שתעדכנו אותנו ונטפל בהקדם. ניתן תמיד לקבוע תור גם בטלפון או בוואטסאפ.</p>
+        <h3>רכז הנגישות ופרטי קשר</h3>
+        <p>ענבל בוחניק · טלפון/וואטסאפ: <a href="tel:+972525550870" dir="ltr">052-555-0870</a> · כתובת: רחוב יעל 16 ט״ו, אשדוד.<br>בפנייה, נשמח לקבל תיאור הבעיה, באיזה עמוד, ובאיזה דפדפן ומכשיר השתמשתם.</p>
+        <h3>נגישות הקליניקה</h3>
+        <p>לשאלות על הגעה ונגישות פיזית של הקליניקה – פנו אלינו לפני ההגעה ונשמח לעזור ולהתאים את השירות.</p>
+        <p class="legaldate">הצהרה זו עודכנה ביום 17.11.2026.</p>
+      </article>
+      <article id="legal-priv" class="legaltxt" hidden>
+        <p>מדיניות זו מסבירה איזה מידע נאסף באתר ״מעבר לנקודה – קליניקה לרפואה סינית״ (maavar.barbershops.company), למה, ומה הזכויות שלכם, בהתאם לחוק הגנת הפרטיות, התשמ״א-1981.</p>
+        <h3>איזה מידע נאסף</h3>
+        <ul><li>בקביעת תור: שם, מספר טלפון נייד, השירות, היום והשעה.</li><li>במטופלים חדשים: שאלון בריאות, הסכמה לטיפול וחתימה. מידע זה רגיש, נשמר מוצפן ונגיש רק למטפלת.</li><li>בכתיבת ביקורת: שם, טלפון (לאימות בלבד), הדירוג והטקסט.</li><li>הודעות וואטסאפ שאתם שולחים למספר האוטומטי של העסק.</li><li>במכשיר שלכם בלבד (אחסון מקומי בדפדפן, לא נשלח אלינו): רשימת התורים שקבעתם וההעדפות שלכם. האתר אינו משתמש בעוגיות פרסום או במעקב של צד שלישי.</li></ul>
+        <h3>למה המידע משמש</h3>
+        <ul><li>קביעת התור, אישור ותזכורת לפני התור, ואפשרות לבטל.</li><li>בקשה להשאיר ביקורת אחרי הביקור.</li><li>הודעות על תורים פנויים ועדכונים – <b>רק אם סימנתם שאתם מסכימים</b>. אפשר להסיר בכל רגע בהשבת ״הסר״.</li></ul>
+        <p>אינכם חייבים למסור את המידע לפי חוק, אך בלי מספר טלפון לא ניתן לאמת ולקבוע תור באתר.</p>
+        <h3>מי רואה את המידע</h3>
+        <p>בעלת העסק (ענבל בוחניק) ומפעיל המערכת הטכנית (BarberShops), לצורך הפעלת השירות בלבד. ההודעות נשלחות דרך וואטסאפ, והנתונים נשמרים מוצפנים בשרת אחסון חיצוני. המידע אינו נמכר ואינו מועבר לאף גורם אחר לצורכי פרסום.</p>
+        <h3>שמירה ואבטחה</h3>
+        <p>הנתונים נשמרים בהצפנה ונגישים רק בסיסמה. ביקורות מתפרסמות עם השם הפרטי בלבד. נשמור את המידע כל עוד אתם לקוחות, ונמחק אותו לפי בקשה.</p>
+        <h3>הזכויות שלכם</h3>
+        <p>מותר לכם לעיין במידע עליכם, לבקש לתקן אותו או למחוק אותו, ולבקש להפסיק לקבל הודעות. פנו בוואטסאפ או בטלפון <a href="tel:+972525550870" dir="ltr">052-555-0870</a> ונטפל בהקדם.</p>
+        <p class="legaldate">עודכן ביום 17.11.2026.</p>
+      </article>
+      <article id="legal-terms" class="legaltxt" hidden>
+        <p>השימוש באתר ובשירות קביעת התורים של ״מעבר לנקודה – קליניקה לרפואה סינית״, רחוב יעל 16 ט״ו, אשדוד, כפוף לתנאים הבאים.</p>
+        <h3>קביעת תור</h3>
+        <ul><li>התור נקבע אחרי אימות מספר הטלפון בקוד שנשלח בוואטסאפ, ומאושר בהודעה.</li><li>היומן פתוח לשנה קדימה, כפי שמופיע באתר.</li><li>המחירים באתר כוללים מע״מ (אם חל) ומשולמים בקליניקה. אין תשלום באתר.</li></ul>
+        <h3>ביטול ושינוי</h3>
+        <ul><li>נבקש לעדכן על ביטול לפחות יום מראש. אפשר לבטל: באתר ב״התורים שלי״, או בהשבת ״ביטול״ להודעה בוואטסאפ.</li><li>במקרה של איחור משמעותי ייתכן שלא נוכל לקבל אתכם, כדי לא לפגוע בלקוח הבא.</li><li>העסק רשאי לבטל או להזיז תור במקרה חירום, ויעדכן אתכם בהקדם.</li></ul>
+        <h3>ביקורות</h3>
+        <p>ביקורת מתפרסמת עם השם הפרטי בלבד. נשמח לכל ביקורת כנה; ביקורת פוגענית, לא חוקית או שאינה קשורה לשירות עשויה להיות מוסרת.</p>
+        <h3>כללי</h3>
+        <p>אנו עושים מאמץ שהאתר יפעל ברציפות ובלי טעויות, אך ייתכנו תקלות. על התנאים חל הדין הישראלי. לכל שאלה: <a href="tel:+972525550870" dir="ltr">052-555-0870</a>.</p>
+        <p class="legaldate">עודכן ביום 17.11.2026.</p>
+      </article>
+    </div>
+  </div>
+  <div class="instmodal" id="findModal" hidden role="dialog" aria-modal="true" aria-labelledby="findTitle">
+    <form class="instcard" id="findForm" novalidate>
+      <div style="text-align:center"><b id="findTitle" style="font-size:19px">מצא את התורים שלי</b><p class="today" style="margin:6px 0 0">מכל טלפון או מחשב. נשלח לך קוד בוואטסאפ לאימות.</p></div>
+      <div class="field"><label class="sr" for="findPhone">מספר טלפון</label>
+      <input id="findPhone" type="tel" inputmode="tel" autocomplete="tel" placeholder="מספר הטלפון שלך" dir="ltr" style="text-align:center"></div>
+      <div id="findCodeWrap" class="field" hidden><label class="sr" for="findCode">קוד מהוואטסאפ</label>
+      <input id="findCode" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="4" placeholder="הקוד מהוואטסאפ" dir="ltr" style="text-align:center"></div>
+      <p class="msg" id="findMsg" aria-live="polite" style="text-align:center;margin:0"></p>
+      <button class="cta md" id="findGo" type="submit">שלחו לי קוד</button>
+      <button class="ghost" id="findClose" type="button">סגירה</button>
+    </form>
+  </div>
+  <div class="instmodal" id="instModal" hidden role="dialog" aria-modal="true" aria-labelledby="instTitle">
+    <div class="instcard">
+      <div class="instrow"><img src="icon-192.png" alt="" width="56" height="56"><div><b id="instTitle">מעבר לנקודה</b><span>הוספה למסך הבית, ככה:</span></div></div>
+      <div class="pm" id="pm" aria-hidden="true"><div class="pm-scr" id="pmScr">
+        <div class="pm-page"><b>מעבר לנקודה</b><i></i><i></i><i></i><i></i></div>
+        <div class="pm-top"><span class="pm-url">maavar.barbershops.company</span><i class="pm-k" data-k="dotsA">⋮</i></div>
+        <div class="pm-bot"><i class="pm-k">‹</i><i class="pm-k">›</i><i class="pm-k" data-k="share"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V3M7 8l5-5 5 5"/><path d="M5 12v8h14v-8"/></svg></i><i class="pm-k">▢</i><i class="pm-k" data-k="dotsI">⋯</i></div>
+        <div class="pm-menu" id="pmMenu"></div>
+        <div class="pm-sheet"><div class="pm-r">העתקה</div><div class="pm-r">הוספה לסימניות</div><div class="pm-r" data-k="a2hsS">הוספה למסך הבית ⊞</div></div>
+        <div class="pm-conf"><div class="pm-cbar"><span>ביטול</span><b data-k="add">הוספה</b></div><div class="pm-capp"><img src="icon-192.png" alt=""><span>מעבר לנקודה</span></div></div>
+        <div class="pm-home"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span class="pm-me"><img src="icon-192.png" alt="">ענבל</span></div>
+        <div class="pm-f" id="pmF"></div>
+      </div></div>
+      <ol class="insteps" id="instSteps"></ol>
+      <button class="ghost" id="instOk" type="button">הבנתי</button>
+    </div>
+  </div>
+
+</main>
+  <footer>
+    <div id="footBiz">מעבר לנקודה · קליניקה לרפואה סינית · אשדוד</div>
+    <address class="footaddr">רחוב יעל 16 ט״ו, אשדוד · <a href="tel:+972525550870" dir="ltr">052-555-0870</a></address>
+    <nav class="legal" aria-label="מידע משפטי"><a href="#accessibility" data-legal="acc">הצהרת נגישות</a><span aria-hidden="true">·</span><a href="#privacy" data-legal="priv">מדיניות פרטיות</a><span aria-hidden="true">·</span><a href="#terms" data-legal="terms">תקנון</a></nav>
+    <button class="ownerlink" id="ownerLink" type="button">כניסת מנהל</button>
+    <a class="bs-sign" href="https://barbershops.company/?from=maavar#contact" target="_blank" rel="noopener">נבנה ע״י <span class="bs-mark" dir="ltr"><svg viewBox="0 0 64 210" width="6" height="18" aria-hidden="true"><rect x="3" y="10" width="58" height="30" rx="8" fill="#d0a858"/><rect x="10" y="40" width="44" height="140" fill="#f6efe2"/><path d="M10 92 L54 60 L54 82 L10 114 Z M10 150 L54 118 L54 140 L10 172 Z" fill="#c2452f"/><path d="M10 64 L54 40 L54 52 L10 76 Z M10 122 L54 90 L54 102 L10 134 Z" fill="#2f5aa0"/><rect x="3" y="180" width="58" height="30" rx="8" fill="#d0a858"/></svg>BarberShops</span></a>
+  </footer>
+</div>
+
+<aside aria-label="יצירת קשר בוואטסאפ"><a class="wa-fab" id="waFab" href="https://wa.me/972525550870" target="_blank" rel="noopener" aria-label="שלחו הודעה בוואטסאפ לענבל">
+  <span class="pulse" aria-hidden="true"></span>
+  <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.7c-2 0-4-.5-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.7 10.7 0 1 1 16 26.7zm5.9-8c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6.3-.5c.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.7 5 .8.4 1.4.6 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg>
+</a></aside>
+
+<div class="admin" id="admin" hidden role="dialog" aria-label="ניהול יומן">
+  <div class="wrap">
+    <div class="admhead"><h2>ניהול יומן</h2><div style="display:flex;gap:6px"><button class="btn" id="admLogout" type="button">יציאה</button><button class="btn" id="admClose" type="button">לדף הלקוחות</button></div></div>
+    <div class="tabs" role="tablist" id="tabs">
+      <button role="tab" data-t="biz" type="button">עסק</button>
+      <button role="tab" data-t="cal" type="button">יומן</button>
+      <button role="tab" data-t="cli" type="button">מטופלים</button>
+      <button role="tab" data-t="chat" type="button" id="tabChat">צ'אט</button>
+      <button role="tab" data-t="wa" type="button">וואטסאפ</button>
+      <button role="tab" data-t="hours" type="button">שעות</button>
+      <button role="tab" data-t="vac" type="button">חופשות</button>
+      <button role="tab" data-t="svc" type="button">שירותים</button>
+      <button role="tab" data-t="gen" type="button">כללי</button>
+    </div>
+    <div id="tabBody"></div>
+  </div>
+</div>
+<div class="admin" id="login" hidden role="dialog" aria-label="כניסת מנהל">
+  <div class="wrap" style="max-width:420px">
+    <div class="admhead"><h2>כניסת מנהל</h2><button class="btn" id="loginClose" type="button">ביטול</button></div>
+    <form class="card" id="loginForm" novalidate>
+      <div id="tokWrap">
+        <div class="field"><label for="lgTok">מפתח GitHub (פעם אחת בכל מכשיר)</label><input id="lgTok" type="password" dir="ltr" autocomplete="off" placeholder="github_pat_…"></div>
+        <p class="who" style="margin-top:-6px">המפתח נשמר במכשיר הזה בלבד, מוצפן בסיסמה שלך.</p>
+      </div>
+      <div class="field"><label for="lgUser">שם משתמש</label><input id="lgUser" dir="ltr" autocomplete="username" autocapitalize="off" spellcheck="false" placeholder="inbal"></div>
+      <div class="field"><label for="lgPass">סיסמה</label><input id="lgPass" type="password" autocomplete="current-password"></div>
+      <div class="field" id="pass2Wrap"><label for="lgPass2">סיסמה שוב (בפעם הראשונה)</label><input id="lgPass2" type="password" autocomplete="new-password"></div>
+      <button class="btn primary" style="width:100%" id="lgBtn" type="submit">כניסה</button>
+      <div class="msg" id="lgMsg" aria-live="polite"></div>
+      <button class="ownerlink" id="lgReset" type="button" hidden>להזין מפתח GitHub חדש במכשיר הזה</button>
+    </form>
+  </div>
+</div>
+<div class="pubbar" id="pubbar" hidden>
+  <div class="in"><div class="st" id="pubStatus">אין שינויים שמחכים לפרסום</div>
+    <button class="btn primary" id="pubBtn" type="button">שמור ופרסם שינויים</button></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script>
+(function(){
+"use strict";
+var DEFAULT_CFG={"biz":{"name":"מעבר לנקודה","type":"קליניקה לרפואה סינית","area":"רחוב יעל 16 ט״ו, אשדוד","audience":"נשים, גברים וילדים","tagline":"קליניקה לרפואה סינית · ענבל בוחניק"},"wa":"0525550870","daysAhead":365,"slot":60,"firstSlot":45,"lead":180,"hours":[{"open":"08:15","close":"17:00","closed":false},{"open":"08:15","close":"17:00","closed":true},{"open":"08:15","close":"17:00","closed":false},{"open":"08:15","close":"17:00","closed":true},{"open":"08:15","close":"17:00","closed":false},{"open":"08:15","close":"13:00","closed":false},{"open":"08:15","close":"13:00","closed":true}],"vacations":[],"services":[{"id":"s1","name":"טיפול ברפואה סינית","dur":45,"price":170,"desc":"שיחת אבחנה, דיקור סיני וטווינא. במידת הצורך כוסות רוח, מוקסה והקזה. 45–60 דקות."}],"addons":[],"busy":[],"openMode":"rolling","openAnchor":"2026-12-31","openTime":"08:00","botUrl":"","botAt":0,"adminPhones":["0525550870"],"siteUrl":"https://maavar.barbershops.company/","goalDay":0,"igHandle":"","health":true};
+var WD=["ראשון","שני","שלישי","רביעי","חמישי","שישי","שבת"];
+var WDS=["יום א׳","יום ב׳","יום ג׳","יום ד׳","יום ה׳","יום ו׳","שבת"];
+var MO=["ינואר","פברואר","מרץ","אפריל","מאי","יוני","יולי","אוגוסט","ספטמבר","אוקטובר","נובמבר","דצמבר"];
+var cfg=clone(DEFAULT_CFG);
+var sel={day:null,time:null,svc:null,addons:[],name:"",phone:""};
+var $=function(id){return document.getElementById(id)};
+var reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+var G=window.gsap&&!reduce?window.gsap:null;
+var current="home";
+
+function clone(o){return JSON.parse(JSON.stringify(o))}
+function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
+function pad(n){return (n<10?"0":"")+n}
+function toMin(t){var p=String(t||"0:0").split(":");return (+p[0])*60+(+p[1]||0)}
+function fromMin(m){return pad(Math.floor(m/60))+":"+pad(m%60)}
+function ymd(d){return d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate())}
+function parseYmd(s){var p=s.split("-");return new Date(+p[0],+p[1]-1,+p[2])}
+function dateLong(s){var d=parseYmd(s);return "יום "+WD[d.getDay()]+", "+d.getDate()+" ב"+MO[d.getMonth()]}
+function dateShort(s){var d=parseYmd(s);return WDS[d.getDay()]+" "+d.getDate()+"."+(d.getMonth()+1)}
+function svcById(id){for(var i=0;i<cfg.services.length;i++)if(cfg.services[i].id===id)return cfg.services[i];return null}
+function addonById(id){var a=cfg.addons||[];for(var i=0;i<a.length;i++)if(a[i].id===id)return a[i];return null}
+function onVacation(s){return (cfg.vacations||[]).some(function(v){return s>=v.from&&s<=(v.to||v.from)})}
+function waIntl(n){var d=String(n||"").replace(/\D/g,"");if(d.indexOf("972")===0)return d;if(d.charAt(0)==="0")return "972"+d.slice(1);return d}
+function nowMin(){var n=new Date();return n.getHours()*60+n.getMinutes()}
+function minDur(){var m=Infinity;cfg.services.forEach(function(s){m=Math.min(m,+s.dur||30)});return isFinite(m)?m:30}
+function total(){var s=svcById(sel.svc),t=s?+s.price:0;sel.addons.forEach(function(id){var a=addonById(id);if(a)t+=+a.price});return t}
+
+/* ---- booking window: rolling N days, or a new 2-week block every other Friday ---- */
+function openInfo(){
+  if(cfg.openMode!=="biweekly"||!cfg.openAnchor)return null;
+  var a=parseYmd(cfg.openAnchor),tm=toMin(cfg.openTime||"08:00");a.setHours(Math.floor(tm/60),tm%60,0,0);
+  var P=14*864e5,k=Math.floor((Date.now()-a.getTime())/P),last=new Date(a.getTime()+k*P),next=new Date(a.getTime()+(k+1)*P);
+  var end=new Date(last);end.setHours(0,0,0,0);end.setDate(end.getDate()+13);
+  return {last:last,next:next,end:ymd(end)};
+}
+function bookDays(){
+  var oi=openInfo();if(!oi)return +cfg.daysAhead||14;
+  var t=new Date();t.setHours(0,0,0,0);var e=parseYmd(oi.end);
+  return Math.max(0,Math.round((e-t)/864e5)+1);
+}
+/* ---- availability ---- */
+function dayInfo(dayStr){
+  var d=parseYmd(dayStr),h=cfg.hours[d.getDay()];
+  if(!h||h.closed||onVacation(dayStr))return null;
+  return {o:toMin(h.open),c:toMin(h.close),busy:(cfg.busy||[]).filter(function(b){return b.d===dayStr}).map(function(b){var s=toMin(b.s);return [s,s+(+b.m||0)]})};
+}
+function fits(dayStr,t,dur){
+  var info=dayInfo(dayStr);if(!info)return false;
+  var earliest=dayStr===ymd(new Date())?nowMin()+(+cfg.lead||0):-1;
+  var end=t+dur;
+  return t>=info.o&&end<=info.c&&t>=earliest&&!info.busy.some(function(b){return t<b[1]&&end>b[0]});
+}
+function slotsFor(dayStr){
+  var info=dayInfo(dayStr);if(!info)return [];
+  var step=+cfg.slot||30,md=minDur(),out=[];
+  var first=+cfg.firstSlot||step;
+  for(var t=info.o,k=0;t<info.c;t+=(k++===0?first:step))out.push({t:t,ok:fits(dayStr,t,md)});
+  return out;
+}
+
+/* ---- screens ---- */
+function show(id,dir){
+  var from=$(current),to=$(id);if(!to||current===id)return;
+  from.hidden=true;to.hidden=false;current=id;
+  window.scrollTo(0,0);
+  if(G){G.fromTo(to,{opacity:0,x:dir<0?24:-24},{opacity:1,x:0,duration:.35,ease:"power2.out",clearProps:"transform,opacity"});
+    var items=to.querySelectorAll(".day,.slot,.svc,.chip");
+    if(items.length)G.from(items,{opacity:0,y:14,duration:.32,stagger:Math.min(.025,0.6/items.length),ease:"power2.out",delay:.08,clearProps:"transform,opacity"});}
+  var f=to.querySelector("h2");if(f){f.setAttribute("tabindex","-1");try{f.focus({preventScroll:true})}catch(_){}}
+}
+document.addEventListener("click",function(e){var b=e.target.closest("[data-back]");if(b)show(b.dataset.back,-1)});
+
+/* ---- render: landing ---- */
+function renderBiz(){
+  var b=cfg.biz,nm=b.name;
+  $("hName").textContent=nm;
+  document.querySelectorAll(".bn").forEach(function(e){e.textContent=nm});
+  $("hArea").innerHTML='<a href="https://waze.com/ul?q='+encodeURIComponent(b.area)+'&navigate=yes" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:4px">'+esc(b.area)+'</a>';
+  $("hTag").textContent=b.tagline;$("hTag").hidden=!b.tagline;
+  $("footBiz").textContent=b.name+" · "+b.type+" · "+String(b.area).split(",")[0];
+  document.querySelectorAll(".bizname").forEach(function(e){e.textContent=b.name});
+  $("askLink").href="https://wa.me/"+waIntl(cfg.wa)+"?text="+encodeURIComponent("היי "+b.name+", יש לי שאלה:");
+  $("waFab").href="https://wa.me/"+waIntl(cfg.wa)+"?text="+encodeURIComponent("היי "+b.name+", ");$("waFab").setAttribute("aria-label","שלחו הודעה בוואטסאפ ל"+b.name);
+  var td=ymd(new Date()),h=cfg.hours[new Date().getDay()];
+  var nowM=new Date().getHours()*60+new Date().getMinutes();
+  $("todayLine").innerHTML=(!h||h.closed||onVacation(td))?"היום סגור":nowM>=toMin(h.close)?"סגור כעת":"פתוח היום <b>"+esc(h.open)+"–"+esc(h.close)+"</b>";
+  var oi=openInfo();if(oi)$("todayLine").innerHTML+="<br>היומן פתוח עד "+dateShort(oi.end)+" · הבא נפתח בשישי "+oi.next.getDate()+"."+(oi.next.getMonth()+1)+" ב־"+esc(cfg.openTime||"08:00");
+}
+
+/* ---- render: days ---- */
+function renderDays(){
+  var base=new Date();base.setHours(0,0,0,0);var today=ymd(base),h="",lastMonth=base.getMonth();
+  var N=bookDays();
+  for(var i=0;i<N;i++){
+    var d=new Date(base);d.setDate(base.getDate()+i);var s=ymd(d);
+    if(d.getMonth()!==lastMonth){h+='<div class="month">'+MO[d.getMonth()]+'</div>';lastMonth=d.getMonth()}
+    var info=dayInfo(s),free=info?slotsFor(s).filter(function(x){return x.ok}).length:0;
+    var label=i===0?"היום":i===1?"מחר":WDS[d.getDay()];
+    var state=!info?"סגור":free?"":"מלא";
+    h+='<button type="button" class="day'+(i===0?' today':'')+'" data-d="'+s+'" '+(state?'disabled ':'')+'aria-pressed="'+(sel.day===s)+'" aria-label="'+label+' '+d.getDate()+' '+MO[d.getMonth()]+(state?', '+state:', '+free+' שעות פנויות')+'">'+
+      '<span class="wd">'+label+'</span><span class="dn">'+d.getDate()+'</span><span class="mo">'+MO[d.getMonth()]+'</span>'+(state?'<span class="st">'+state+'</span>':'')+'</button>';
+  }
+  var oi=openInfo();
+  if(oi)h+='<p class="hint" style="grid-column:1/-1;text-align:center">היומן הבא נפתח ביום שישי '+oi.next.getDate()+'.'+(oi.next.getMonth()+1)+' בשעה '+esc(cfg.openTime||"08:00")+'</p>';
+  if(!N)h='<p class="empty" style="grid-column:1/-1">כל התורים לתקופה הזו נתפסו.</p>'+h;
+  $("days").innerHTML=h;
+}
+/* ---- render: time ---- */
+function renderSlots(){
+  if(!sel.day){$("slots").innerHTML="";return}
+  $("timeSub").textContent=dateLong(sel.day);
+  var list=slotsFor(sel.day),first=true,h="";
+  list.forEach(function(x){
+    var t=fromMin(x.t),tag="";
+    if(x.ok&&first){tag="<small>הכי קרוב</small>";first=false}
+    h+='<button type="button" class="slot" data-t="'+t+'" '+(x.ok?'':'disabled ')+'aria-pressed="'+(sel.time===t)+'" aria-label="'+t+(x.ok?'':' תפוס')+'">'+t+tag+'</button>';
+  });
+  $("slots").innerHTML=h||'<p class="empty">אין שעות ביום הזה.</p>';
+}
+/* ---- render: services ---- */
+function renderSvcs(){
+  if(!sel.day||!sel.time)return;
+  $("svcSub").textContent=dateLong(sel.day)+" · "+sel.time;
+  var t=toMin(sel.time),h="";
+  cfg.services.forEach(function(s){
+    var ok=fits(sel.day,t,+s.dur);
+    if(!ok&&sel.svc===s.id)sel.svc=null;
+    h+='<button type="button" class="svc" data-id="'+esc(s.id)+'" '+(ok?'':'disabled ')+'aria-pressed="'+(sel.svc===s.id)+'"><span><span class="nm">'+esc(s.name)+'</span>'+(ok?'':'<span class="why">לא נכנס בשעה הזו, נסו שעה אחרת</span>')+'</span><span class="pr">'+esc(s.price)+' ₪</span></button>';
+  });
+  $("svcs").innerHTML=h;
+  var ad=cfg.addons||[];
+  $("addWrap").hidden=!ad.length;
+  $("addons").innerHTML=ad.map(function(a){var on=sel.addons.indexOf(a.id)>-1;
+    return '<button type="button" class="chip" data-a="'+esc(a.id)+'" aria-pressed="'+on+'" '+(sel.svc?'':'disabled')+'><span class="pl">'+(on?'✓':'+')+'</span>'+esc(a.name)+' <span class="p">'+esc(a.price)+' ₪</span></button>'}).join("");
+  $("svcNext").disabled=!sel.svc;
+  $("svcNext").textContent=sel.svc?"המשך · "+total()+" ₪":"המשך";
+}
+/* ---- ticket ---- */
+function ticketHtml(withPerson){
+  var s=svcById(sel.svc);if(!s)return "";
+  var end=fromMin(toMin(sel.time)+(+s.dur)),lines='<div class="ln"><span>'+esc(s.name)+'</span><span>'+esc(s.price)+' ₪</span></div>';
+  sel.addons.forEach(function(id){var a=addonById(id);if(a)lines+='<div class="ln"><span>'+esc(a.name)+'</span><span>'+esc(a.price)+' ₪</span></div>'});
+  if(withPerson)lines+='<hr><div class="ln"><span>'+esc(sel.name.trim())+'</span><span dir="ltr">'+esc(phoneLocal(sel.phone))+'</span></div>';
+  return '<div class="dt">'+esc(dateLong(sel.day))+'</div><div class="tm">'+sel.time+'</div><hr>'+lines+'<div class="tot"><span>סה״כ</span><b>'+total()+' ₪</b></div>';
+}
+
+/* ---- phone check (format only, no SMS) ---- */
+function normPhone(v){return String(v||"").replace(/[\s\-().]/g,"")}
+function phoneOk(v){var p=normPhone(v);return /^05\d{8}$/.test(p)||/^\+?9725\d{8}$/.test(p)}
+function phoneLocal(v){var p=normPhone(v).replace(/^\+?972/,"0");return p.slice(0,3)+"-"+p.slice(3)}
+function phoneFeedback(){
+  var raw=$("fphone").value,p=normPhone(raw),m=$("phoneMsg");
+  if(!p){m.textContent="";m.className="msg";return}
+  if(phoneOk(raw)){m.textContent="✓ המספר תקין";m.className="msg ok";return}
+  var msg;
+  if(/[^\d+]/.test(p))msg="אפשר להקליד רק ספרות (ו־+ בהתחלה).";
+  else if(/^\+?972/.test(p)){var rest=p.replace(/^\+?972/,"");msg=rest.charAt(0)!=="5"?"אחרי 972 צריך לבוא מספר נייד שמתחיל ב־5.":"בפורמט 972+ צריכות להיות 9 ספרות אחרי הקידומת ("+rest.length+" כרגע)."}
+  else if(p.indexOf("05")!==0)msg="מספר נייד ישראלי מתחיל ב־05.";
+  else msg="מספר נייד צריך 10 ספרות (הוקלדו "+p.length+").";
+  m.textContent=msg;m.className="msg bad";
+}
+function buildMessage(){
+  var s=svcById(sel.svc),ads=sel.addons.map(function(id){var a=addonById(id);return a?a.name:""}).filter(Boolean);
+  return "היי "+cfg.biz.name+", אני "+sel.name.trim()+".\n"+
+    "אשמח לקבוע תור:\n"+
+    "שירות: "+s.name+(ads.length?" + "+ads.join(", "):"")+"\n"+
+    "יום: "+dateLong(sel.day)+"\n"+
+    "שעה: "+sel.time+"\n"+
+    "סה״כ: "+total()+" ₪\n"+
+    "טלפון: "+phoneLocal(sel.phone)+"\n"+
+    "מחכה לאישור שלך 🙏\n"+
+    "(קוד ליומן: "+sel.day+" "+sel.time+" "+(+s.dur)+")";
+}
+
+/* ---- "my appointments": kept only in this customer's browser ---- */
+var MINE_KEY="maavarMine";
+function mineGet(){try{var v=JSON.parse(localStorage.getItem(MINE_KEY)||"[]");return Array.isArray(v)?v:[]}catch(_){return []}}
+var lastBook=null,cancelArmed=null;
+function mineSet(l){try{localStorage.setItem(MINE_KEY,JSON.stringify(l.slice(-30)))}catch(_){}}
+function mineAdd(r){try{var l=mineGet().filter(function(x){return !(x.day===r.day&&x.time===r.time)});l.push(r);localStorage.setItem(MINE_KEY,JSON.stringify(l.slice(-30)))}catch(_){}}
+function renderMine(){
+  var l=mineGet().sort(function(a,b){return (b.day+b.time)<(a.day+a.time)?-1:1}),now=ymd(new Date())+" "+fromMin(nowMin());
+  if(!l.length){$("mineList").innerHTML='<p class="empty">אין כאן תורים עדיין. קבעת תור מטלפון אחר? לחצו על ״מצא את התורים שלי״ למעלה.</p>';return}
+  $("mineList").innerHTML=l.map(function(r){
+    var past=(r.day+" "+r.time)<now,key=r.day+"|"+r.time;
+    /* the public agenda tells whether this slot is still booked */
+    var inAgenda=(cfg.busy||[]).some(function(x){return x.d===r.day&&x.s===r.time});
+    if(!past&&!r.cancelled&&cfgFresh&&!inAgenda&&(r.ok||Date.now()-(r.sent||0)>15*60e3))r.gone=true;
+    var off=r.cancelled||r.gone;
+    var can=!past&&!off&&r.ok&&r.id&&r.ctok;
+    var st=r.cancelled?'<span style="color:var(--err)">בוטל</span>':r.gone?'<span style="color:var(--err)">'+(r.ok?'בוטל':'לא נקבע')+'</span>':past?'עבר':(r.ok?'נקבע ✓':'נשלח בוואטסאפ, מחכה לאישור של '+esc(cfg.biz.name));
+    return '<div class="svc" style="cursor:default;flex-wrap:wrap'+(past||off?';opacity:.55':'')+'"><span><span class="nm">'+esc(dateLong(r.day))+' · '+esc(r.time)+'</span><span class="du">'+esc(r.svc)+'</span>'+
+      '<span class="why" style="color:'+(past?'var(--muted)':'var(--gold-lt)')+'">'+st+'</span></span><span class="pr">'+esc(r.total)+' ₪</span>'+
+      (can?'<button type="button" class="ghost" data-mcancel="'+esc(key)+'" style="width:100%;min-height:44px;margin-top:6px;border-color:var(--err);color:var(--err)">'+(cancelArmed===key?'לחצו שוב לאישור הביטול':'ביטול התור')+'</button>':'')+
+      (past||off?'<button type="button" class="textlink" data-mremove="'+esc(key)+'" style="width:100%;font-size:14px;padding:6px">הסר מהרשימה</button>':'')+'</div>';
+  }).join("")+'<p class="hint" style="text-align:center">חסר תור? לחצו על ״מצא את התורים שלי״ ותקבלו את כל התורים הקרובים למספר שלכם.</p>';
+}
+var cfgFresh=false;
+$("myLink").addEventListener("click",function(){cfgFresh=false;renderMine();show("sMine",1);
+  loadCfg().then(function(c){if(c&&Array.isArray(c.busy)){applyConfig(c);cfgFresh=true;renderMine()}checkBot()}).catch(function(){})});
+$("mineList").addEventListener("click",function(e){
+  var rm=e.target.closest("[data-mremove]");
+  if(rm){var k=rm.dataset.mremove;mineSet(mineGet().filter(function(x){return x.day+"|"+x.time!==k}));renderMine();return}
+  var b=e.target.closest("[data-mcancel]");if(!b)return;var key=b.dataset.mcancel;
+  if(cancelArmed!==key){cancelArmed=key;renderMine();return}
+  cancelArmed=null;var l=mineGet(),r=l.filter(function(x){return x.day+"|"+x.time===key})[0];if(!r)return;
+  b.disabled=true;b.textContent="מבטל…";
+  if(!cfg.botUrl){b.textContent="הביטול לא זמין כרגע. כתבו ל"+cfg.biz.name+" בוואטסאפ";return}
+  botCall("/cancel",{id:r.id,ctok:r.ctok}).then(function(j){
+    if(j.ok||j.error==="already"){r.cancelled=true;mineSet(l);cfg.busy=cfg.busy.filter(function(x){return !(x.d===r.day&&x.s===r.time)});renderMine();return}
+    if(j.error==="late"){b.textContent="אפשר לבטל עד "+(j.minutes||60)+" דקות לפני. כתבו ל"+cfg.biz.name;return}
+    if(j.error==="notfound"){b.textContent="התור לא נמצא, אולי כבר בוטל. כתבו ל"+cfg.biz.name;return}
+    b.disabled=false;b.textContent="הביטול נכשל, נסו שוב";
+  }).catch(function(){b.disabled=false;b.textContent="אין חיבור לשירות כרגע. נסו שוב או כתבו ל"+cfg.biz.name});
+});
+
+/* ---- legal pages (accessibility statement, privacy, terms) ---- */
+var LEGAL_T={acc:"הצהרת נגישות",priv:"מדיניות פרטיות",terms:"תקנון שימוש"},LEGAL_H={accessibility:"acc",privacy:"priv",terms:"terms"},legalBack=null;
+function legalOpen(k){if(!LEGAL_T[k])return;legalBack=document.activeElement;$("legalTitle").textContent=LEGAL_T[k];
+  ["acc","priv","terms"].forEach(function(x){$("legal-"+x).hidden=x!==k});$("legalModal").hidden=false;setTimeout(function(){try{$("legalClose").focus()}catch(_){}},30)}
+function legalClose(){$("legalModal").hidden=true;if(/^#(accessibility|privacy|terms)$/.test(location.hash))try{history.replaceState(null,"",location.pathname+location.search)}catch(_){}
+  try{legalBack&&legalBack.focus()}catch(_){}}
+document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("[data-legal]");if(!a)return;e.preventDefault();legalOpen(a.getAttribute("data-legal"))});
+$("legalClose").addEventListener("click",legalClose);
+$("legalModal").addEventListener("click",function(e){if(e.target===this)legalClose()});
+document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!$("legalModal").hidden)legalClose()});
+(function(){var h=(location.hash||"").slice(1);if(LEGAL_H[h])setTimeout(function(){legalOpen(LEGAL_H[h])},300)})();
+
+/* ---- where the visitor came from (?from=ig in the Instagram bio), kept 30 days ---- */
+var REF_KEY="maavarFrom";
+(function(){try{var f=new URLSearchParams(location.search).get("from");if(f&&/^[a-z0-9_-]{1,20}$/i.test(f)){localStorage.setItem(REF_KEY,JSON.stringify({v:f.toLowerCase(),t:Date.now()}));
+  if(history.replaceState){var u=new URL(location.href);u.searchParams.delete("from");history.replaceState(null,"",u.pathname+u.search+u.hash)}}}catch(_){}})();
+function refGet(){try{var o=JSON.parse(localStorage.getItem(REF_KEY)||"null");return o&&Date.now()-o.t<30*864e5?o.v:""}catch(_){return ""}}
+
+/* ---- find my appointments from any device (phone + WhatsApp code) ---- */
+var findSent=false,findBusy=false;
+function findMsg(t,ok){var m=$("findMsg");m.textContent=t||"";m.className="msg"+(t?(ok?" ok":" bad"):"")}
+function findReset(){findSent=false;findBusy=false;$("findCodeWrap").hidden=true;$("findCode").value="";$("findGo").disabled=false;$("findGo").textContent="שלחו לי קוד";findMsg("")}
+function findOpen(){findReset();if(!$("findPhone").value&&sel.phone)$("findPhone").value=sel.phone;$("findModal").hidden=false;setTimeout(function(){try{$("findPhone").focus()}catch(_){}},50)}
+function findClose(){$("findModal").hidden=true}
+$("findBtn").addEventListener("click",findOpen);
+$("findClose").addEventListener("click",findClose);
+$("findModal").addEventListener("click",function(e){if(e.target===this)findClose()});
+$("findPhone").addEventListener("input",function(){if(findSent)findReset()});
+$("findCode").addEventListener("input",function(){this.value=this.value.replace(/\D/g,"").slice(0,4);if(this.value.length===4&&!findBusy)$("findForm").requestSubmit&&$("findForm").requestSubmit()});
+$("findForm").addEventListener("submit",function(e){
+  e.preventDefault();if(findBusy)return;
+  var ph=$("findPhone").value.trim();
+  if(!phoneOk(ph)){findMsg("בדקו את מספר הטלפון.");return}
+  if(!cfg.botUrl){findMsg("השירות לא זמין כרגע. נסו שוב מאוחר יותר.");return}
+  var go=$("findGo");findBusy=true;go.disabled=true;
+  if(!findSent){
+    findMsg("שולח קוד…",true);
+    botCall("/otp",{phone:ph}).then(function(j){
+      findBusy=false;go.disabled=false;
+      if(j.ok){findSent=true;$("findCodeWrap").hidden=false;go.textContent="הצג את התורים שלי";findMsg("שלחנו לך קוד בוואטסאפ ✓",true);setTimeout(function(){try{$("findCode").focus()}catch(_){}},80);return}
+      findMsg(j.error==="nowa"?"המספר הזה לא רשום בוואטסאפ.":j.error==="rate"?"יותר מדי ניסיונות. נסו שוב בעוד כמה דקות.":"השירות לא זמין כרגע. נסו שוב מאוחר יותר.");
+    }).catch(function(){findBusy=false;go.disabled=false;findMsg("השירות לא זמין כרגע. נסו שוב מאוחר יותר.")});
+    return;
+  }
+  var code=$("findCode").value.trim();
+  if(!/^\d{4}$/.test(code)){findBusy=false;go.disabled=false;findMsg("הקלידו את 4 הספרות מהוואטסאפ.");return}
+  findMsg("מחפש…",true);
+  botCall("/mine",{phone:ph,code:code}).then(function(j){
+    findBusy=false;go.disabled=false;
+    if(j.ok){
+      (j.list||[]).forEach(function(a){mineAdd({day:a.day,time:a.time,svc:a.svc,total:a.total,sent:Date.now(),ok:true,id:a.id,ctok:a.ctok})});
+      if(!(j.list||[]).length){findMsg("לא מצאנו תורים קרובים למספר הזה.");findSent=false;$("findCodeWrap").hidden=true;$("findCode").value="";go.textContent="שלחו לי קוד";return}
+      findClose();cfgFresh=false;renderMine();
+      loadCfg().then(function(c){if(c&&Array.isArray(c.busy)){applyConfig(c);cfgFresh=true;renderMine()}}).catch(function(){});
+      return;
+    }
+    if(j.error==="code")findMsg("הקוד לא נכון. בדקו ונסו שוב.");
+    else if(j.error==="expired"){findReset();findMsg("הקוד פג תוקף. שלחו קוד חדש.")}
+    else findMsg("השירות לא זמין כרגע. נסו שוב מאוחר יותר.");
+  }).catch(function(){findBusy=false;go.disabled=false;findMsg("השירות לא זמין כרגע. נסו שוב מאוחר יותר.")});
+});
+
+/* ---- install as an app: offered once per phone ---- */
+var INST_KEY="maavarInstallOffered",instEvt=null;
+function isStandalone(){return (window.matchMedia&&matchMedia("(display-mode: standalone)").matches)||navigator.standalone===true}
+function instSeen(){try{return localStorage.getItem(INST_KEY)==="1"}catch(_){return true}}
+function instMark(){try{localStorage.setItem(INST_KEY,"1")}catch(_){}}
+if("serviceWorker" in navigator){try{navigator.serviceWorker.register("sw.js").catch(function(){})}catch(_){}}
+window.addEventListener("beforeinstallprompt",function(e){e.preventDefault();instEvt=e});
+function instSteps(){
+  var ua=navigator.userAgent||"",ios=/iPhone|iPad|iPod/.test(ua)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1),crios=/CriOS|FxiOS|EdgiOS/.test(ua);
+  if(ios&&crios)return ['נוגעים ב־⋯ למטה, ליד שורת הכתובת','בוחרים ״שיתוף״ <small>(Share)</small>','גוללים ובוחרים ״הוספה למסך הבית״ <small>(Add to Home Screen)</small>','נוגעים ב״הוספה״ <small>(Add)</small>'];
+  if(ios)return ['נוגעים בכפתור השיתוף ⬆︎ בתחתית המסך','גוללים ובוחרים ״הוספה למסך הבית״ <small>(Add to Home Screen)</small>','נוגעים ב״הוספה״ למעלה <small>(Add)</small>'];
+  return ['נוגעים ב־⋮ למעלה בדפדפן','בוחרים ״הוספה למסך הבית״ או ״התקנת אפליקציה״','מאשרים ב״הוספה״ / ״התקנה״'];
+}
+function instOffer(){
+  if(isStandalone()||instSeen())return;
+  setTimeout(function(){if(current==="home"&&!isStandalone()&&!instSeen()&&$("admin").hidden)$("instBar").hidden=false},2500);
+}
+$("instNo").addEventListener("click",function(){instMark();$("instBar").hidden=true});
+$("instYes").addEventListener("click",function(){
+  instMark();$("instBar").hidden=true;
+  if(instEvt){instEvt.prompt();instEvt.userChoice.finally(function(){instEvt=null});return}
+  $("instSteps").innerHTML=instSteps().map(function(t){return "<li><span>"+t+"</span></li>"}).join("");
+  $("instModal").hidden=false;try{$("instOk").focus()}catch(_){}
+  pmStart();
+});
+$("instOk").addEventListener("click",function(){$("instModal").hidden=true;pmStop()});
+$("instModal").addEventListener("click",function(e){if(e.target===this){this.hidden=true;pmStop()}});
+/* animated phone that shows each step */
+var pmT=null;
+function pmScenes(){
+  var ua=navigator.userAgent||"",ios=/iPhone|iPad|iPod/.test(ua)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1),crios=/CriOS|FxiOS|EdgiOS/.test(ua);
+  var row=function(t,k){return '<div class="pm-r"'+(k?' data-k="'+k+'"':'')+'>'+t+'</div>'};
+  if(ios&&crios){$("pmMenu").innerHTML=row("כרטיסייה חדשה")+row("שיתוף ⬆︎","shr")+row("הגדרות");
+    return {cls:"pm-ios",sc:[{t:"dotsI",li:0},{v:"menu",t:"shr",li:1},{v:"sheet",t:"a2hsS",li:2},{v:"conf",t:"add",li:3},{v:"home",li:-1}]}}
+  if(ios)return {cls:"pm-ios",sc:[{t:"share",li:0},{v:"sheet",t:"a2hsS",li:1},{v:"conf",t:"add",li:2},{v:"home",li:-1}]};
+  $("pmMenu").innerHTML=row("כרטיסייה חדשה")+row("היסטוריה")+row("הוספה למסך הבית","a2hsM")+row("הגדרות");
+  return {cls:"pm-and",sc:[{t:"dotsA",li:0},{v:"menu",t:"a2hsM",li:1},{v:"conf",t:"add",li:2},{v:"home",li:-1}]};
+}
+function pmStop(){clearTimeout(pmT);pmT=null}
+function pmStart(){
+  pmStop();var P=pmScenes(),pm=$("pm"),scr=$("pmScr"),f=$("pmF"),lis=$("instSteps").children,i=0;
+  pm.className="pm "+P.cls;
+  (function run(){
+    if($("instModal").hidden)return pmStop();
+    var s=P.sc[i];pm.className="pm "+P.cls+(s.v?" v-"+s.v:"");
+    scr.querySelectorAll(".hit").forEach(function(e){e.classList.remove("hit")});
+    for(var n=0;n<lis.length;n++)lis[n].classList.toggle("on",n===s.li);
+    f.classList.remove("tap");
+    var tg=s.t&&scr.querySelector('[data-k="'+s.t+'"]');
+    if(tg){setTimeout(function(){var a=tg.getBoundingClientRect(),b=scr.getBoundingClientRect();
+      f.style.left=(a.left-b.left+Math.min(a.width*.3,22))+"px";f.style.top=(a.top-b.top+a.height*.8)+"px";f.classList.add("show");
+      setTimeout(function(){f.classList.add("tap");tg.classList.add("hit")},800);
+      setTimeout(function(){f.classList.remove("tap")},1000)},450)}
+    else f.classList.remove("show");
+    i=(i+1)%P.sc.length;pmT=setTimeout(run,s.v==="home"?2600:2300);
+  })();
+}
+instOffer();
+/* link from the review request: #review opens the form */
+if(location.hash==="#review"){setTimeout(function(){var r=$("reviews");if(r)r.scrollIntoView({behavior:reduce?"auto":"smooth",block:"start"});$("revOpen").click()},900)}
+
+/* ---- customer reviews ---- */
+var rvStars=0,rvOtp=false,rvBusy=false;
+function starStr(n){return "★★★★★".slice(0,n)+"☆☆☆☆☆".slice(0,5-n)}
+function renderReviews(){
+  var l=(cfg.reviews||[]).filter(function(r){return !r.hidden});
+  if(!l.length){$("revSum").textContent="עוד אין ביקורות. היו הראשונים!";$("revList").innerHTML="";return}
+  var avg=l.reduce(function(a,r){return a+(+r.stars||0)},0)/l.length;
+  $("revSum").innerHTML="<b>"+avg.toFixed(1)+"</b><span class=\"st\">"+starStr(Math.round(avg))+"</span><br>"+l.length+" ביקורות";
+  $("revList").innerHTML=l.slice(0,12).map(function(r){var d=parseYmd(r.date||ymd(new Date()));
+    return '<div class="rev"><div class="st">'+starStr(+r.stars||0)+'</div><div class="nm">'+esc(r.name)+'</div>'+(r.text?'<div class="tx">'+esc(r.text)+'</div>':'')+'<div class="dt">'+d.getDate()+"."+(d.getMonth()+1)+"."+d.getFullYear()+'</div></div>'}).join("");
+}
+function rvMsg(t,ok){var m=$("rvMsg");m.textContent=t||"";m.className="msg"+(t?(ok?" ok":" bad"):"")}
+function setStars(n){rvStars=n;[].forEach.call($("revStars").children,function(b){b.classList.toggle("on",+b.dataset.st<=n);b.setAttribute("aria-pressed",String(+b.dataset.st===n))})}
+$("revStars").addEventListener("click",function(e){var b=e.target.closest("[data-st]");if(b)setStars(+b.dataset.st)});
+$("revOpen").addEventListener("click",function(){$("revForm").hidden=false;this.hidden=true;checkBot();setTimeout(function(){try{$("revStars").children[4].focus()}catch(_){}},50)});
+$("rvPhone").addEventListener("input",function(){if(rvOtp){rvOtp=false;$("rvCodeWrap").hidden=true;$("rvBtn").textContent="שלחו לי קוד לאימות"}});
+$("revForm").addEventListener("submit",function(e){
+  e.preventDefault();if(rvBusy)return;
+  var name=$("rvName").value.trim(),phone=$("rvPhone").value,text=$("rvText").value.trim();
+  if(!rvStars)return rvMsg("בחרו דירוג בכוכבים.");
+  if(!name)return rvMsg("כתבו את השם שלכם.");
+  if(!phoneOk(phone))return rvMsg("מספר נייד לא תקין.");
+  if(!botOn||!cfg.botUrl)return rvMsg("אפשר לכתוב ביקורת כשהשירות זמין. נסו שוב בעוד כמה דקות.");
+  rvBusy=true;
+  if(!rvOtp){rvMsg("שולח קוד…",true);
+    botCall("/otp",{phone:phone}).then(function(j){rvBusy=false;
+      if(j.ok){rvOtp=true;$("rvCodeWrap").hidden=false;$("rvBtn").textContent="פרסום הביקורת";rvMsg("שלחנו לך קוד בוואטסאפ ✓",true);try{$("rvCode").focus()}catch(_){}}
+      else rvMsg(j.error==="rate"?"יותר מדי ניסיונות. נסו שוב מאוחר יותר.":j.error==="nowa"?"המספר הזה לא רשום בוואטסאפ.":"השליחה נכשלה. נסו שוב.");
+    }).catch(function(){rvBusy=false;rvMsg("אין חיבור. נסו שוב.")});return}
+  rvMsg("מפרסם…",true);
+  botCall("/review",{phone:phone,code:$("rvCode").value.trim(),name:name,stars:rvStars,text:text}).then(function(j){rvBusy=false;
+    if(j.ok){cfg.reviews=[j.review].concat((cfg.reviews||[]).filter(function(r){return r.id!==j.review.id}));renderReviews();$("revForm").hidden=true;$("revSum").scrollIntoView({behavior:reduce?"auto":"smooth",block:"center"});rvMsg("");return}
+    rvMsg(j.error==="code"?"הקוד לא נכון.":j.error==="expired"?"הקוד פג תוקף. שנו את המספר ושלחו שוב.":j.error==="notclient"?"רק לקוחות שקבעו תור אצלנו יכולים לכתוב ביקורת.":"משהו השתבש. נסו שוב.");
+  }).catch(function(){rvBusy=false;rvMsg("אין חיבור. נסו שוב.")});
+});
+
+/* ---- add to the customer's calendar ---- */
+function calStamp(day,min){return day.replace(/-/g,"")+"T"+fromMin(min).replace(":","")+"00"}
+function calLink(){
+  var s=svcById(sel.svc),st=toMin(sel.time),en=st+(+s.dur);
+  return "https://calendar.google.com/calendar/render?action=TEMPLATE"+
+    "&text="+encodeURIComponent("תור אצל "+cfg.biz.name+" · "+s.name)+
+    "&dates="+calStamp(sel.day,st)+"/"+calStamp(sel.day,en)+"&ctz=Asia%2FJerusalem"+
+    "&details="+encodeURIComponent("התור סגור רק אחרי אישור בוואטסאפ.")+
+    "&location="+encodeURIComponent(cfg.biz.area);
+}
+function icsText(){
+  var s=svcById(sel.svc),st=toMin(sel.time),en=st+(+s.dur);
+  return ["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//maavar-booking//HE","BEGIN:VEVENT",
+    "UID:"+sel.day+sel.time.replace(":","")+"-"+Date.now()+"@maavar",
+    "DTSTAMP:"+new Date().toISOString().replace(/[-:]/g,"").split(".")[0]+"Z",
+    "DTSTART;TZID=Asia/Jerusalem:"+calStamp(sel.day,st),"DTEND;TZID=Asia/Jerusalem:"+calStamp(sel.day,en),
+    "SUMMARY:תור אצל "+cfg.biz.name+" · "+s.name,"LOCATION:"+cfg.biz.area.replace(/,/g,"\\,"),
+    "DESCRIPTION:התור סגור רק אחרי אישור בוואטסאפ.","BEGIN:VALARM","TRIGGER:-PT2H","ACTION:DISPLAY","DESCRIPTION:תזכורת לתור","END:VALARM",
+    "END:VEVENT","END:VCALENDAR"].join("\r\n");
+}
+$("icsBtn").addEventListener("click",function(){
+  try{var u=URL.createObjectURL(new Blob([icsText()],{type:"text/calendar"})),a=document.createElement("a");
+    a.href=u;a.download="tor-maavar.ics";document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(u)},4000);
+    this.textContent="✓ פתחו את הקובץ כדי להוסיף ליומן"}catch(_){this.textContent="לא הצלחנו ליצור קובץ, השתמשו ביומן Google"}
+});
+
+/* ---- events: customer ---- */
+$("startBtn").addEventListener("click",function(){renderDays();show("sDay",1)});
+$("days").addEventListener("click",function(e){var b=e.target.closest(".day");if(!b||b.disabled)return;
+  if(sel.day!==b.dataset.d){sel.day=b.dataset.d;sel.time=null}
+  renderDays();renderSlots();show("sTime",1)});
+$("slots").addEventListener("click",function(e){var b=e.target.closest(".slot");if(!b||b.disabled)return;
+  sel.time=b.dataset.t;renderSlots();renderSvcs();show("sSvc",1)});
+$("svcs").addEventListener("click",function(e){var b=e.target.closest(".svc");if(!b||b.disabled)return;
+  sel.svc=b.dataset.id;renderSvcs()});
+$("addons").addEventListener("click",function(e){var b=e.target.closest(".chip");if(!b||b.disabled)return;
+  var id=b.dataset.a,i=sel.addons.indexOf(id);if(i>-1)sel.addons.splice(i,1);else sel.addons.push(id);renderSvcs()});
+$("svcNext").addEventListener("click",function(){if(!sel.svc)return;$("ticket").innerHTML=ticketHtml(false);formChanged();show("sDet",1)});
+/* ---- automatic booking through the WhatsApp bot (falls back to the manual WhatsApp message) ---- */
+var botOn=false,otpSent=false,botBusy=false;
+function botCall(path,data){
+  var ctl=window.AbortController?new AbortController():null,tm=setTimeout(function(){if(ctl)ctl.abort()},15000);
+  return fetch(cfg.botUrl+path,{method:data?"POST":"GET",headers:data?{"Content-Type":"application/json"}:{},body:data?JSON.stringify(data):undefined,signal:ctl?ctl.signal:undefined})
+    .then(function(r){clearTimeout(tm);return r.json().catch(function(){return {}}).then(function(j){j._status=r.status;return j})});
+}
+function checkBot(){
+  if(!cfg.botUrl){botOn=false;setBookUi();return}
+  botCall("/health").then(function(j){botOn=j.ok&&j.wa==="open";setBookUi()}).catch(function(){botOn=false;setBookUi()});
+}
+function setBookUi(){
+  $("otpWrap").hidden=!(botOn&&otpSent);
+  if($("hBlock")){var hb=$("hBlock").hidden;$("hBlock").hidden=!healthOn();if(hb&&!$("hBlock").hidden&&hFirst)setTimeout(sigSize,30)}
+  var inbox=!botOn&&!!cfg.inboxUrl;
+  var LG=" <a href=\"#privacy\" data-legal=\"priv\">מדיניות הפרטיות</a> · <a href=\"#terms\" data-legal=\"terms\">תקנון</a>";
+  if(inbox){$("fineTxt").innerHTML="התור נשמר מיד ביומן של "+esc(cfg.biz.name)+", ותקבל אישור בוואטסאפ."+LG;$("toConfirm").textContent="קביעת התור";formChanged();return}
+  $("fineTxt").innerHTML=botOn?"נשלח אליך קוד בוואטסאפ כדי לוודא שהמספר שלך. אחרי האישור התור נקבע מיד, ותקבל אישור ותזכורת."+LG:"הבקשה נשלחת מהוואטסאפ שלך, כך <span class=\"bizname\">"+esc(cfg.biz.name)+"</span> רואה שהמספר אמיתי. התור נסגר רק אחרי שהוא מאשר לך בחזרה."+LG;
+  $("toConfirm").textContent=botOn?(otpSent?"אישור וקביעת התור":"שלחו לי קוד בוואטסאפ"):"שליחת בקשה לתור";
+  formChanged();
+}
+function bookMsg(t,ok){var m=$("bookMsg");m.textContent=t||"";m.className="msg"+(t?(ok?" ok":" bad"):"")}
+function formChanged(){sel.name=$("fname").value;sel.phone=$("fphone").value;phoneFeedback();
+  var base=sel.name.trim()&&phoneOk(sel.phone)&&sel.time&&sel.svc&&healthOk();
+  if(botOn&&otpSent)base=base&&/^\d{4}$/.test($("fcode").value.trim());
+  $("toConfirm").disabled=!base||botBusy}
+$("fname").addEventListener("input",formChanged);
+$("fphone").addEventListener("input",function(){if(otpSent){otpSent=false;$("fcode").value="";setBookUi()}formChanged()});
+$("fcode").addEventListener("input",function(){this.value=this.value.replace(/\D/g,"").slice(0,4);formChanged();if(this.value.length===4&&!botBusy)$("form").requestSubmit&&$("form").requestSubmit()});
+function sendOtp(){
+  botBusy=true;formChanged();bookMsg("שולח קוד…",true);
+  return botCall("/otp",{phone:sel.phone}).then(function(j){
+    botBusy=false;
+    if(j.ok){otpSent=true;setBookUi();bookMsg("שלחנו לך קוד בוואטסאפ ✓",true);setTimeout(function(){try{$("fcode").focus()}catch(_){}},100);return}
+    if(j.error==="nowa")bookMsg("המספר הזה לא רשום בוואטסאפ. בדקו את המספר.");
+    else if(j.error==="rate")bookMsg("יותר מדי ניסיונות. נסו שוב בעוד כמה דקות.");
+    else{botOn=false;setBookUi();bookMsg("השליחה האוטומטית לא זמינה כרגע. אפשר לשלוח בקשה בוואטסאפ.")}
+    formChanged();
+  }).catch(function(){botBusy=false;botOn=false;setBookUi();bookMsg("השליחה האוטומטית לא זמינה כרגע. אפשר לשלוח בקשה בוואטסאפ.")});
+}
+$("resendBtn").addEventListener("click",function(){if(!botBusy)sendOtp()});
+/* ---- health questionnaire for new patients ---- */
+var HQ=["הריון","קוצב לב","מדללי דם","סוכרת","לחץ דם","אפילפסיה","מחלת לב","בעיות קרישת דם","נטייה להתעלפות / פחד ממחטים","ניתוח בחצי השנה האחרונה"];
+var hFirst=null,sigDirty=false;
+(function(){
+  if(!$("hqItems"))return;
+  $("hqItems").innerHTML=HQ.map(function(t,i){return '<label><input type="checkbox" data-hq="'+i+'"> <span>'+t+'</span></label>'}).join("");
+  document.querySelectorAll("[data-first]").forEach(function(b){b.addEventListener("click",function(){
+    hFirst=b.dataset.first==="1";document.querySelectorAll("[data-first]").forEach(function(x){x.setAttribute("aria-pressed",x===b?"true":"false")});
+    $("hq").hidden=!hFirst;if(hFirst)setTimeout(sigSize,30);formChanged()})});
+  ["hWhy","hMeds","hAll"].forEach(function(id){$(id).addEventListener("input",formChanged)});
+  $("hOk").addEventListener("change",formChanged);
+  var c=$("hSig"),ctx=c.getContext("2d"),drawing=false,last=null;
+  window.sigSize=function(){var r=c.getBoundingClientRect();if(!r.width)return;var dpr=window.devicePixelRatio||1;c.width=r.width*dpr;c.height=r.height*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);ctx.lineWidth=2.4;ctx.lineCap="round";ctx.lineJoin="round";ctx.strokeStyle="#0b1f16";sigDirty=false;$("hSigHint").hidden=false;formChanged()};
+  function pt(e){var r=c.getBoundingClientRect();return {x:e.clientX-r.left,y:e.clientY-r.top}}
+  c.addEventListener("pointerdown",function(e){drawing=true;last=pt(e);try{c.setPointerCapture(e.pointerId)}catch(_){}e.preventDefault()});
+  c.addEventListener("pointermove",function(e){if(!drawing)return;var p=pt(e);ctx.beginPath();ctx.moveTo(last.x,last.y);ctx.lineTo(p.x,p.y);ctx.stroke();last=p;
+    if(!sigDirty){sigDirty=true;$("hSigHint").hidden=true;formChanged()}e.preventDefault()});
+  ["pointerup","pointercancel","pointerleave"].forEach(function(ev){c.addEventListener(ev,function(){drawing=false})});
+  $("hSigClr").addEventListener("click",function(){sigSize()});
+})();
+function healthOn(){return !!cfg.health&&botOn&&!!$("hBlock")}
+function healthOk(){if(!healthOn())return true;if(hFirst===null)return false;if(!hFirst)return true;
+  return $("hWhy").value.trim().length>1&&$("hOk").checked&&sigDirty}
+function healthData(){
+  if(!healthOn()||!hFirst)return healthOn()?{first:false}:null;
+  var c=$("hSig"),sm=document.createElement("canvas");sm.width=360;sm.height=Math.round(360*c.height/c.width)||140;
+  var x=sm.getContext("2d");x.fillStyle="#fff";x.fillRect(0,0,sm.width,sm.height);x.drawImage(c,0,0,sm.width,sm.height);
+  return {first:true,items:HQ.filter(function(_,i){return document.querySelector('[data-hq="'+i+'"]').checked}),
+    meds:$("hMeds").value.trim(),allergies:$("hAll").value.trim(),reason:$("hWhy").value.trim(),
+    consent:true,signedAt:new Date().toISOString(),sig:sm.toDataURL("image/jpeg",.6)};
+}
+function bookNow(){
+  botBusy=true;formChanged();bookMsg("קובע את התור…",true);
+  botCall("/book",{phone:sel.phone,code:$("fcode").value.trim(),name:sel.name.trim(),day:sel.day,time:sel.time,svc:sel.svc,src:refGet(),mk:!!$("fmk").checked,health:healthData()}).then(function(j){
+    botBusy=false;
+    if(j.ok){bookMsg("");lastBook={id:j.id,ctok:j.ctok};cfg.busy.push({d:sel.day,s:sel.time,m:(svcById(sel.svc)||{}).dur||30});showDone(true);return}
+    var e=j.error;
+    if(e==="code")bookMsg("הקוד לא נכון. בדקו ונסו שוב.");
+    else if(e==="expired"){otpSent=false;setBookUi();bookMsg("הקוד פג תוקף. שלחו קוד חדש.")}
+    else if(e==="taken"){bookMsg("השעה הזו נתפסה הרגע. בחרו שעה אחרת.");cfg.busy.push({d:sel.day,s:sel.time,m:30});sel.time=null;otpSent=false;setTimeout(function(){renderSlots();show("sTime",-1)},1500)}
+    else if(e==="limit")bookMsg("כבר יש למספר הזה תורים קרובים. לשינוי כתבו ל"+cfg.biz.name+".");
+    else if(e==="closed")bookMsg("השעה הזו כבר לא פתוחה להזמנה. בחרו שעה אחרת.");
+    else bookMsg("משהו השתבש. נסו שוב.");
+    formChanged();
+  }).catch(function(){botBusy=false;bookMsg("אין חיבור. נסו שוב.");formChanged()});
+}
+$("form").addEventListener("submit",function(e){e.preventDefault();formChanged();if($("toConfirm").disabled)return;
+  if(botOn){if(!otpSent)sendOtp();else bookNow();return}
+  if(cfg.inboxUrl){inboxBook();return}
+  showDone(false);
+});
+function inboxBook(){
+  botBusy=true;formChanged();bookMsg("קובע את התור…",true);
+  fetch(cfg.inboxUrl,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify({action:"book",phone:sel.phone,name:sel.name.trim(),day:sel.day,time:sel.time,svc:sel.svc,ctok:(lastBook={ctok:Array.from(crypto.getRandomValues(new Uint8Array(12))).map(function(b){return b.toString(16).padStart(2,"0")}).join("")}).ctok})})
+    .then(function(r){return r.json()}).then(function(j){
+      botBusy=false;
+      if(j.ok){bookMsg("");lastBook.id=j.id;cfg.busy.push({d:sel.day,s:sel.time,m:(svcById(sel.svc)||{}).dur||30});showDone("saved");return}
+      var e=j.error;
+      if(e==="taken"){bookMsg("השעה הזו נתפסה הרגע. בחרו שעה אחרת.");cfg.busy.push({d:sel.day,s:sel.time,m:30});sel.time=null;setTimeout(function(){renderSlots();show("sTime",-1)},1500)}
+      else if(e==="limit")bookMsg("כבר יש למספר הזה תורים שמחכים. לשינוי כתבו ל"+cfg.biz.name+".");
+      else if(e==="phone")bookMsg("מספר הטלפון לא תקין.");
+      else{bookMsg("");showDone(false)}
+      formChanged();
+    }).catch(function(){botBusy=false;bookMsg("");showDone(false)});
+}
+function showDone(auto){
+  var text=buildMessage();
+  $("ticket2").innerHTML=ticketHtml(true);
+  $("waBtn").href="https://wa.me/"+waIntl(cfg.wa)+"?text="+encodeURIComponent(text);
+  $("waPlain").textContent=cfg.wa;$("copyText").value=text;$("copyFallback").hidden=true;$("copyBtn").textContent="העתק הודעה";
+  $("gcalBtn").href=calLink();$("icsBtn").hidden=false;
+  var sv=svcById(sel.svc);mineAdd({day:sel.day,time:sel.time,svc:sv.name,total:total(),sent:Date.now(),ok:!!auto,id:auto&&lastBook?lastBook.id:null,ctok:auto&&lastBook?lastBook.ctok:null});lastBook=null;
+  $("doneTitle").textContent=auto?"התור נקבע ✓":"הבקשה מוכנה";
+  $("doneNote").textContent=auto==="saved"?"התור נשמר ביומן ✓ תקבל אישור בוואטסאפ בדקות הקרובות, ותזכורת לפני התור.":auto?"שלחנו לך אישור בוואטסאפ, ותקבל תזכורת לפני התור. נתראה!":"התור עוד לא נקבע. שלחו את הבקשה מהוואטסאפ של המספר שהזנתם. "+cfg.biz.name+" יבדוק ויאשר לכם בחזרה בוואטסאפ, ורק אז התור סגור.";
+  $("waBtn").hidden=auto;$("copyBtn").hidden=auto;$("waPlainRow").hidden=auto;$("editBtn").hidden=auto;if(auto)$("copyFallback").hidden=true;
+  if(auto){otpSent=false;$("fcode").value="";setBookUi()}
+  var c=$("sDone").querySelector(".check"),n=c.cloneNode(true);c.parentNode.replaceChild(n,c);
+  show("sDone",1);
+}
+$("editBtn").addEventListener("click",function(){show("sDet",-1)});
+$("copyBtn").addEventListener("click",function(){
+  var text=$("copyText").value,btn=this;
+  function fallback(){$("copyFallback").hidden=false;var t=$("copyText");t.focus();t.select()}
+  try{
+    if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(text).then(function(){btn.textContent="✓ ההודעה הועתקה"},fallback);
+    else fallback();
+  }catch(_){fallback()}
+});
+
+/* ---- decor + entrance ---- */
+(function deco(){
+  var shapes=['<path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>',
+    '<path d="M12 2v16"/><circle cx="12" cy="20" r="2"/>',
+    '<circle cx="12" cy="12" r="9"/><path d="M12 3a4.5 4.5 0 0 1 0 9a4.5 4.5 0 0 0 0 9"/>'];
+  var pos=[[8,12,-20],[84,18,30],[12,62,15],[88,70,-35],[50,90,10],[78,42,50]],h="";
+  pos.forEach(function(p,i){h+='<svg viewBox="0 0 24 24" style="left:'+p[0]+'%;top:'+p[1]+'%;transform:rotate('+p[2]+'deg)">'+shapes[i%3]+'</svg>'});
+  $("deco").innerHTML=h;
+})();
+if(G){G.from(".emblem",{scale:.85,opacity:0,duration:.8,ease:"power3.out",clearProps:"transform,opacity"});
+  G.from(".home .h-in",{y:22,opacity:0,duration:.6,stagger:.08,delay:.2,ease:"power2.out",clearProps:"transform,opacity"});}
+
+/* ---- load published config ---- */
+function applyConfig(c){
+  if(c&&Array.isArray(c.services))setTimeout(renderReviews,0);
+  if(!c||!Array.isArray(c.services)||!Array.isArray(c.hours))return;
+  cfg=c;cfg.busy=cfg.busy||[];cfg.vacations=cfg.vacations||[];cfg.addons=cfg.addons||[];
+  if(sel.svc&&!svcById(sel.svc))sel.svc=null;
+  sel.addons=sel.addons.filter(addonById);
+  renderBiz();if(current==="sDay")renderDays();if(current==="sTime")renderSlots();if(current==="sSvc")renderSvcs();
+}
+renderBiz();
+/* fresh settings straight from GitHub (the bot's address changes when it restarts); falls back to the published copy */
+function loadCfg(){
+  return fetch("https://api.github.com/repos/chlomo111-bit/maavar-lanekuda/contents/config.json?ref=main&t="+Date.now(),{cache:"no-store",headers:{"Accept":"application/vnd.github.raw+json"}})
+    .then(function(r){if(!r.ok)throw 0;return r.json()})
+    .catch(function(){return fetch("config.json?v="+Date.now(),{cache:"no-store"}).then(function(r){return r.ok?r.json():null})});
+}
+loadCfg().then(function(c){applyConfig(c);checkBot()}).catch(function(){});
+/* re-check the bot when the customer reaches the details step, in case it restarted meanwhile */
+var _show=show;show=function(id,dir){_show(id,dir);if(id==="sDet"&&!otpSent)loadCfg().then(function(c){if(c&&c.botUrl){cfg.botUrl=c.botUrl}checkBot()}).catch(function(){})};
+
+/* =================== OWNER MODE =================== */
+var user=null,db=null,uid=null,appts=[],draft=null,dirty=false,curTab="cal",armed=null;
+var SS_KEY="maavarAdminTab";
+function ssGet(){try{return sessionStorage.getItem(SS_KEY)}catch(_){return null}}
+function ssSet(v){try{v?sessionStorage.setItem(SS_KEY,v):sessionStorage.removeItem(SS_KEY)}catch(_){}}
+
+/* ===== GitHub-backed storage =====
+   config.json      public: settings + anonymous busy time ranges
+   data.enc.json    private: appointments + client notes, AES-GCM encrypted with the admin password */
+var GH={owner:"chlomo111-bit",repo:"maavar-lanekuda",branch:"main"};
+var TOK_KEY="maavarGhTok",ghToken=null,ghPass=null,store={},shas={},pubCfg=null,listeners=[];
+function b64e(buf){var b=new Uint8Array(buf),s="";for(var i=0;i<b.length;i++)s+=String.fromCharCode(b[i]);return btoa(s)}
+function b64d(str){var s=atob(str),b=new Uint8Array(s.length);for(var i=0;i<s.length;i++)b[i]=s.charCodeAt(i);return b}
+function utf8b64(str){return b64e(new TextEncoder().encode(str))}
+function b64utf8(str){return new TextDecoder().decode(b64d(str.replace(/\s/g,"")))}
+async function deriveKey(pass,salt){
+  var base=await crypto.subtle.importKey("raw",new TextEncoder().encode(pass),"PBKDF2",false,["deriveKey"]);
+  return crypto.subtle.deriveKey({name:"PBKDF2",salt:salt,iterations:150000,hash:"SHA-256"},base,{name:"AES-GCM",length:256},false,["encrypt","decrypt"]);
+}
+async function encryptStr(pass,text){
+  var salt=crypto.getRandomValues(new Uint8Array(16)),iv=crypto.getRandomValues(new Uint8Array(12)),k=await deriveKey(pass,salt);
+  var ct=await crypto.subtle.encrypt({name:"AES-GCM",iv:iv},k,new TextEncoder().encode(text));
+  return {v:1,salt:b64e(salt),iv:b64e(iv),ct:b64e(ct)};
+}
+async function decryptStr(pass,o){
+  var k=await deriveKey(pass,b64d(o.salt));
+  var pt=await crypto.subtle.decrypt({name:"AES-GCM",iv:b64d(o.iv)},k,b64d(o.ct));
+  return new TextDecoder().decode(pt);
+}
+async function ghReq(method,path,body){
+  var r=await fetch("https://api.github.com/repos/"+GH.owner+"/"+GH.repo+"/contents/"+path+(method==="GET"?"?ref="+GH.branch+"&t="+Date.now():""),{
+    method:method,cache:"no-store",headers:{"Authorization":"Bearer "+ghToken,"Accept":"application/vnd.github+json","X-GitHub-Api-Version":"2022-11-28"},
+    body:body?JSON.stringify(body):undefined});
+  if(r.status===404&&method==="GET")return null;
+  if(!r.ok){var e=new Error("gh "+r.status);e.status=r.status;throw e}
+  return r.json();
+}
+async function ghGet(path){var j=await ghReq("GET",path);if(!j)return null;shas[path]=j.sha;return b64utf8(j.content)}
+async function ghPut(path,text,msg){
+  var body={message:msg,content:utf8b64(text),branch:GH.branch};if(shas[path])body.sha=shas[path];
+  var j=await ghReq("PUT",path,body);shas[path]=j.content.sha;
+}
+/* data.enc.json v2: {v:2, keys:{user: password-wrapped data key}, iv, ct}. v1 (one password) is upgraded at first login. */
+var dek=null,dekRaw=null,keysMap={},ghUser=null,needsSave=false;
+async function encryptBytes(pass,bytes){
+  var salt=crypto.getRandomValues(new Uint8Array(16)),iv=crypto.getRandomValues(new Uint8Array(12)),k=await deriveKey(pass,salt);
+  var ct=await crypto.subtle.encrypt({name:"AES-GCM",iv:iv},k,bytes);return {salt:b64e(salt),iv:b64e(iv),ct:b64e(ct)};
+}
+async function decryptBytes(pass,o){var k=await deriveKey(pass,b64d(o.salt));return new Uint8Array(await crypto.subtle.decrypt({name:"AES-GCM",iv:b64d(o.iv)},k,b64d(o.ct)))}
+async function setDek(raw){dekRaw=raw;dek=await crypto.subtle.importKey("raw",raw,"AES-GCM",false,["encrypt","decrypt"])}
+async function newDek(){await setDek(crypto.getRandomValues(new Uint8Array(32)));keysMap={};keysMap[ghUser]=await encryptBytes(ghPass,dekRaw);needsSave=true}
+async function loadStore(){
+  var t=await ghGet("data.enc.json");
+  if(!t){store={};if(!dek)await newDek();return}
+  var o=JSON.parse(t);
+  if(o.v===2){
+    keysMap=o.keys||{};
+    if(!dek){var k=keysMap[ghUser];if(!k){var e=new Error("nouser");e.code="nouser";throw e}
+      try{await setDek(await decryptBytes(ghPass,k))}catch(_){var e2=new Error("pass");e2.code="pass";throw e2}}
+    var pt=await crypto.subtle.decrypt({name:"AES-GCM",iv:b64d(o.iv)},dek,b64d(o.ct));
+    store=JSON.parse(new TextDecoder().decode(pt)).docs||{};
+  }else{
+    try{store=JSON.parse(await decryptStr(ghPass,o)).docs||{}}catch(_){var e3=new Error("pass");e3.code="pass";throw e3}
+    if(!dek)await newDek();
+  }
+}
+async function dataFileText(){
+  var iv=crypto.getRandomValues(new Uint8Array(12));
+  var ct=await crypto.subtle.encrypt({name:"AES-GCM",iv:iv},dek,new TextEncoder().encode(JSON.stringify({docs:store})));
+  return JSON.stringify({v:2,keys:keysMap,iv:b64e(iv),ct:b64e(ct)});
+}
+async function loadPubCfg(){var t=await ghGet("config.json");pubCfg=t?JSON.parse(t):clone(cfg);applyConfig(clone(pubCfg))}
+function busyFromStore(){var today=ymd(new Date());return Object.keys(store).map(function(k){return store[k]}).filter(function(a){return a.date&&a.time&&a.date>=today&&a.status!=="cancelled"}).map(function(a){return {d:a.date,s:a.time,m:+a.dur||0}})}
+/* read the latest config, change only our part, write; the bot writes botUrl/botAt itself */
+async function saveConfig(patch,msg){
+  for(var i=0;i<3;i++){
+    var t=await ghGet("config.json"),latest=t?JSON.parse(t):{},obj=patch(latest);
+    try{await ghPut("config.json",JSON.stringify(obj),msg);pubCfg=obj;return obj}
+    catch(e){if((e.status===409||e.status===422)&&i<2)continue;throw e}
+  }
+}
+/* one change at a time; on a conflict re-read the other device's data and apply the change again */
+var saveChain=Promise.resolve();
+function mutate(fn,msg){
+  saveChain=saveChain.then(async function(){
+    fn(store);
+    for(var attempt=0;attempt<2;attempt++){
+      try{await ghPut("data.enc.json",await dataFileText(),msg);needsSave=false;break}
+      catch(e){if((e.status===409||e.status===422)&&attempt===0){await loadStore();fn(store)}else throw e}
+    }
+    emit();
+    await saveConfig(function(l){l.busy=busyFromStore();return l},"busy times");
+  });
+  return saveChain;
+}
+function emit(){var snap={docs:Object.keys(store).map(function(id){return {id:id,data:function(){return store[id]}}})};listeners.forEach(function(f){f(snap)})}
+var ghDb={collection:function(){return {
+  doc:function(id){return {set:function(d){return mutate(function(st){st[id]=d},"update "+id)},delete:function(){return mutate(function(st){delete st[id]},"delete "+id)}}},
+  onSnapshot:function(f){listeners.push(f);emit();return function(){}}
+}}};
+var ghArtifact={publish:async function(files){var o=JSON.parse(files["config.json"].content);await saveConfig(function(l){o.botUrl=l.botUrl;o.botAt=l.botAt;o.busy=busyFromStore();o.reviews=l.reviews||[];return o},"settings")}};
+var inboxBusy=false;
+async function importInbox(){
+  if(inboxBusy||!ghToken)return;var ib=null;Object.keys(store).forEach(function(k){if(store[k]&&store[k].kind==="inbox")ib=store[k]});
+  if(!ib||!ib.url)return;inboxBusy=true;
+  try{
+    var r=await fetch(ib.url,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify({action:"list",secret:ib.secret})});
+    var j=await r.json();if(!j.ok||!j.items||!j.items.length)return;
+    var ids=j.items.map(function(x){return x.id});
+    await mutate(function(st){j.items.forEach(function(x){if(st[x.id])return;
+      var clash=Object.keys(st).some(function(k){var a=st[k];return a.status!=="cancelled"&&a.date===x.day&&a.time&&toMin(x.time)<toMin(a.time)+(+a.dur||0)&&toMin(x.time)+x.dur>toMin(a.time)});
+      st[x.id]={kind:"appt",date:x.day,time:x.time,dur:x.dur,name:x.name,phone:x.phone,note:x.svcName+(clash?" ⚠️ חפיפה עם תור אחר":""),price:x.price,source:"web",confirmSent:false,created:x.created,reminded:false}})},"bookings from inbox");
+    await fetch(ib.url,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify({action:"ack",secret:ib.secret,ids:ids})});
+    setStatus("✓ "+ids.length+" תורים חדשים נכנסו ליומן");
+  }catch(_){}finally{inboxBusy=false}
+}
+setInterval(function(){if(ghToken&&!$("admin").hidden&&!editingNote)loadStore().then(function(){emit();return importInbox()}).catch(function(){})},60000);
+
+/* ---- login ---- */
+function tokKey(u){return TOK_KEY+":"+String(u||"").trim().toLowerCase()}
+function lastUser(){try{return localStorage.getItem(TOK_KEY+":last")||""}catch(_){return ""}}
+function storedTok(u){try{return JSON.parse(localStorage.getItem(tokKey(u))||localStorage.getItem(TOK_KEY)||"null")}catch(_){return null}}
+function showLogin(){
+  if(!$("lgUser").value)$("lgUser").value=lastUser();
+  var has=!!storedTok($("lgUser").value);
+  $("tokWrap").hidden=has;$("pass2Wrap").hidden=has;$("lgReset").hidden=!has;$("lgMsg").textContent="";$("lgPass").value="";$("lgPass2").value="";
+  $("login").hidden=false;document.body.style.overflow="hidden";document.body.classList.add("adm");
+  setTimeout(function(){try{(!$("lgUser").value?$("lgUser"):has?$("lgPass"):$("lgTok")).focus()}catch(_){}},50);
+}
+$("lgUser").addEventListener("change",function(){var has=!!storedTok(this.value);$("tokWrap").hidden=has;$("pass2Wrap").hidden=has;$("lgReset").hidden=!has});
+function hideLogin(){$("login").hidden=true;document.body.style.overflow="";document.body.classList.remove("adm")}
+$("loginClose").addEventListener("click",hideLogin);
+$("lgReset").addEventListener("click",function(){try{localStorage.removeItem(TOK_KEY);localStorage.removeItem(tokKey($("lgUser").value))}catch(_){};showLogin()});
+$("loginForm").addEventListener("submit",async function(e){
+  e.preventDefault();var m=$("lgMsg"),btn=$("lgBtn"),pass=$("lgPass").value,user=$("lgUser").value.trim().toLowerCase(),st=storedTok(user);
+  function fail(t){m.textContent=t;m.className="msg bad";btn.disabled=false}
+  if(!window.crypto||!crypto.subtle)return fail("הדפדפן הזה לא תומך בהצפנה. נסה Chrome או Safari מעודכן.");
+  if(!/^[a-z0-9._-]{2,40}$/.test(user))return fail("שם משתמש: אותיות באנגלית, ספרות, נקודה או מקף.");
+  if(pass.length<6)return fail("סיסמה של 6 תווים לפחות.");
+  btn.disabled=true;m.textContent="מתחבר…";m.className="msg";
+  try{
+    if(st){try{ghToken=await decryptStr(pass,st)}catch(_){
+      var own=null;try{own=localStorage.getItem(tokKey(user))}catch(_){}
+      if(!own){try{localStorage.removeItem(TOK_KEY)}catch(_){};$("tokWrap").hidden=false;$("pass2Wrap").hidden=false;$("lgReset").hidden=true;return fail("משתמש חדש במכשיר הזה: הדבק את מפתח GitHub והקלד את הסיסמה פעמיים.")}
+      return fail("סיסמה שגויה.")}}
+    else{
+      var tk=$("lgTok").value.trim();if(!tk)return fail("צריך להדביק מפתח GitHub.");
+      if(pass!==$("lgPass2").value)return fail("שתי הסיסמאות לא זהות.");
+      ghToken=tk;
+    }
+    ghPass=pass;ghUser=user;dek=null;dekRaw=null;keysMap={};
+    try{await loadPubCfg()}catch(err){ghToken=null;return fail(err.status===401||err.status===403?"מפתח GitHub לא תקין או בלי הרשאה למאגר.":"אין חיבור ל-GitHub. נסה שוב.")}
+    try{await loadStore()}catch(err){ghToken=null;return fail(err.code==="nouser"?"שם המשתמש לא קיים. משתמש מנהל יכול להוסיף אותו בלשונית כללי.":"שם משתמש או סיסמה שגויים.")}
+    try{localStorage.setItem(tokKey(user),JSON.stringify(await encryptStr(pass,ghToken)));localStorage.setItem(TOK_KEY+":last",user)}catch(_){}
+    if(needsSave)mutate(function(){},"secure data for users").catch(function(){});
+    btn.disabled=false;hideLogin();db=ghDb;uid="admin";openAdmin("cal");setTimeout(importInbox,500);
+  }catch(err){fail("משהו השתבש. נסה שוב.")}
+});
+$("admLogout").addEventListener("click",function(){ghToken=null;ghPass=null;ghUser=null;dek=null;dekRaw=null;keysMap={};botKey=null;botStat=null;store={};appts=[];cmeta={};db=null;listeners=[];closeAdmin()});
+if(location.hash==="#admin")setTimeout(showLogin,300);
+async function connectDb(){
+  if(!db)return;
+  if(listeners.length)return;
+  db.collection("data").onSnapshot(function(snap){
+    var all=snap.docs.map(function(d){var x=d.data()||{};x._id=d.id;return x});
+    allAppts=all.filter(function(x){return x.date&&x.time});
+    appts=allAppts.filter(function(x){return x.status!=="cancelled"});
+    cmeta={};all.forEach(function(x){if(x.kind==="client"&&x.phone)cmeta[x.phone]=x});
+    if((curTab==="cal"||curTab==="cli"||curTab==="biz")&&!$("admin").hidden&&!editingNote)renderTab();
+  },function(){});
+}
+function openAdmin(tab){
+  draft=clone(cfg);draft.addons=draft.addons||[];dirty=false;curTab=tab||"cal";if(!openDay)openDay=ymd(new Date());
+  $("admin").hidden=false;$("pubbar").hidden=false;document.body.style.overflow="hidden";document.body.classList.add("adm");
+  ssSet(curTab);setStatus();renderTabs();renderTab();connectDb();
+}
+function closeAdmin(){$("admin").hidden=true;$("pubbar").hidden=true;document.body.style.overflow="";document.body.classList.remove("adm");ssSet(null)}
+$("ownerLink").addEventListener("click",function(){if(ghToken)openAdmin("cal");else showLogin()});
+$("admClose").addEventListener("click",closeAdmin);
+$("tabs").addEventListener("click",function(e){var b=e.target.closest("button[data-t]");if(!b)return;curTab=b.dataset.t;ssSet(curTab);armed=null;renderTabs();renderTab();
+  clearInterval(chatPoll);if(curTab==="chat"){chatK=null;chatPoll=setInterval(function(){if(curTab==="chat"&&!$("admin").hidden&&!document.hidden)chatRefresh();else if(curTab!=="chat")clearInterval(chatPoll)},4000)}
+  clearInterval(botPoll);if(curTab==="wa"){refreshBot();botPoll=setInterval(function(){if(curTab==="wa"&&!$("admin").hidden)refreshBot();else clearInterval(botPoll)},5000)}});
+function renderTabs(){[].forEach.call($("tabs").children,function(b){b.setAttribute("aria-selected",String(b.dataset.t===curTab))})}
+function markDirty(){dirty=true;setStatus()}
+function setStatus(txt,cls){var s=$("pubStatus");
+  if(txt){s.textContent=txt;s.className="st "+(cls||"");return}
+  s.textContent=dirty?"יש שינויים שעוד לא פורסמו ללקוחות":"אין שינויים שמחכים לפרסום";s.className="st"+(dirty?" dirty":"")}
+
+function renderTab(){
+  var b=$("tabBody"),h="";
+  if(curTab==="cal"){
+    var today=ymd(new Date());
+    h+=monthHtml();
+    h+='<div class="card"><h3>בקשה חדשה מוואטסאפ</h3><div class="field"><label for="pasteBox">הדבק כאן את הודעת הלקוח</label>'+
+      '<textarea id="pasteBox" rows="4" style="background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:10px;width:100%"></textarea></div>'+
+      '<button class="btn" style="width:100%" id="pasteFill" type="button">מלא את הטופס מההודעה</button><div class="msg" id="pasteMsg"></div></div>';
+    h+='<div class="card"><h3>היסטוריה לפי טלפון</h3><div class="field"><label for="histPhone">טלפון הלקוח</label><input id="histPhone" type="tel" dir="ltr" placeholder="050-1234567"></div><div id="histOut"></div></div>';
+    h+='<div class="card"><h3>הוספת תור או חסימת זמן</h3>'+
+      '<div class="grid2"><div class="field"><label for="aKind">סוג</label><select id="aKind"><option value="appt">תור ללקוח</option><option value="block">חסימת זמן</option></select></div>'+
+      '<div class="field"><label for="aDur">משך (דקות)</label><input id="aDur" type="number" min="5" step="5" value="30"></div>'+
+      '<div class="field"><label for="aDate">תאריך</label><input id="aDate" type="date" value="'+today+'"></div>'+
+      '<div class="field"><label for="aTime">שעה</label><input id="aTime" type="time" value="12:00"></div>'+
+      '<div class="field"><label for="aName">שם</label><input id="aName" maxlength="40"></div>'+
+      '<div class="field"><label for="aPhone">טלפון</label><input id="aPhone" type="tel" dir="ltr" maxlength="17"></div></div>'+
+      '<div class="field"><label for="aSvc">שירות</label><select id="aSvc">'+(draft.services||[]).map(function(sv){return '<option value="'+esc(sv.id)+'">'+esc(sv.name)+' · '+esc(sv.price)+' ₪</option>'}).join("")+'</select></div>'+
+      '<div class="field"><label for="aNote">הערה</label><input id="aNote" maxlength="120"></div>'+
+      '<button class="btn primary" style="width:100%" id="aAdd" type="button">הוסף ליומן</button><div class="msg" id="aMsg"></div></div>';
+    h+='<div class="card"><h3>תורים קרובים</h3>';
+    if(!db)h+='<p class="who">היומן הפרטי נטען… אם הוא לא מופיע, היומן לא זמין בתצוגה הזו.</p>';
+    var up=appts.filter(function(a){return a.date>=today}).sort(function(a,c){return (a.date+a.time)<(c.date+c.time)?-1:1});
+    if(db&&!up.length)h+='<p class="who">אין תורים קרובים. תור שתוסיף כאן יחסום את השעה אצל הלקוחות אחרי פרסום.</p>';
+    up.forEach(function(a){
+      h+='<div class="row"><div class="grow"><div class="when">'+esc(dateShort(a.date))+' · '+esc(a.time)+'–'+fromMin(toMin(a.time)+(+a.dur||0))+' <span class="badge'+(a.kind==="block"?" block":"")+'">'+(a.kind==="block"?"חסימה":"תור")+'</span></div>'+
+        '<div class="who">'+esc(a.name||"")+(a.phone?' · <span dir="ltr">'+esc(a.phone)+'</span>':'')+(a.note?' · '+esc(a.note):'')+'</div></div>'+
+        '<button class="btn danger" type="button" data-del="'+esc(a._id)+'">'+(armed===a._id?"בטוח?":(a.kind==="block"?"מחיקה":"ביטול"))+'</button></div>';
+    });
+    h+='<p class="who">שמות וטלפונים נשמרים רק בשטח הפרטי שלך. ללקוחות מתפרסמות רק השעות התפוסות.</p></div>';
+  }
+  else if(curTab==="cli"){h+=cliHtml()}
+  else if(curTab==="chat"){h+='<div id="chatBox"></div>'}
+  else if(curTab==="wa"){h+=waHtml()}
+  else if(curTab==="biz"){h+=bizHtml()}
+  else if(curTab==="hours"){
+    h+='<div class="card"><h3>שעות פתיחה</h3>';
+    draft.hours.forEach(function(x,i){
+      h+='<div class="row"><b style="width:56px">'+WD[i]+'</b>'+
+        '<label><input type="checkbox" data-h="'+i+'" data-k="closed" '+(x.closed?"checked":"")+'> סגור</label>'+
+        '<label class="sr" for="ho'+i+'">פתיחה '+WD[i]+'</label><input id="ho'+i+'" type="time" data-h="'+i+'" data-k="open" value="'+esc(x.open)+'" '+(x.closed?"disabled":"")+'>'+
+        '<span>עד</span><label class="sr" for="hc'+i+'">סגירה '+WD[i]+'</label><input id="hc'+i+'" type="time" data-h="'+i+'" data-k="close" value="'+esc(x.close)+'" '+(x.closed?"disabled":"")+'></div>';
+    });
+    h+='</div>';
+  }
+  else if(curTab==="vac"){
+    h+='<div class="card"><h3>הוספת חופשה</h3><div class="grid2">'+
+      '<div class="field"><label for="vFrom">מתאריך</label><input id="vFrom" type="date"></div>'+
+      '<div class="field"><label for="vTo">עד תאריך</label><input id="vTo" type="date"></div></div>'+
+      '<div class="field"><label for="vNote">הערה</label><input id="vNote" maxlength="80" placeholder="למשל: חופשה משפחתית"></div>'+
+      '<button class="btn primary" style="width:100%" id="vAdd" type="button">הוסף</button><div class="msg" id="vMsg"></div></div>';
+    h+='<div class="card"><h3>ימים סגורים</h3>';
+    if(!draft.vacations.length)h+='<p class="who">אין חופשות מתוכננות.</p>';
+    draft.vacations.forEach(function(v,i){h+='<div class="row"><div class="grow"><b>'+esc(dateShort(v.from))+(v.to&&v.to!==v.from?' – '+esc(dateShort(v.to)):'')+'</b> '+esc(v.note||"")+'</div><button class="btn danger" type="button" data-vdel="'+i+'">הסר</button></div>'});
+    h+='</div>';
+  }
+  else if(curTab==="svc"){
+    h+='<div class="card"><h3>שירותים ומחירים</h3>';
+    draft.services.forEach(function(s,i){
+      h+='<div class="row"><label class="sr" for="sn'+i+'">שם שירות</label><input class="grow" id="sn'+i+'" data-s="'+i+'" data-k="name" value="'+esc(s.name)+'">'+
+        '<label for="sd'+i+'">דק׳</label><input id="sd'+i+'" type="number" min="5" step="5" data-s="'+i+'" data-k="dur" value="'+esc(s.dur)+'">'+
+        '<label for="sp'+i+'">₪</label><input id="sp'+i+'" type="number" min="0" data-s="'+i+'" data-k="price" value="'+esc(s.price)+'">'+
+        '<button class="btn danger" type="button" data-sdel="'+i+'">הסר</button></div>';
+    });
+    h+='<button class="btn" id="sAdd" type="button" style="margin-top:10px">+ הוסף שירות</button></div>';
+    h+='<div class="card"><h3>תוספות (רק יחד עם שירות)</h3>';
+    draft.addons.forEach(function(a,i){
+      h+='<div class="row"><label class="sr" for="xn'+i+'">שם תוספת</label><input class="grow" id="xn'+i+'" data-x="'+i+'" data-k="name" value="'+esc(a.name)+'">'+
+        '<label for="xp'+i+'">₪</label><input id="xp'+i+'" type="number" min="0" data-x="'+i+'" data-k="price" value="'+esc(a.price)+'">'+
+        '<button class="btn danger" type="button" data-xdel="'+i+'">הסר</button></div>';
+    });
+    h+='<button class="btn" id="xAdd" type="button" style="margin-top:10px">+ הוסף תוספת</button></div>';
+  }
+  else if(curTab==="gen"){
+    var g=draft;
+    h+='<div class="card"><h3>פרטי העסק</h3>'+
+      '<div class="field"><label for="gName">שם</label><input id="gName" data-g="biz.name" value="'+esc(g.biz.name)+'"></div>'+
+      '<div class="field"><label for="gTag">מסר מרכזי</label><input id="gTag" data-g="biz.tagline" value="'+esc(g.biz.tagline)+'"></div>'+
+      '<div class="field"><label for="gArea">כתובת / אזור</label><input id="gArea" data-g="biz.area" value="'+esc(g.biz.area)+'"></div>'+
+      '<div class="field"><label for="gWa">מספר וואטסאפ לקבלת בקשות</label><input id="gWa" type="tel" dir="ltr" data-g="wa" value="'+esc(g.wa)+'"><div class="msg" id="gWaMsg"></div></div></div>'+
+      usersHtml()+reviewsAdminHtml()+
+      '<div class="card"><h3>חוקי הזמנה</h3><div class="grid2">'+
+      '<div class="field"><label for="gMode">פתיחת היומן</label><select id="gMode" data-g="openMode"><option value="biweekly"'+(g.openMode==="biweekly"?" selected":"")+'>כל שבועיים ביום שישי</option><option value="rolling"'+(g.openMode!=="biweekly"?" selected":"")+'>רציף, X ימים קדימה</option></select></div>'+
+      '<div class="field"><label for="gAnchor">יום שישי של פתיחה (תאריך אחד)</label><input id="gAnchor" type="date" data-g="openAnchor" value="'+esc(g.openAnchor||"")+'"></div>'+
+      '<div class="field"><label for="gOpenT">שעת פתיחה</label><input id="gOpenT" type="time" data-g="openTime" value="'+esc(g.openTime||"08:00")+'"></div>'+
+      '<div class="field"><label for="gDays">כמה ימים קדימה (במצב רציף)</label><input id="gDays" type="number" min="1" max="366" data-g="daysAhead" data-num="1" value="'+esc(g.daysAhead)+'"></div>'+
+      '<div class="field"><label for="gSlot">אורך משבצת</label><select id="gSlot" data-g="slot" data-num="1">'+[15,20,30,45,60].map(function(v){return '<option value="'+v+'"'+(+g.slot===v?" selected":"")+'>'+v+' דקות</option>'}).join("")+'</select></div>'+
+      '<div class="field"><label for="gFirst">משבצת ראשונה ביום</label><select id="gFirst" data-g="firstSlot" data-num="1">'+[0,15,20,30,45,60,75,90].map(function(v){return '<option value="'+v+'"'+((+g.firstSlot||0)===v?" selected":"")+'>'+(v?v+' דקות':'כמו שאר המשבצות')+'</option>'}).join("")+'</select></div>'+
+      '<div class="field"><label for="gLead">הזמנה מינימלית מראש (דקות)</label><input id="gLead" type="number" min="0" step="15" data-g="lead" data-num="1" value="'+esc(g.lead)+'"></div></div></div>';
+  }
+  b.innerHTML=h;
+  if(curTab==="chat")chatInit();
+  if(curTab==="gen")waCheck();
+  if(curTab==="cal"){$("pasteBox").value=pasteVal;$("histPhone").value=histVal;renderHist()}
+}
+var BOT_DEF={"otp":"הקוד שלך לקביעת תור ב{biz}: *{code}*\nהקוד בתוקף ל-10 דקות.","confirm":"היי {name} 🌿 התור שלך ב{biz} נקבע\n\n🗓 {date} בשעה {time}\n🍃 {service}\n📍 {area}\n\n📅 הוספה ליומן: {cal}\n\nℹ️ אם לא מסתדר, נשמח לעדכון יום מראש: השיבו *ביטול*","cancelOk":"התור שלך ב{date} בשעה {time} בוטל ✅\nתודה שעדכנת 🙏 לקביעת תור חדש: {site}","adminCancel":"❌ תור בוטל{by}\n{name} · {phone}\n{service}\n{date} בשעה {time}","reminder":"היי {name} 🌿 תזכורת: היום בשעה {time} ב{biz}\n📍 {area}","adminNew":"📅 תור חדש נקבע\n{name} · {phone}\n{service}\n{date} בשעה {time}","cancel":"היי {name}, מצטערים 🙏 התור שלך ב{date} בשעה {time} בוטל.\nלקביעת תור חדש: {site}","autoReply":"היי! 🌿 זה המספר האוטומטי של {biz} לאישורים ותזכורות.\n🗓 לקביעת תור: {site}\n💬 לשאלות אפשר לכתוב לענבל: {adminPhone}","reminderMin":60,"eveRemind":true,"eveRemindHour":19,"eveReminder":"היי {name} 👋 תזכורת: מחר נתראה ב{biz}\n\n🗓 {date} בשעה {time}\n📍 {area}\n\nלא מסתדר? השיבו *ביטול* ונפנה את התור 🙏","confirmManual":true,"notifyAdmin":true,"sendConfirm":true,"sendReminder":false,"maxFuturePerPhone":99,"cancelMinBefore":60,"winback":false,"winbackDays":30,"winbackMaxPerDay":10,"winbackDaysOfWeek":[0,2],"winbackTexts":["היי {first} 🌿 עבר כבר חודש מהטיפול האחרון. רוצה לקבוע טיפול המשך? {site}","{first}, מקווה שאת/ה מרגיש/ה טוב 🙂 אם מתאים לחזור לטיפול, היומן פתוח: {site}","היי {first}, כאן ענבל מ{biz} 🍃 מתי נוח לך לטיפול הבא? {site}"],"winbackFooter":"\n\n{biz} · {area} · {adminPhone}\nלהסרה מרשימת התפוצה השיבו *הסר*","reviewAsk":false,"reviewAskMin":60,"openRemind":false,"openRemindHour":20,"openRemindText":"היי {biz} 👋\nמחר ({openDay}) ב־{openTime} נפתח היומן: {from}–{to}.\nיש שינויים בשעות או ימי חופש? הוסיפו אותם עכשיו באתר.","reviewNext":"\n\n🗓 לקביעת הטיפול הבא: {site}","reviewFooter":"","reviewTexts":["היי {first}, תודה שבאת לטיפול 🌿 אם תרצה/י לשתף חוויה קצרה, זה עוזר מאוד:\n{review}"]};
+var botStat=null,botKey=null,botPoll=null,qrLib=null;
+
+/* ---- live WhatsApp chat of the bot number (the conversations stay on the bot's computer) ---- */
+var chatK=null,chatPoll=null,chatList=[],chatBusy=false,chatLastSig="";
+function chTime(t){var d=new Date(t),n=new Date();var hm=pad(d.getHours())+":"+pad(d.getMinutes());return ymd(d)===ymd(n)?hm:d.getDate()+"."+(d.getMonth()+1)+" "+hm}
+function chDay(t){var d=new Date(t),n=new Date(),y=new Date();y.setDate(n.getDate()-1);if(ymd(d)===ymd(n))return "היום";if(ymd(d)===ymd(y))return "אתמול";return "יום "+["ראשון","שני","שלישי","רביעי","חמישי","שישי","שבת"][d.getDay()]+" "+d.getDate()+"."+(d.getMonth()+1)}
+function chTick(st){return st>=4?"<b>✓✓</b>":st>=3?"✓✓":st>=1?"✓":""}
+function chLabel(c){return c.name||(c.phone||"לקוח")}
+function chatBadge(n){var b=$("tabChat");if(b)b.textContent="צ'אט"+(n?" ("+n+")":"")}
+function chatInit(){
+  var box=$("chatBox");if(!box)return;
+  if(!chatK){box.innerHTML='<div class="card"><h3>שיחות וואטסאפ</h3><p class="who">ההודעות שנכנסות למספר הבוט, בזמן אמת. לחצו על שיחה כדי לענות.</p><div class="chl" id="chList"><p class="who">טוען…</p></div></div>'}
+  else{var c=chatList.find(function(x){return x.k===chatK})||{k:chatK};
+    box.innerHTML='<div class="card"><div class="chhd"><button class="btn" type="button" data-a="chback" aria-label="חזרה לשיחות">→</button><div class="chn"><span>'+esc(chLabel(c))+'</span>'+(c.phone&&c.name?'<span class="who" dir="ltr">'+esc(c.phone)+'</span>':'')+'</div>'+(c.phone?'<a class="btn" href="tel:'+esc(c.phone)+'" aria-label="התקשרות">📞</a>':'')+'</div>'+
+    '<div class="chth" id="chThread" aria-live="polite"><p class="who">טוען…</p></div>'+
+    '<div class="chcomp"><label for="chIn" class="sr">הודעה</label><textarea id="chIn" rows="1" placeholder="כתבו הודעה…"></textarea><button class="btn primary" type="button" data-a="chsend">שליחה</button></div><div class="msg" id="chMsg"></div></div>'}
+  chatLastSig="";chatRefresh();
+}
+async function chatRefresh(){
+  if(chatBusy)return;chatBusy=true;
+  try{
+    if(!chatK){var j=await botAdmin("/admin/chats");chatList=j.list||[];var un=0;chatList.forEach(function(c){un+=c.unread||0});chatBadge(un);
+      var el=$("chList");if(!el)return;
+      if(!chatList.length){el.innerHTML='<p class="who">עדיין אין שיחות. כשמישהו יכתוב למספר הבוט, השיחה תופיע כאן.</p>';return}
+      el.innerHTML=chatList.map(function(c){var l=chLabel(c);return '<button class="chi" type="button" data-a="chopen" data-k="'+esc(c.k)+'"><span class="chav" aria-hidden="true">'+esc(l.charAt(0))+'</span><span class="chm"><span class="chn"><span>'+esc(l)+'</span>'+(c.unread?'<span class="chu">'+c.unread+'</span>':'')+'<small>'+chTime(c.t)+'</small></span><span class="chp">'+(c.me?"אתה: ":"")+esc(c.last)+'</span></span></button>'}).join("")}
+    else{var k=chatK,j2=await botAdmin("/admin/chat?read=1&k="+encodeURIComponent(k));if(k!==chatK)return;
+      var th=$("chThread");if(!th)return;var ms=j2.msgs||[],sig=ms.length+":"+(ms.length?ms[ms.length-1].id+ms[ms.length-1].st:"");if(sig===chatLastSig)return;chatLastSig=sig;
+      var nearEnd=th.scrollHeight-th.scrollTop-th.clientHeight<80||!th.dataset.done,h="",lastDay="";
+      ms.forEach(function(m){var d=chDay(m.t);if(d!==lastDay){h+='<div class="chday">'+d+'</div>';lastDay=d}
+        h+='<div class="bb '+(m.me?"out":"in")+'">'+esc(m.text)+'<i>'+(m.me?chTick(m.st)+" ":"")+chTime(m.t).split(" ").pop()+'</i></div>'});
+      th.innerHTML=h||'<p class="who">אין הודעות.</p>';th.dataset.done="1";if(nearEnd)th.scrollTop=th.scrollHeight}
+  }catch(e){var t=e.status===401?"הבוט פועל, אבל הסיסמה שלו שונה מסיסמת הניהול.":"הבוט לא מחובר כרגע. ודאו שהמחשב דלוק ושהבוט רץ.";var x=$(chatK?"chThread":"chList");if(x&&!x.dataset.done)x.innerHTML='<p class="msg bad">'+t+'</p>';else{var m=$("chMsg");if(m){m.textContent=t;m.className="msg bad"}}}
+  finally{chatBusy=false}
+}
+async function chatSend(){
+  var inp=$("chIn"),m=$("chMsg"),t=(inp&&inp.value||"").trim();if(!t||!chatK)return;
+  m.textContent="שולח…";m.className="msg";
+  try{await botAdmin("/admin/reply",{k:chatK,text:t});inp.value="";m.textContent="";chatLastSig="";await chatRefresh()}
+  catch(e){m.textContent=e.message==="offline"?"וואטסאפ של הבוט לא מחובר כרגע. ההודעה לא נשלחה.":"ההודעה לא נשלחה. נסו שוב.";m.className="msg bad"}
+}
+document.addEventListener("click",function(e){var b=e.target.closest("[data-a]");if(!b||curTab!=="chat")return;
+  if(b.dataset.a==="chopen"){chatK=b.dataset.k;chatInit()}
+  else if(b.dataset.a==="chback"){chatK=null;chatInit()}
+  else if(b.dataset.a==="chsend")chatSend()});
+document.addEventListener("keydown",function(e){if(e.target&&e.target.id==="chIn"&&e.key==="Enter"&&!e.shiftKey&&!e.isComposing&&window.matchMedia("(pointer:fine)").matches){e.preventDefault();chatSend()}});
+function botSettings(){draft.bot=Object.assign({},BOT_DEF,draft.bot||{});return draft.bot}
+async function getBotKey(){if(botKey)return botKey;var h=await crypto.subtle.digest("SHA-256",new TextEncoder().encode("ariel-bot:"+b64e(dekRaw)));botKey=Array.from(new Uint8Array(h)).map(function(b){return b.toString(16).padStart(2,"0")}).join("");return botKey}
+async function botAdmin(path,data){
+  var u=(pubCfg&&pubCfg.botUrl)||cfg.botUrl;if(!u)throw new Error("nourl");
+  var r=await fetch(u+path,{method:data?"POST":"GET",headers:Object.assign({"X-Admin":await getBotKey()},data?{"Content-Type":"application/json"}:{}),body:data?JSON.stringify(data):undefined});
+  var j=await r.json().catch(function(){return {}});if(!r.ok){var e=new Error(j.error||("http "+r.status));e.status=r.status;throw e}return j;
+}
+function refreshBot(){
+  return loadPubCfg().catch(function(){}).then(function(){return botAdmin("/admin/status")}).then(function(j){botStat=j}).catch(function(e){botStat={err:e.status===401?"auth":"off"}}).then(function(){if(curTab==="wa"&&!$("admin").hidden&&!editingNote)renderTab()});
+}
+function loadQrLib(){
+  if(window.QRCode||qrLib)return qrLib||Promise.resolve();
+  qrLib=new Promise(function(ok){var sc=document.createElement("script");sc.src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js";sc.onload=ok;sc.onerror=ok;document.head.appendChild(sc)});
+  return qrLib;
+}
+function drawQr(){var box=$("waQr");if(!box||!botStat||!botStat.qr)return;loadQrLib().then(function(){if(!window.QRCode||!$("waQr"))return;$("waQr").innerHTML="";new QRCode($("waQr"),{text:botStat.qr,width:240,height:240,colorDark:"#000",colorLight:"#fff"})})}
+function waHtml(){
+  var b=botSettings(),st=botStat,h='<div class="card"><h3>מצב הבוט</h3>';
+  if(!st)h+='<p class="who">בודק…</p>';
+  else if(st.err==="auth")h+='<p class="msg bad">הבוט פועל, אבל הסיסמה בקובץ ההגדרות שלו שונה מסיסמת הניהול.</p>';
+  else if(st.err)h+='<p class="msg bad">הבוט לא מחובר. ודא שהמחשב דלוק ושהבוט רץ (start-bot).</p>';
+  else{
+    var lab={open:"מחובר ✓",qr:"מחכה לסריקת QR",reconnecting:"מתחבר מחדש…",loggedout:"נותק, צריך לסרוק מחדש",starting:"מתחיל…"}[st.wa]||st.wa;
+    h+='<p><span class="badge'+(st.wa==="open"?'':' block')+'" style="font-size:14px;padding:3px 12px">'+esc(lab)+'</span>'+(st.me?' <span class="who" dir="ltr">+'+esc(st.me)+'</span>':'')+'</p>';
+    if(st.pair)h+='<p class="who">בטלפון של מספר הבוט: וואטסאפ ← הגדרות ← מכשירים מקושרים ← קישור מכשיר ← ״קישור עם מספר טלפון״, והקלד:</p><div dir="ltr" style="font-size:34px;font-weight:900;letter-spacing:.15em;text-align:center;color:var(--gold-lt);background:var(--bg);border:1px solid var(--gold);border-radius:12px;padding:12px;font-variant-numeric:tabular-nums">'+esc(st.pair)+'</div>';
+    if(st.qr)h+='<p class="who">בטלפון של מספר הבוט: וואטסאפ ← הגדרות ← מכשירים מקושרים ← קישור מכשיר, וסרוק:</p><div id="waQr" style="background:#fff;padding:12px;border-radius:12px;width:264px;margin:0 auto"></div>';
+    h+='<p class="who">יומן Google: '+({ok:'מסונכרן ✓',error:'שגיאה בסנכרון',off:'לא מחובר'}[st.gcal]||'—')+'</p>';
+    h+='<div class="clia"><button class="btn" type="button" id="waTest">שלח הודעת בדיקה למנהלים</button>'+(st.wa==="open"?'<button class="btn danger" type="button" id="waLogout">נתק את המספר</button>':'')+'</div><div class="msg" id="waMsg"></div>';
+  }
+  h+='</div>';
+  h+='<div class="card"><h3>מה הבוט שולח</h3>'+
+    '<label class="row"><input type="checkbox" data-b="sendConfirm" '+(b.sendConfirm?'checked':'')+'> אישור ללקוח מיד אחרי ההזמנה (עם קישור ליומן)</label>'+
+    '<label class="row"><input type="checkbox" data-b="sendReminder" '+(b.sendReminder?'checked':'')+'> תזכורת ללקוח לפני התור</label>'+
+    '<label class="row"><input type="checkbox" data-b="notifyAdmin" '+(b.notifyAdmin?'checked':'')+'> הודעה למנהלים על כל תור חדש</label>'+
+    '<div class="field" style="margin-top:10px"><label for="admPh">מספרי המנהלים שמקבלים הודעות (מופרדים בפסיק)</label><input id="admPh" dir="ltr" data-ap="1" value="'+esc((draft.adminPhones&&draft.adminPhones.length?draft.adminPhones:[draft.wa]).join(", "))+'"></div>'+
+    '<label class="row"><input type="checkbox" data-b="winback" '+(b.winback?'checked':'')+'> הודעת ״מזמן לא התראינו״ ללקוחות שלא הגיעו ולא קבעו תור (רביעי–חמישי, 11:00–18:00)</label>'+
+    '<label class="row"><input type="checkbox" data-b="reviewAsk" '+(b.reviewAsk?'checked':'')+'> בקשת ביקורת ללקוח אחרי התור</label>'+
+    '<div class="field"><label for="bRvA">כמה דקות אחרי סוף התור</label><input id="bRvA" type="number" min="5" step="5" data-b="reviewAskMin" data-num="1" value="'+esc(b.reviewAskMin)+'"></div>'+
+    '<div class="grid2"><div class="field"><label for="bWbD">אחרי כמה ימים בלי טיפול</label><input id="bWbD" type="number" min="7" max="90" data-b="winbackDays" data-num="1" value="'+esc(b.winbackDays)+'"></div>'+
+    '<div class="field"><label for="bWbM">מקסימום הודעות כאלה ביום</label><input id="bWbM" type="number" min="1" max="40" data-b="winbackMaxPerDay" data-num="1" value="'+esc(b.winbackMaxPerDay)+'"></div></div>'+
+    '<div class="grid2" style="margin-top:10px"><div class="field"><label for="bRem">תזכורת כמה דקות לפני</label><input id="bRem" type="number" min="15" step="15" data-b="reminderMin" data-num="1" value="'+esc(b.reminderMin)+'"></div>'+
+    '<div class="field"><label for="bCan">הלקוח יכול לבטל עד כמה דקות לפני</label><input id="bCan" type="number" min="0" step="15" data-b="cancelMinBefore" data-num="1" value="'+esc(b.cancelMinBefore)+'"></div>'+
+    '<div class="field"><label for="bMax">מקסימום תורים קרובים למספר</label><input id="bMax" type="number" min="1" max="10" data-b="maxFuturePerPhone" data-num="1" value="'+esc(b.maxFuturePerPhone)+'"></div></div></div>';
+  var T=[["confirm","אישור תור ללקוח"],["reminder","תזכורת ללקוח"],["adminNew","הודעה לענבל על תור חדש"],["otp","קוד אימות"],["cancel","ביטול תור מהניהול (ללקוח)"],["cancelOk","ביטול על ידי הלקוח (תשובה ללקוח)"],["adminCancel","הודעה למנהלים על ביטול"],["autoReply","תשובה אוטומטית למי שכותב לבוט"]];
+  h+='<div class="card"><h3>נוסח ההודעות</h3><p class="who">אפשר להשתמש ב: {name} {phone} {date} {time} {service} {area} {biz} {cal} {site} {adminPhone} {code} {by}</p>';
+  T.forEach(function(x){h+='<div class="field"><label for="bt_'+x[0]+'">'+x[1]+'</label><textarea id="bt_'+x[0]+'" data-b="'+x[0]+'" rows="4" style="background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:10px;width:100%">'+esc(b[x[0]])+'</textarea></div>'});
+  h+='<p class="who">השינויים נשמרים עם ״שמור ופרסם שינויים״ למטה.</p></div>';
+  if(st&&st.log&&st.log.length){h+='<div class="card"><h3>יומן פעילות</h3>';st.log.slice(0,30).forEach(function(e){var d=new Date(e.t);h+='<div class="row"><span class="who" style="width:92px;flex:none;font-variant-numeric:tabular-nums">'+pad(d.getDate())+"."+pad(d.getMonth()+1)+" "+pad(d.getHours())+":"+pad(d.getMinutes())+'</span><span class="grow">'+esc(e.text)+'</span></div>'});h+='</div>'}
+  setTimeout(drawQr,0);
+  return h;
+}
+function reviewsAdminHtml(){
+  var l=(pubCfg&&pubCfg.reviews)||cfg.reviews||[],h='<div class="card"><h3>ביקורות לקוחות ('+l.length+')</h3>';
+  if(!l.length)h+='<p class="who">עוד אין ביקורות.</p>';
+  l.forEach(function(r){h+='<div class="row"><div class="grow"><b>'+esc(r.name)+'</b> <span style="color:var(--gold)">'+starStr(+r.stars||0)+'</span>'+(r.hidden?' <span class="badge block">מוסתר</span>':'')+(r.text?'<div class="who">'+esc(r.text)+'</div>':'')+'</div>'+
+    '<button class="btn" type="button" data-rvhide="'+esc(r.id)+'">'+(r.hidden?'הצג':'הסתר')+'</button><button class="btn danger" type="button" data-rvdel="'+esc(r.id)+'">'+(armed==="rv:"+r.id?"בטוח?":"מחק")+'</button></div>'});
+  return h+'<div class="msg" id="rvAdmMsg"></div></div>';
+}
+function usersHtml(){
+  var h='<div class="card"><h3>משתמשי ניהול</h3><p class="who">כל משתמש נכנס עם שם וסיסמה משלו. בכל מכשיר חדש צריך גם את מפתח GitHub פעם אחת.</p>';
+  Object.keys(keysMap).sort().forEach(function(u){
+    h+='<div class="row"><b class="grow" dir="ltr" style="text-align:start">'+esc(u)+(u===ghUser?' <span class="badge">אתה</span>':'')+'</b>'+
+      (u===ghUser?'<button class="btn" type="button" data-upw="1">שינוי סיסמה</button>':'<button class="btn danger" type="button" data-udel="'+esc(u)+'">'+(armed==="u:"+u?"בטוח?":"הסר")+'</button>')+'</div>';
+  });
+  h+='<div class="grid2" style="margin-top:10px"><div class="field"><label for="nuName">שם משתמש חדש</label><input id="nuName" dir="ltr" autocapitalize="off" spellcheck="false"></div>'+
+    '<div class="field"><label for="nuPass">סיסמה</label><input id="nuPass" type="password" autocomplete="new-password"></div></div>'+
+    '<button class="btn" type="button" id="nuAdd">הוסף משתמש</button>'+
+    '<div id="pwWrap" hidden style="margin-top:12px"><div class="field"><label for="myPass">הסיסמה החדשה שלך</label><input id="myPass" type="password" autocomplete="new-password"></div><button class="btn primary" type="button" id="myPassSave">שמור סיסמה</button></div>'+
+    '<div class="msg" id="uMsg"></div></div>';
+  return h;
+}
+var allAppts=[],pasteVal="",histVal="",calMonth=null,openDay=null,cmeta={},cliQ="",cliOpen=null,editingNote=false;
+function pkey(v){return normPhone(v).replace(/^\+?972/,"0")}
+function clientsList(){
+  var m={},today=ymd(new Date());
+  allAppts.forEach(function(a){if(a.kind==="block"||!a.phone)return;var k=pkey(a.phone);if(k.length<9)return;
+    var c=m[k]||(m[k]={phone:k,name:"",visits:0,upcoming:0,last:"",next:"",list:[],cancelled:0});
+    c.list.push(a);if(a.name)c.name=a.name;
+    if(a.status==="cancelled"){c.cancelled++;return}
+    if(a.date<today){c.visits++;if(a.date>c.last)c.last=a.date}else{c.upcoming++;if(!c.next||a.date<c.next)c.next=a.date}});
+  Object.keys(cmeta).forEach(function(k){if(!m[k])m[k]={phone:k,name:cmeta[k].name||"",visits:0,upcoming:0,last:"",next:"",list:[]}});
+  return Object.keys(m).map(function(k){var c=m[k],x=cmeta[k]||{};c.note=x.note||"";c.vip=!!x.vip;c.health=x.health||null;c.optOut=!!x.optOut;c.winbackAt=x.winbackAt||0;if(x.name)c.name=x.name;return c});
+}
+function infoText(){
+  var c=pubCfg||cfg,ic={},WDL=["א׳","ב׳","ג׳","ד׳","ה׳","ו׳","ש׳"];
+  var lines=["היי! כאן "+c.biz.name+" – "+String(c.biz.type||"")+" 🌿",""];
+  if(c.biz.tagline)lines.push(c.biz.tagline+"!","");
+  (c.services||[]).forEach(function(sv){lines.push((ic[sv.name]||"•")+" "+sv.name+" – "+sv.price+" ₪")});
+  lines.push("");
+  var groups=[];(c.hours||[]).forEach(function(h,i){var k=h.closed?"סגור":h.open+"–"+h.close,g=groups[groups.length-1];if(g&&g.k===k)g.to=i;else groups.push({k:k,from:i,to:i})});
+  groups.forEach(function(g){if(g.k==="סגור")return;lines.push("🕐 "+WDL[g.from]+(g.to>g.from?"–"+WDL[g.to]:"")+" "+g.k)});
+  lines.push("📍 "+c.biz.area,"","לקביעת תור:",(c.siteUrl||"https://maavar.barbershops.company/"));
+  return lines.join("\n");
+}
+/* ---- business dashboard: finished appointments with the amount paid ---- */
+var bizMonth=null;
+function svcPrice(a){
+  if(a.paid!=null&&a.paid!=="")return +a.paid||0;
+  if(a.price!=null)return +a.price||0;
+  var n=String(a.note||""),best=null;(draft.services||cfg.services||[]).forEach(function(sv){if(n.indexOf(sv.name)===0&&(!best||sv.name.length>best.name.length))best=sv});
+  if(best)return +best.price||0;
+  var def=(draft.services||cfg.services||[])[0];return def?+def.price||0:0; /* no service noted: a regular haircut */
+}
+function doneAppts(){
+  var now=Date.now();
+  return allAppts.filter(function(a){if(a.kind!=="appt"||a.status==="cancelled"||!a.date||!a.time)return false;
+    var end=parseYmd(a.date).getTime()+(toMin(a.time)+(+a.dur||30))*60e3;return end<=now});
+}
+var TIPS=["בסוף כל טיפול שאלי: ״לקבוע כבר את הטיפול הבא?״. מטופל שיוצא עם תור הבא ממשיך את התהליך.", "רשמי בכרטיס המטופל מה עבד בטיפול. בפעם הבאה תוכלי להמשיך בדיוק מאותה נקודה.", "מטופל/ת מרוצה? בקשי ביקורת קצרה באתר כבר בסוף הטיפול.", "פוסט קצר שמסביר מה זה טווינא או מוקסה מביא שאלות, ושאלות מביאות תורים.", "מטופל שלא חזר חודש? הודעה אישית קצרה מהלשונית מטופלים עובדת יותר מכל פרסום.", "בדקי ביומן אילו שעות הכי ריקות, וספרי עליהן בסטורי.", "שבוע לפני חג: ״נשארו מקומות אחרונים השבוע״. אנשים קובעים מהר כשיש מעט מקום.", "שתי מים ותני לעצמך כמה דקות בין מטופלים. מטפלת רגועה מעבירה רוגע.", "שאלי מטופל קבוע מה הכי עזר לו אצלך, והשתמשי במילים שלו בפרסום הבא."];
+function motivHtml(){
+  var now=new Date(),today=ymd(now),nm=nowMin(),name=((pubCfg||cfg).biz||{}).name||"";
+  var list=appts.filter(function(a){return a.kind==="appt"&&a.date===today});
+  var done=list.filter(function(a){return !a.noShow&&toMin(a.time)+(+a.dur||30)<=nm}),left=list.length-done.length-list.filter(function(a){return a.noShow}).length;
+  var earned=done.reduce(function(t,a){return t+svcPrice(a)},0),planned=list.filter(function(a){return !a.noShow}).reduce(function(t,a){return t+svcPrice(a)},0);
+  var goal=+((pubCfg||cfg).goalDay)||600,pct=Math.min(100,Math.round(earned/goal*100));
+  var h=(cfg.hours||[])[now.getDay()],closed=!h||h.closed,afterClose=h&&!closed&&nm>=toMin(h.close);
+  var msg;
+  if(closed)msg="יום חופש 😎 נח, תטען כוחות. מחר ממשיכים חזק.";
+  else if(earned>=goal)msg="🔥 "+name+", עברת את היעד של היום! "+done.length+" תספורות, "+earned+" ₪. אלוף!";
+  else if(afterClose&&done.length)msg="עבודה מצוינת היום "+name+" 💪 "+done.length+" תספורות ו-"+earned+" ₪ בכיס. מגיע לך לנוח.";
+  else if(!done.length&&left>0)msg="בוקר טוב "+name+" ☀️ יש לך היום "+left+" תורים ("+planned+" ₪ צפוי). יאללה, יום מעולה!";
+  else if(!list.length)msg="היומן של היום עדיין ריק. זה הזמן לשלוח הודעה ללקוחות ותיקים או להעלות סטורי 🌿";
+  else msg="יופי "+name+" 👊 כבר "+done.length+" תספורות היום. עוד "+Math.max(0,goal-earned)+" ₪ ליעד"+(left>0?", ונשארו לך "+left+" תורים.":".");
+  var start=new Date(now.getFullYear(),0,0),day=Math.floor((now-start)/864e5),tip=TIPS[day%TIPS.length];
+  return '<div class="card motiv"><p class="mt">'+esc(msg)+'</p>'+
+    '<div class="goal"><div class="gl"><span>יעד היום</span><b>'+earned+' / '+goal+' ₪</b></div><div class="gb"><i style="width:'+pct+'%"></i></div>'+
+    '<div class="ge"><label for="goalIn">שינוי יעד יומי</label><input id="goalIn" type="number" min="50" step="50" value="'+goal+'"><button class="btn" type="button" id="goalSave">שמור</button></div></div>'+
+    '<p class="tip"><b>💡 טיפ של היום</b>'+esc(tip)+'</p></div>';
+}
+function bizHtml(){
+  if(!db)return '<div class="card"><p class="who">הנתונים נטענים…</p></div>';
+  if(!bizMonth){var n=new Date();bizMonth=new Date(n.getFullYear(),n.getMonth(),1)}
+  var all=doneAppts(),paid=all.filter(function(a){return !a.noShow}),today=ymd(new Date());
+  var wk=new Date();wk.setHours(0,0,0,0);wk.setDate(wk.getDate()-wk.getDay());var wks=ymd(wk);
+  var mk=ymd(bizMonth).slice(0,7),mo=paid.filter(function(a){return a.date.slice(0,7)===mk});
+  var sum=function(l){return l.reduce(function(t,a){return t+svcPrice(a)},0)};
+  var tD=paid.filter(function(a){return a.date===today}),tW=paid.filter(function(a){return a.date>=wks});
+  var noShow=all.filter(function(a){return a.noShow&&a.date.slice(0,7)===mk}).length;
+  var h=motivHtml()+'<div class="kpis">'+
+    '<div class="kpi"><small>היום</small><b>'+sum(tD)+' ₪</b><span>'+tD.length+' תספורות</span></div>'+
+    '<div class="kpi"><small>השבוע</small><b>'+sum(tW)+' ₪</b><span>'+tW.length+' תספורות</span></div>'+
+    '<div class="kpi"><small>'+MO[bizMonth.getMonth()]+'</small><b>'+sum(mo)+' ₪</b><span>'+mo.length+' תספורות'+(mo.length?' · ממוצע '+Math.round(sum(mo)/mo.length)+' ₪':'')+'</span></div>'+
+    '<div class="kpi"><small>לא הגיעו</small><b>'+noShow+'</b><span>ב'+MO[bizMonth.getMonth()]+'</span></div></div>';
+  /* where bookings come from (last 30 days, by creation) */
+  var cut=Date.now()-30*864e5,src={ig:0,site:0,man:0};
+  allAppts.forEach(function(a){if(!a||a.kind!=="appt"||a.status==="cancelled"||!a.created||a.created<cut)return;
+    if(a.source==="web"&&a.ref==="ig")src.ig++;else if(a.source==="web")src.site++;else src.man++});
+  var stot=src.ig+src.site+src.man;
+  h+='<div class="card"><h3>מאיפה הגיעו התורים (30 יום)</h3><div class="kpis" style="grid-template-columns:repeat(3,1fr)">'+
+    '<div class="kpi"><small>מאינסטגרם</small><b>'+src.ig+'</b><span>דרך הלינק בביו</span></div>'+
+    '<div class="kpi"><small>מהאתר</small><b>'+src.site+'</b><span>הלקוח קבע לבד</span></div>'+
+    '<div class="kpi"><small>ידני</small><b>'+src.man+'</b><span>הוזן בניהול</span></div></div>'+
+    (stot?'<p class="who" style="text-align:center">'+Math.round((src.ig+src.site)/stot*100)+'% מהתורים נקבעו לבד ע״י הלקוחות</p>':'')+'</div>';
+  /* last 14 days chart */
+  var days=[],max=0;for(var i=13;i>=0;i--){var d=new Date();d.setHours(0,0,0,0);d.setDate(d.getDate()-i);var ds=ymd(d),v=sum(paid.filter(function(a){return a.date===ds}));days.push({d:d,v:v});if(v>max)max=v}
+  h+='<div class="card"><h3>הכנסות ב־14 הימים האחרונים</h3><div class="bars">'+days.map(function(x){var pct=max?Math.round(x.v/max*100):0;
+    return '<div class="bar" title="'+x.d.getDate()+'.'+(x.d.getMonth()+1)+': '+x.v+' ₪"><i style="height:'+Math.max(pct,x.v?4:0)+'%"></i><em>'+(x.v?x.v:'')+'</em><span>'+x.d.getDate()+'</span></div>'}).join("")+'</div></div>';
+  /* month list */
+  h+='<div class="card"><div class="calhead"><button class="btn" type="button" data-bm="-1">› הקודם</button><h3>תספורות ב'+MO[bizMonth.getMonth()]+' '+bizMonth.getFullYear()+'</h3><button class="btn" type="button" data-bm="1">הבא ‹</button></div>';
+  var rows=all.filter(function(a){return a.date.slice(0,7)===mk}).sort(function(a,b){return (b.date+b.time)<(a.date+a.time)?-1:1});
+  if(!rows.length)h+='<p class="who">אין תספורות שהסתיימו בחודש הזה.</p>';
+  rows.forEach(function(a){
+    h+='<div class="row'+(a.noShow?'" style="opacity:.55':'')+'"><div class="grow"><div class="when">'+esc(dateShort(a.date))+' · '+esc(a.time)+' · '+esc(a.name||"לקוח")+'</div><div class="who">'+esc(a.note||"")+(a.noShow?' · לא הגיע':'')+'</div></div>'+
+      '<label class="sr" for="pd_'+esc(a._id)+'">סכום ששולם</label><input id="pd_'+esc(a._id)+'" type="number" min="0" data-paid="'+esc(a._id)+'" value="'+svcPrice(a)+'" style="width:80px" '+(a.noShow?'disabled':'')+'> ₪'+
+      '<button class="btn" type="button" data-noshow="'+esc(a._id)+'" style="min-height:36px;padding:4px 10px;font-size:13px">'+(a.noShow?'הגיע':'לא הגיע')+'</button></div>';
+  });
+  h+='<p class="who">תור נכנס לכאן אוטומטית כשהוא מסתיים. אפשר לשנות את הסכום ששולם (נשמר כשיוצאים מהשדה).</p></div>';
+  return h;
+}
+function cliHtml(){
+  if(!db)return '<div class="card"><p class="who">רשימת הלקוחות נטענת… אם היא לא מופיעה, היומן הפרטי לא זמין בתצוגה הזו.</p></div>';
+  var all=clientsList(),q=cliQ.trim().toLowerCase(),qd=q.replace(/\D/g,"");
+  var l=all.filter(function(c){return !q||(c.name||"").toLowerCase().indexOf(q)>-1||(qd&&c.phone.indexOf(qd.replace(/^972/,"0"))>-1)})
+    .sort(function(a,b){return (b.next||b.last)<(a.next||a.last)?-1:1});
+  var h='<div class="card"><h3>מטופלים · '+all.length+'</h3><div class="field"><label for="cliSearch">חיפוש לפי שם או טלפון</label><input id="cliSearch" value="'+esc(cliQ)+'" placeholder="דני או 050…"></div>';
+  if(!all.length)h+='<p class="who">אין עדיין לקוחות. כל תור שתוסיף ביומן עם טלפון יוצר כאן כרטיס לקוח.</p>';
+  else if(!l.length)h+='<p class="who">לא נמצא לקוח.</p>';
+  l.forEach(function(c){
+    var open=cliOpen===c.phone;
+    h+='<div class="cli'+(open?' open':'')+'"><button class="clirow" type="button" data-cli="'+c.phone+'" aria-expanded="'+open+'">'+
+      '<span class="grow"><b>'+esc(c.name||"ללא שם")+'</b>'+(c.vip?' <span class="badge">מטופל/ת קבוע/ה</span>':'')+(c.health?' <span class="badge">📋 שאלון</span>':'')+'<span class="who" dir="ltr" style="display:block;text-align:start">'+esc(c.phone)+'</span></span>'+
+      (c.optOut?'<span class="badge block">הוסר</span>':'')+'<span class="cst"><b>'+c.visits+'</b><small>ביקורים</small></span>'+
+      '<span class="cst"><b>'+(c.next?esc(dateShort(c.next)):(c.last?esc(dateShort(c.last)):'—'))+'</b><small>'+(c.next?'תור הבא':'ביקור אחרון')+'</small></span></button>';
+    if(open){
+      var hist=c.list.slice().sort(function(a,b){return (b.date+b.time)<(a.date+a.time)?-1:1}),today=ymd(new Date());
+      h+='<div class="clid"><div class="clia">'+
+        '<a class="btn primary" target="_blank" rel="noopener" href="https://wa.me/'+waIntl(c.phone)+'?text='+encodeURIComponent("היי "+(c.name||"")+", ")+'">וואטסאפ</a>'+
+        '<button class="btn" type="button" data-newfor="'+c.phone+'">קבע תור</button>'+
+        '<button class="btn" type="button" data-vip="'+c.phone+'">'+(c.vip?'הסר לקוח קבוע':'סמן כלקוח קבוע')+'</button></div>'+
+        '<div class="field"><label for="cliName">שם</label><input id="cliName" data-cname="'+c.phone+'" value="'+esc(c.name)+'"></div>'+
+        '<div class="field"><label for="cliPhone">טלפון</label><input id="cliPhone" type="tel" dir="ltr" data-cname="'+c.phone+'" value="'+esc(c.phone)+'"></div>'+
+        '<div class="field"><label for="cliNote">הערות פרטיות (למשל: נקודות שעבדו, תגובה לטיפול)</label><textarea id="cliNote" data-cnote="'+c.phone+'" rows="2" style="background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:10px;width:100%">'+esc(c.note)+'</textarea></div>'+
+        '<button class="btn" type="button" data-csave="'+c.phone+'">שמור פרטי מטופל/ת</button><div class="msg" id="cliMsg"></div>'+healthHtml(c.health)+
+        '<h3 style="margin-top:14px">הודעה מהבוט</h3><div class="field"><label for="cliSend">טקסט ההודעה</label><textarea id="cliSend" data-cname="'+c.phone+'" rows="6" style="background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:10px;width:100%"></textarea></div>'+
+        '<div class="clia"><button class="btn" type="button" id="cliInfo">מלא מידע על הקליניקה</button><button class="btn primary" type="button" data-csend="'+c.phone+'">שלח בוואטסאפ</button></div><div class="msg" id="cliSendMsg"></div>'+
+        (c.winbackAt?'<p class="who">הודעת ״מזמן לא התראינו״ נשלחה: '+esc(dateShort(ymd(new Date(c.winbackAt))))+'</p>':'')+(c.optOut?'<p class="who">הלקוח ביקש לא לקבל הודעות</p>':'')+
+        '<h3 style="margin-top:14px">היסטוריה ('+hist.length+')</h3>';
+      hist.forEach(function(a){h+='<div class="row"><div class="grow"><div class="when">'+esc(dateShort(a.date))+' · '+esc(a.time)+(a.status==="cancelled"?' <span class="badge block" style="border-color:var(--err);color:var(--err)">בוטל</span>':a.date<today?' <span class="badge block">עבר</span>':' <span class="badge">קרוב</span>')+'</div>'+(a.note?'<div class="who">'+esc(a.note)+'</div>':'')+'</div></div>'});
+      if(!hist.length)h+='<p class="who">אין תורים ביומן.</p>';
+      h+='</div>';
+    }
+    h+='</div>';
+  });
+  return h+'</div>';
+}
+function healthHtml(hh){
+  if(!hh)return '<p class="who" style="margin-top:12px">אין שאלון בריאות למטופל/ת הזה/ו.</p>';
+  var row=function(k,v){return v?'<div class="row"><div class="grow"><b>'+k+'</b><div class="who" style="white-space:pre-wrap">'+esc(v)+'</div></div></div>':''};
+  return '<h3 style="margin-top:14px">📋 שאלון בריאות והסכמה לטיפול</h3>'+
+    row("סומן",(hh.items||[]).length?(hh.items||[]).join(" · "):"לא סומן דבר")+row("תרופות קבועות",hh.meds)+row("אלרגיות",hh.allergies)+row("סיבת הפנייה",hh.reason)+
+    row("הסכמה לטיפול",hh.consent?"✓ אושרה ונחתמה "+(hh.signedAt?dateShort(String(hh.signedAt).slice(0,10)):""):"")+
+    (hh.sig?'<img src="'+hh.sig+'" alt="חתימת המטופל/ת" style="display:block;max-width:240px;width:100%;background:#fff;border-radius:10px;margin:6px 0">':'');
+}
+function apptsOn(s){return appts.filter(function(a){return a.date===s}).sort(function(a,c){return a.time<c.time?-1:1})}
+function monthHtml(){
+  if(!calMonth){var n=new Date();calMonth=new Date(n.getFullYear(),n.getMonth(),1)}
+  var y=calMonth.getFullYear(),m=calMonth.getMonth(),first=new Date(y,m,1).getDay(),nd=new Date(y,m+1,0).getDate(),today=ymd(new Date());
+  var tl=apptsOn(today).filter(function(a){return a.kind!=="block"}),nm=nowMin(),nx=tl.filter(function(a){return toMin(a.time)+(+a.dur||30)>nm})[0];
+  var h='<div class="card todaycard"><div class="tdh"><b>היום · '+esc(dateLong(today))+'</b><span class="badge">'+tl.length+' תורים</span></div>'+
+    (nx?'<div class="tdnext">הבא בתור: <b>'+esc(nx.time)+'</b> '+esc(nx.name||"לקוח")+(nx.note?' · '+esc(nx.note):'')+'</div>':'<div class="who">'+(tl.length?'סיימת את התורים של היום':'אין תורים היום')+'</div>')+
+    (tl.length?'<div class="tdlist">'+tl.map(function(a){var past=toMin(a.time)+(+a.dur||30)<=nm;return '<div class="tdi'+(past?' done':'')+(a===nx?' now':'')+'"><b>'+esc(a.time)+'</b> '+esc(a.name||"לקוח")+(a.phone?' <a class="btn" style="min-height:32px;padding:2px 10px;font-size:12px;text-decoration:none;margin-inline-start:auto" target="_blank" rel="noopener" href="https://wa.me/'+waIntl(a.phone)+'">וואטסאפ</a>':'')+'</div>'}).join("")+'</div>':'')+
+    '</div>';
+  h+='<div class="card"><div class="calhead"><button class="btn" type="button" data-cm="-1" aria-label="החודש הקודם">› הקודם</button><h3>'+MO[m]+' '+y+'</h3><button class="btn" type="button" data-today="1">היום</button><button class="btn" type="button" data-cm="1" aria-label="החודש הבא">הבא ‹</button></div>';
+  h+='<div class="cal">'+["א","ב","ג","ד","ה","ו","ש"].map(function(d){return '<div class="cw">'+d+'</div>'}).join("");
+  for(var i=0;i<first;i++)h+='<div></div>';
+  for(var d=1;d<=nd;d++){
+    var s=ymd(new Date(y,m,d)),wd=new Date(y,m,d).getDay(),hrs=draft.hours[wd],off=!hrs||hrs.closed||(draft.vacations||[]).some(function(v){return s>=v.from&&s<=(v.to||v.from)});
+    var list=apptsOn(s),n=list.filter(function(a){return a.kind!=="block"}).length;
+    h+='<button type="button" class="cd'+(s===today?' tod':'')+(s===openDay?' open':'')+(off?' off':'')+(s<today?' past':'')+'" data-cd="'+s+'" aria-label="'+d+' '+MO[m]+', '+n+' תורים'+(off?', סגור':'')+'"><b>'+d+'</b>'+(n?'<i>'+n+'</i>':(off?'<em>סגור</em>':''))+'</button>';
+  }
+  h+='</div>';
+  if(openDay)h+=dayHtml(openDay);
+  else h+='<p class="who" style="margin:10px 0 0">לחץ על תאריך כדי לראות מי מגיע בכל שעה.</p>';
+  return h+'</div>';
+}
+function dayHtml(s){
+  var d=parseYmd(s),hrs=draft.hours[d.getDay()],list=apptsOn(s),step=+draft.slot||30;
+  var appt=list.filter(function(a){return a.kind!=="block"});
+  var h='<div class="dayview" id="dayview"><div class="dvhead"><b>'+esc(dateLong(s))+'</b><span class="who">'+appt.length+' תורים</span><button class="btn" type="button" data-cd="'+s+'">סגור ✕</button></div>';
+  var o=hrs&&!hrs.closed?toMin(hrs.open):null,c=hrs&&!hrs.closed?toMin(hrs.close):null;
+  if(o===null){
+    h+='<p class="who">יום סגור לפי שעות הפתיחה.</p>';
+    list.forEach(function(a){h+=hourRow(a.time,[a],s)});
+    return h+'</div>';
+  }
+  list.filter(function(a){return toMin(a.time)<o||toMin(a.time)>=c}).forEach(function(a){h+=hourRow(a.time,[a],s)});
+  for(var t=o;t<c;t+=step){
+    var here=list.filter(function(a){var st=toMin(a.time);return st>=t&&st<t+step});
+    var cont=!here.length&&list.some(function(a){var st=toMin(a.time);return st<t&&st+(+a.dur||0)>t});
+    h+=hourRow(fromMin(t),here,s,cont);
+  }
+  return h+'</div>';
+}
+function hourRow(t,items,s,cont){
+  var h='<div class="hr"><span class="ht">'+esc(t)+'</span><div class="hc">';
+  if(items.length)items.forEach(function(a){
+    h+='<div class="ab'+(a.kind==="block"?' blk':'')+'"><div><b>'+esc(a.time)+'–'+fromMin(toMin(a.time)+(+a.dur||0))+'</b> '+(a.kind==="block"?'חסום':esc(a.name||'לקוח'))+
+      '<div class="who">'+(a.note?esc(a.note):'')+(a.phone?' · <span dir="ltr">'+esc(a.phone)+'</span>':'')+'</div></div>'+
+      (a.phone&&a.kind!=="block"?'<a class="btn" target="_blank" rel="noopener" href="https://wa.me/'+waIntl(a.phone)+'" aria-label="וואטסאפ ללקוח">וואטסאפ</a>':'')+
+      '<button class="btn danger" type="button" data-del="'+esc(a._id)+'">'+(armed===a._id?"בטוח?":(a.kind==="block"?"מחק":"ביטול"))+'</button></div>';
+  });
+  else if(cont)h+='<span class="cont">ממשיך…</span>';
+  else h+='<button class="free" type="button" data-slot="'+s+'|'+esc(t)+'">פנוי · הוסף תור</button>';
+  return h+'</div></div>';
+}
+function renderHist(){
+  var out=$("histOut");if(!out)return;var q=normPhone(histVal).replace(/^\+?972/,"0");
+  if(q.length<9){out.innerHTML='<p class="who">הקלד מספר כדי לראות את כל התורים של הלקוח.</p>';return}
+  var l=allAppts.filter(function(a){return normPhone(a.phone).replace(/^\+?972/,"0")===q}).sort(function(a,c){return (c.date+c.time)<(a.date+a.time)?-1:1});
+  var today=ymd(new Date());
+  out.innerHTML=l.length?'<p class="who">'+l.length+' תורים ביומן</p>'+l.map(function(a){return '<div class="row"><div class="grow"><div class="when">'+esc(dateShort(a.date))+' · '+esc(a.time)+(a.date<today?' <span class="badge block">עבר</span>':' <span class="badge">קרוב</span>')+'</div><div class="who">'+esc(a.name||"")+(a.note?' · '+esc(a.note):'')+'</div></div></div>'}).join(""):'<p class="who">אין תורים ביומן למספר הזה.</p>';
+}
+function parsePaste(txt){
+  var r={},m;
+  if((m=txt.match(/(\d{4}-\d{2}-\d{2})\s+(\d{1,2}:\d{2})\s+(\d+)/))){r.date=m[1];r.time=m[2].length===4?"0"+m[2]:m[2];r.dur=+m[3]}
+  if((m=txt.match(/אני\s+([^.\n]+)/)))r.name=m[1].trim();
+  if((m=txt.match(/טלפון:\s*([+\d\-\s]+)/)))r.phone=m[1].trim();
+  if((m=txt.match(/שירות:\s*([^\n]+)/)))r.note=m[1].trim();
+  return r;
+}
+function waCheck(){var el=$("gWa"),m=$("gWaMsg");if(!el)return;var ok=phoneOk(el.value);m.textContent=ok?"✓ מספר תקין":"צריך מספר נייד ישראלי תקין";m.className="msg "+(ok?"ok":"bad")}
+
+$("tabBody").addEventListener("input",function(e){
+  var t=e.target,d=t.dataset;
+  if(t.id==="pasteBox"){pasteVal=t.value;return}
+  if(t.dataset.paid){editingNote=true;return}
+  if(t.dataset.ap){draft.adminPhones=t.value.split(/[,;\s]+/).map(function(x){return x.trim()}).filter(function(x){return x});markDirty();return}
+  if(t.dataset.b){var bs=botSettings(),k=t.dataset.b;bs[k]=t.type==="checkbox"?t.checked:(t.dataset.num?(+t.value||0):t.value);markDirty();return}
+  if(t.id==="cliSearch"){cliQ=t.value;var pos=t.selectionStart;renderTab();var n=$("cliSearch");if(n){n.focus();try{n.setSelectionRange(pos,pos)}catch(_){}}return}
+  if(t.dataset.cnote!=null||t.dataset.cname!=null){editingNote=true;return}
+  if(t.id==="histPhone"){histVal=t.value;renderHist();return}
+  if(d.h!=null){var x=draft.hours[+d.h];if(d.k==="closed"){x.closed=t.checked;renderTab()}else x[d.k]=t.value;markDirty()}
+  else if(d.s!=null){var s=draft.services[+d.s];s[d.k]=d.k==="name"?t.value:Math.max(0,+t.value||0);markDirty()}
+  else if(d.x!=null){var a=draft.addons[+d.x];a[d.k]=d.k==="name"?t.value:Math.max(0,+t.value||0);markDirty()}
+  else if(d.g){var path=d.g.split("."),o=draft;for(var i=0;i<path.length-1;i++)o=o[path[i]];o[path[path.length-1]]=d.num?(+t.value||0):t.value;markDirty();if(d.g==="wa")waCheck()}
+});
+$("tabBody").addEventListener("change",async function(e){
+  var t=e.target;if(!t.dataset||!t.dataset.paid)return;
+  var a=store[t.dataset.paid];if(!a)return;var cp=clone(a);cp.paid=Math.max(0,+t.value||0);editingNote=false;
+  try{await db.collection("data/users/"+uid).doc(t.dataset.paid).set(cp);setStatus("✓ הסכום נשמר")}catch(_){setStatus("השמירה נכשלה","dirty")}
+});
+$("tabBody").addEventListener("click",async function(e){
+  var t=e.target.closest("button");if(!t)return;
+  if(t.id==="cliInfo"){$("cliSend").value=infoText();editingNote=true;return}
+  if(t.dataset.csend){
+    var tx=$("cliSend").value.trim(),sm=$("cliSendMsg");if(!tx){sm.textContent="כתוב הודעה קודם.";sm.className="msg bad";return}
+    if(armed!=="send:"+t.dataset.csend){armed="send:"+t.dataset.csend;t.textContent="בטוח? לחץ שוב לשליחה";return}
+    armed=null;t.disabled=true;t.textContent="שולח…";
+    try{await botAdmin("/admin/send",{phone:t.dataset.csend,text:tx});sm.textContent="✓ ההודעה נשלחה";sm.className="msg ok";$("cliSend").value="";editingNote=false}
+    catch(e){sm.textContent="השליחה נכשלה. בדוק שהבוט מחובר (לשונית וואטסאפ).";sm.className="msg bad"}
+    t.disabled=false;t.textContent="שלח בוואטסאפ";return}
+  if(t.id==="goalSave"){var gv=Math.max(50,+$("goalIn").value||600);t.disabled=true;
+    try{await saveConfig(function(l){l.goalDay=gv;return l},"daily goal");draft.goalDay=gv;applyConfig(clone(pubCfg));renderTab();setStatus("✓ היעד נשמר")}catch(_){setStatus("השמירה נכשלה","dirty");t.disabled=false}return}
+  if(t.dataset.bm){bizMonth=new Date(bizMonth.getFullYear(),bizMonth.getMonth()+(+t.dataset.bm),1);renderTab();return}
+  if(t.dataset.noshow){var ns=store[t.dataset.noshow];if(!ns)return;var cp=clone(ns);cp.noShow=!cp.noShow;t.disabled=true;try{await db.collection("data/users/"+uid).doc(t.dataset.noshow).set(cp)}catch(_){setStatus("השמירה נכשלה","dirty")}return}
+  if(t.dataset.cli){cliOpen=cliOpen===t.dataset.cli?null:t.dataset.cli;editingNote=false;renderTab();return}
+  if(t.dataset.newfor){var c=clientsList().filter(function(x){return x.phone===t.dataset.newfor})[0];curTab="cal";ssSet(curTab);renderTabs();renderTab();
+    $("aKind").value="appt";$("aName").value=c?c.name:"";$("aPhone").value=t.dataset.newfor;$("aDate").focus();$("aAdd").scrollIntoView({behavior:reduce?"auto":"smooth",block:"center"});return}
+  if(t.dataset.vip||t.dataset.csave){
+    var ph=t.dataset.vip||t.dataset.csave,cur=cmeta[ph]||{},rec=Object.assign({},cur,{kind:"client",phone:ph,name:cur.name||"",note:cur.note||"",vip:!!cur.vip});
+    if(t.dataset.vip)rec.vip=!rec.vip;
+    if(t.dataset.csave){var ne=$("cliName"),no=$("cliNote");if(ne)rec.name=ne.value.trim();if(no)rec.note=no.value.trim()}
+    editingNote=false;
+    var np=t.dataset.csave&&$("cliPhone")?pkey($("cliPhone").value):ph;
+    if(np!==ph){
+      var mm3=$("cliMsg");
+      if(!phoneOk(np)){mm3.textContent="מספר נייד לא תקין (05X-XXXXXXX)";mm3.className="msg bad";return}
+      t.disabled=true;rec.phone=np;
+      try{
+        await mutate(function(st){
+          Object.keys(st).forEach(function(k){var a=st[k];if(a&&a.kind==="appt"&&a.phone&&pkey(a.phone)===ph)a.phone=np});
+          var oldMeta=st["c"+ph];delete st["c"+ph];
+          var into=st["c"+np]||{};st["c"+np]=Object.assign({},oldMeta||{},into,rec);
+        },"change client phone");
+        cliOpen=np;renderTab();var mm4=$("cliMsg");if(mm4){mm4.textContent="✓ המספר עודכן בכל התורים של הלקוח";mm4.className="msg ok"}
+      }catch(_){mm3.textContent="השמירה נכשלה, נסה שוב";mm3.className="msg bad";t.disabled=false}
+      return}
+    t.disabled=true;
+    try{await db.collection("data/users/"+uid).doc("c"+ph).set(rec);var mm=$("cliMsg");if(mm){mm.textContent="✓ נשמר";mm.className="msg ok"}}
+    catch(_){var mm2=$("cliMsg");if(mm2){mm2.textContent="השמירה נכשלה, נסה שוב";mm2.className="msg bad"}}
+    t.disabled=false;return}
+  if(t.dataset.today){var n0=new Date();calMonth=new Date(n0.getFullYear(),n0.getMonth(),1);openDay=ymd(n0);renderTab();var dv0=$("dayview");if(dv0)dv0.scrollIntoView({behavior:reduce?"auto":"smooth",block:"start"});return}
+  if(t.dataset.cm){calMonth=new Date(calMonth.getFullYear(),calMonth.getMonth()+(+t.dataset.cm),1);openDay=null;renderTab();return}
+  if(t.dataset.cd){openDay=openDay===t.dataset.cd?null:t.dataset.cd;renderTab();
+    var dv=$("dayview");if(dv){if(G)G.from(dv,{opacity:0,y:-10,scaleY:.92,transformOrigin:"top",duration:.35,ease:"power2.out",clearProps:"transform,opacity"});dv.scrollIntoView({behavior:reduce?"auto":"smooth",block:"start"})}
+    return}
+  if(t.dataset.slot){var p=t.dataset.slot.split("|");$("aKind").value="appt";$("aDate").value=p[0];$("aTime").value=p[1];$("aDur").value=draft.slot||30;
+    $("aName").focus();$("aAdd").scrollIntoView({behavior:reduce?"auto":"smooth",block:"center"});return}
+  if(t.id==="pasteFill"){
+    var r=parsePaste($("pasteBox").value),pm=$("pasteMsg");
+    if(!r.date){pm.textContent="לא מצאתי את שורת ״קוד ליומן״ בהודעה. בדוק שהדבקת את כל ההודעה.";pm.className="msg bad";return}
+    $("aKind").value="appt";$("aDate").value=r.date;$("aTime").value=r.time;$("aDur").value=r.dur||30;
+    $("aName").value=r.name||"";$("aPhone").value=r.phone||"";$("aNote").value=r.note||"";
+    pm.textContent="הטופס מולא. בדוק ולחץ ״הוסף ליומן״.";pm.className="msg ok";
+    histVal=r.phone||"";$("histPhone").value=histVal;renderHist();
+    $("aAdd").scrollIntoView({behavior:reduce?"auto":"smooth",block:"center"});return;
+  }
+  if(t.id==="aAdd"){
+    var m=$("aMsg");
+    if(!db){m.textContent="היומן הפרטי לא זמין כרגע.";m.className="msg bad";return}
+    var rec={kind:$("aKind").value,date:$("aDate").value,time:$("aTime").value,dur:Math.max(5,+$("aDur").value||30),name:$("aName").value.trim(),phone:$("aPhone").value.trim(),note:$("aNote").value.trim(),created:Date.now()};
+    var asv=(draft.services||[]).filter(function(x){return x.id===$("aSvc").value})[0];
+    if(asv&&rec.kind==="appt"){rec.price=+asv.price||0;rec.note=asv.name+(rec.note?" · "+rec.note:"")}
+    if(!rec.date||!rec.time){m.textContent="צריך תאריך ושעה.";m.className="msg bad";return}
+    t.disabled=true;
+    try{await db.collection("data/users/"+uid).doc("a"+Date.now().toString(36)).set(rec);setStatus("✓ נשמר");pasteVal="";
+      m.className="msg ok";m.textContent="נוסף ליומן ונשמר. השעה תיחסם אצל הלקוחות תוך כדקה.";if(rec.kind==="appt"&&phoneOk(rec.phone)){var cm="היי "+(rec.name||"")+", התור שלך אצל "+draft.biz.name+" אושר ✅\n"+dateLong(rec.date)+" בשעה "+rec.time+"\nנתראה!";var a=document.createElement("a");a.className="btn primary";a.style.cssText="width:100%;margin-top:8px";a.target="_blank";a.rel="noopener";a.href="https://wa.me/"+waIntl(rec.phone)+"?text="+encodeURIComponent(cm);a.textContent="שלח אישור ללקוח בוואטסאפ";m.appendChild(document.createElement("br"));m.appendChild(a);}
+      $("aName").value="";$("aPhone").value="";$("aNote").value="";}
+    catch(err){m.textContent="השמירה נכשלה. נסה שוב.";m.className="msg bad"}
+    t.disabled=false;
+  }
+  else if(t.dataset.del){
+    var id=t.dataset.del;
+    if(armed!==id){armed=id;renderTab();return}
+    armed=null;var old=store[id]?clone(store[id]):null;
+    try{
+      if(old&&old.kind==="appt"&&old.phone){var cx=clone(old);cx.status="cancelled";cx.cancelledAt=Date.now();cx.cancelledBy="admin";cx.cancelNotified=false;await db.collection("data/users/"+uid).doc(id).set(cx);setStatus("✓ התור בוטל (נשאר בכרטיס הלקוח)")}
+      else{await db.collection("data/users/"+uid).doc(id).delete();setStatus("✓ נמחק")}
+      if(old&&old.kind==="appt"&&old.phone&&old.date>=ymd(new Date()))botAdmin("/admin/cancel",{}).then(function(){setStatus("✓ התור בוטל. הלקוח והמנהלים יקבלו הודעה בוואטסאפ")}).catch(function(){setStatus("✓ התור בוטל. ההודעות יישלחו כשהבוט מחובר")});
+    }catch(_){setStatus("המחיקה נכשלה","dirty")}
+  }
+  else if(t.dataset.rvhide||t.dataset.rvdel){
+    var rid=t.dataset.rvhide||t.dataset.rvdel;
+    if(t.dataset.rvdel&&armed!=="rv:"+rid){armed="rv:"+rid;renderTab();return}armed=null;t.disabled=true;
+    try{await saveConfig(function(l){l.reviews=(l.reviews||[]).map(function(r){if(r.id!==rid)return r;if(t.dataset.rvhide){r.hidden=!r.hidden}return r}).filter(function(r){return !(t.dataset.rvdel&&r.id===rid)});return l},"review moderation");
+      applyConfig(clone(pubCfg));renderTab()}catch(_){var rm=$("rvAdmMsg");if(rm){rm.textContent="השמירה נכשלה";rm.className="msg bad"}t.disabled=false}
+  }
+  else if(t.id==="nuAdd"){
+    var un=$("nuName").value.trim().toLowerCase(),up=$("nuPass").value,um=$("uMsg");
+    if(!/^[a-z0-9._-]{2,40}$/.test(un)){um.textContent="שם משתמש: אותיות באנגלית, ספרות, נקודה או מקף.";um.className="msg bad";return}
+    if(up.length<6){um.textContent="סיסמה של 6 תווים לפחות.";um.className="msg bad";return}
+    if(keysMap[un]){um.textContent="המשתמש כבר קיים.";um.className="msg bad";return}
+    t.disabled=true;var wrapped=await encryptBytes(up,dekRaw);
+    try{await mutate(function(){keysMap[un]=wrapped},"add user");um.textContent="✓ המשתמש "+un+" נוסף";um.className="msg ok";renderTab()}
+    catch(_){um.textContent="השמירה נכשלה. נסה שוב.";um.className="msg bad";t.disabled=false}
+  }
+  else if(t.dataset.udel){
+    var du=t.dataset.udel;if(armed!=="u:"+du){armed="u:"+du;renderTab();return}armed=null;
+    try{await mutate(function(){delete keysMap[du]},"remove user");renderTab()}catch(_){setStatus("ההסרה נכשלה","dirty")}
+  }
+  else if(t.dataset.upw){$("pwWrap").hidden=false;$("myPass").focus()}
+  else if(t.id==="myPassSave"){
+    var np=$("myPass").value,um2=$("uMsg");if(np.length<6){um2.textContent="סיסמה של 6 תווים לפחות.";um2.className="msg bad";return}
+    t.disabled=true;var w2=await encryptBytes(np,dekRaw);
+    try{await mutate(function(){keysMap[ghUser]=w2},"change password");ghPass=np;
+      try{localStorage.setItem(tokKey(ghUser),JSON.stringify(await encryptStr(np,ghToken)))}catch(_){}
+      um2.textContent="✓ הסיסמה שונתה";um2.className="msg ok";$("pwWrap").hidden=true}
+    catch(_){um2.textContent="השמירה נכשלה.";um2.className="msg bad"}
+    t.disabled=false;
+  }
+  else if(t.id==="waTest"){var wm=$("waMsg");t.disabled=true;try{await botAdmin("/admin/test",{});wm.textContent="✓ נשלחה הודעת בדיקה";wm.className="msg ok"}catch(e){wm.textContent="השליחה נכשלה. בדוק שהבוט מחובר.";wm.className="msg bad"}t.disabled=false}
+  else if(t.id==="waLogout"){if(armed!=="walogout"){armed="walogout";t.textContent="בטוח? לחץ שוב לניתוק";return}armed=null;try{await botAdmin("/admin/logout",{})}catch(_){}refreshBot()}
+  else if(t.id==="vAdd"){
+    var f=$("vFrom").value,to=$("vTo").value||f,vm=$("vMsg");
+    if(!f){vm.textContent="צריך לבחור תאריך התחלה.";vm.className="msg bad";return}
+    if(to<f){vm.textContent="תאריך הסיום לפני תאריך ההתחלה.";vm.className="msg bad";return}
+    draft.vacations.push({from:f,to:to,note:$("vNote").value.trim()});draft.vacations.sort(function(a,c){return a.from<c.from?-1:1});markDirty();renderTab();
+  }
+  else if(t.dataset.vdel!=null){draft.vacations.splice(+t.dataset.vdel,1);markDirty();renderTab()}
+  else if(t.dataset.sdel!=null){draft.services.splice(+t.dataset.sdel,1);markDirty();renderTab()}
+  else if(t.dataset.xdel!=null){draft.addons.splice(+t.dataset.xdel,1);markDirty();renderTab()}
+  else if(t.id==="sAdd"){draft.services.push({id:"s"+Date.now().toString(36),name:"שירות חדש",dur:30,price:50});markDirty();renderTab()}
+  else if(t.id==="xAdd"){draft.addons.push({id:"x"+Date.now().toString(36),name:"תוספת חדשה",price:15});markDirty();renderTab()}
+});
+
+/* ---- publish: config.json holds settings + anonymous busy ranges only ---- */
+$("pubBtn").addEventListener("click",async function(){
+  var btn=this;
+  if(!phoneOk(draft.wa)){setStatus("מספר הוואטסאפ בלשונית כללי לא תקין","dirty");return}
+  for(var i=0;i<draft.hours.length;i++){var x=draft.hours[i];if(!x.closed&&toMin(x.close)<=toMin(x.open)){setStatus("ביום "+WD[i]+" שעת הסגירה לפני הפתיחה","dirty");return}}
+  if(!draft.services.length){setStatus("צריך לפחות שירות אחד","dirty");return}
+  var art=ghToken?ghArtifact:null;
+  if(!art){setStatus("צריך להתחבר מחדש","dirty");return}
+  var today=ymd(new Date()),out=clone(draft);
+  out.busy=db?appts.filter(function(a){return a.date>=today}).map(function(a){return {d:a.date,s:a.time,m:+a.dur||0}}):(cfg.busy||[]);
+  btn.disabled=true;setStatus("מפרסם…");
+  try{
+    await art.publish({"config.json":{content:JSON.stringify(out),contentType:"application/json"}});
+    applyConfig(clone(out));draft=clone(out);dirty=false;btn.disabled=false;
+    setStatus("✓ פורסם. הלקוחות יראו את השינוי תוך כדקה.");renderTab();
+  }catch(err){
+    btn.disabled=false;var c=err&&err.code;
+    if(err&&(err.status===401||err.status===403))setStatus("מפתח GitHub פג תוקף או בלי הרשאה","dirty");
+    else setStatus("הפרסום נכשל. בדוק חיבור ונסה שוב.","dirty");
+  }
+});
+})();
+</script>
+</body>
+</html>
